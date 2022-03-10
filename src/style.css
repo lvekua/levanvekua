@@ -236,6 +236,13 @@ svg {
   padding-top: 0;
   padding-bottom: 0;
 }
+.block-button{
+  box-shadow: var(--shadow-elevation-high);
+  transition: box-shadow 350ms ease-out;
+}
+.block-button:hover{
+  box-shadow: var(--shadow-elevation-medium);
+}
 .block-button__link {
   background: var(--color-accent);
   color: #fff;
