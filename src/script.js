@@ -42,28 +42,31 @@
 })(window, document);
 
 
-const nav = document.querySelector("nav");
-const menuItem = document.querySelectorAll(".menu-item");
+function navigationToggle(){
+  const nav = document.querySelector("nav");
+  const menuItem = document.querySelectorAll(".menu-item");
 
-menuItem.forEach(function(item){
-  item.addEventListener("click", function(){
-    
-    const menuToggle = document.querySelector(".menu-toggle");
+  menuItem.forEach(function(item){
+    item.addEventListener("click", function(){
+      
+      const menuToggle = document.querySelector(".menu-toggle");
 
-    if(nav.classList.contains("is-open")){
-      nav.classList.toggle("is-open");
-      menuToggle.toggleAttribute("aria-expanded");  
-    }
-    
-  })
-});
+      if(nav.classList.contains("is-open")){
+        nav.classList.toggle("is-open");
+        menuToggle.toggleAttribute("aria-expanded");  
+      }
+      
+    })
+  });
+};
+navigationToggle();
 
 function scrollIndicatorFunction() {
-  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  var height =
+  let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  let height =
   document.documentElement.scrollHeight -
   document.documentElement.clientHeight;
-  var scrolled = (winScroll / height) * 100;
+  let scrolled = (winScroll / height) * 100;
   document.getElementById("myBar").style.width = scrolled + "%";
 };
 
@@ -87,7 +90,7 @@ function navigationScroll() {
   // Gsap scroll-triger
   function animateFrom(elem, direction) {
     direction = direction || 1;
-    var x = 0,
+    let x = 0,
       y = direction * 100;
     if (elem.classList.contains("gs_reveal_fromLeft")) {
       x = -100;
