@@ -71,16 +71,13 @@ function scrollIndicatorFunction() {
 };
 
 function navigationScroll() {
-  let headerNavigation = document.querySelector(".header-inner");
-  if (
-    document.documentElement.scrollTop > 750 ||
-    document.body.scrollTop > 750
-    ) {
+  const headerNavigation = document.querySelector(".header-inner");
+  if ( document.documentElement.scrollTop > 750 || document.body.scrollTop > 750 ) {
       headerNavigation.classList.add("header-inner-color");
     } else{
       headerNavigation.classList.remove("header-inner-color");
     }
-  }
+  };
   
   window.onscroll = function () {
     scrollIndicatorFunction();
