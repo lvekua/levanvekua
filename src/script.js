@@ -61,6 +61,19 @@ function navigationToggle(){
 };
 navigationToggle();
 
+function loaderSpinner(){
+  window.addEventListener("load", () => {
+  const loader = document.querySelector(".loader");
+
+  loader.classList.add("loader--hidden");
+
+  loader.addEventListener("transitionend", () => {
+    document.body.removeChild(loader);
+  });
+});
+}
+loaderSpinner()
+
 function scrollIndicatorFunction() {
   let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
   let height =
