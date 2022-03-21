@@ -52,11 +52,13 @@ html {
   scroll-behavior: smooth;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
 }
 h1 {
   font-size: 2em;
@@ -516,7 +518,7 @@ svg {
 .header-img {
   min-height: 100vh;
   background-color: var(--color-base);
-  background: url("/src/img/bg_triad.jpg");
+  background: url("../img/bg_triad.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -526,6 +528,7 @@ svg {
 .main-heading {
   margin-bottom: 0;
   font-family: Heebo;
+  font-size: clamp(var(--text-5xl), 3.5rem, var(--text-6xl));
 }
 
 .main-intro-text {
@@ -545,7 +548,7 @@ p.has-text-color {
   text-align: center;
 }
 .menu-toggle{
-  background: url("img/hamburger-menu.svg");
+  background: url("../img/hamburger-menu.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -553,7 +556,7 @@ p.has-text-color {
   aspect-ratio: 1;
 }
 .menu-toggle[aria-expanded="true"]{
-  background: url("img/close.svg");
+  background: url("../img/close.svg");
   
 }
 .menu-toggle svg {

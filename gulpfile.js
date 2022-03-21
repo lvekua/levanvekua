@@ -17,17 +17,23 @@ function compilescss() {
 
 //optimize and move images
 function optimizeimg() {
-  return src('src/img/**/*.{jpg,png}') // change to your source directory
+  return src('src/img/**/*.{jpg,png,svg}') // change to your source directory
     .pipe(imagemin([
       imagemin.mozjpeg({ quality: 80, progressive: true }),
       imagemin.optipng({ optimizationLevel: 2 }),
+      imagemin.svgo({
+		plugins: [
+                {removeViewBox: true},
+                {cleanupIDs: false}
+		    ]
+	    })
     ]))
     .pipe(dest('dist/img')) // change to your final/public directory
 };
 
 //optimize and move images
 function webpImage() {
-  return src('dist/img/**/*s.{jpg,png}') // change to your source directory
+  return src('dist/img/**/*s.{jpg,png,svg}') // change to your source directory
     .pipe(imagewebp())
     .pipe(dest('dist/img')) // change to your final/public directory
 };
@@ -45,7 +51,7 @@ function watchTask(){
   watch('src/scss/**/*.scss', compilescss); // change to your source directory
   watch('src/js/*.js', jsmin); // change to your source directory
   watch('src/img/**/*', optimizeimg); // change to your source directory
-  watch('dist/img/*.{jpg,png}', webpImage); // change to your source directory
+  watch('dist/img/*.{jpg,png,svg}', webpImage); // change to your source directory
 }
 
 
