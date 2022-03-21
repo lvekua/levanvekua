@@ -402,8 +402,8 @@ svg {
   background-color: rgba(255, 255, 255, 0.7);
 }
 .header-sticky .header {
-  position: -webkit-sticky;
-  position: sticky;
+  width: 100vw;
+  position: fixed;
   top: 0;
   background: #fff;
   z-index: 9999;

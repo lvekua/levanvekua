@@ -70,10 +70,10 @@ loaderSpinner();
 
 function scrollIndicator() {
   let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  let scrollHeight = document.documentElement.scrollHeight;
-  let clientHeight = document.documentElement.clientHeight
-  let height = scrollHeight - clientHeight;
-  let scrolled = (winScroll / height) * 100;
+  let scrollingHeight = document.documentElement.scrollHeight;
+  let clientWindowHeight = document.documentElement.clientHeight
+  let totalHeight = scrollingHeight - clientWindowHeight;
+  let scrolled = (winScroll / totalHeight) * 100;
   document.querySelector(".progress-bar").style.width = scrolled + "%";
 };
 
