@@ -119,6 +119,9 @@ h2 {
 h3 {
   font-size: var(--text-xl);
 }
+input, select, textarea {
+    font-size: var(--text-md);
+}
 a {
   color: var(--color-accent);
   text-decoration: none;
