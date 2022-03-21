@@ -606,6 +606,9 @@ p.has-text-color {
   aspect-ratio: 1;
 }
 @media (min-width: 1024px) {
+  .main-intro-text{
+    font-size: var(--text-md);
+  }
   .menu-toggle {
     display: none;
   }
@@ -639,9 +642,6 @@ p.has-text-color {
   text-align: center;
   padding: 12px;
   border-top: 1px solid var(--color-light);
-}
-.main-intro-text{
-  font-size: var(--text-md);
 }
 .go-to-top {
   display: flex;
