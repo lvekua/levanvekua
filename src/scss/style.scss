@@ -528,11 +528,13 @@ svg {
 .main-heading {
   margin-bottom: 0;
   font-family: Heebo;
-  font-size: clamp(var(--text-5xl), 3.5rem, var(--text-6xl));
+  font-size: clamp(var(--text-5xl), 15vw, var(--text-6xl));
 }
 
 .main-intro-text {
+  margin-top: .75em;
   margin-bottom: 3em;
+  font-size: clamp(1rem, 1.2rem, 1.4rem);
 }
 
 .block-media-text .block-media-text__content {
