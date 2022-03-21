@@ -528,13 +528,13 @@ svg {
 .main-heading {
   margin-bottom: 0;
   font-family: Heebo;
-  font-size: clamp(var(--text-5xl), 15vw, var(--text-6xl));
+  font-size: clamp(var(--text-5xl), 10vw + 1rem, var(--text-6xl));
 }
 
 .main-intro-text {
-  margin-top: .75em;
+  margin-top: 0.75em;
   margin-bottom: 3em;
-  font-size: clamp(1rem, 1.2rem, 1.4rem);
+  font-size: clamp(1rem, 1.3rem, 1.5rem);
 }
 
 .block-media-text .block-media-text__content {
@@ -639,6 +639,9 @@ p.has-text-color {
   text-align: center;
   padding: 12px;
   border-top: 1px solid var(--color-light);
+}
+.main-intro-text{
+  font-size: var(--text-md);
 }
 .go-to-top {
   display: flex;
