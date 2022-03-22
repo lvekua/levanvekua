@@ -649,6 +649,12 @@ input:valid + .floating-label {
 	width: 24px;
 	aspect-ratio: 1;
 }
+.social-container a {
+	padding: 0.7em;
+}
+.social-container a:hover {
+	opacity: 0.75;
+}
 @media (min-width: 1024px) {
 	.main-intro-text {
 		font-size: var(--text-md);
