@@ -121,6 +121,15 @@ h3 {
 }
 input, select, textarea {
     font-size: var(--text-md);
+    text-indent: 1rem;
+}
+select:focus,
+textarea:focus,
+input:focus{
+  outline: none;
+  box-shadow: 
+    0 0 0 3px var(--color-lightest),
+    0 0 0 5px var(--color-base);
 }
 a {
   color: var(--color-accent);
@@ -596,6 +605,32 @@ p.has-text-color {
 }
 .contact-form textarea{
   height: 8.45rem;
+}
+.floating-group{
+  position: relative;
+  margin-bottom: 2em;
+}
+.floating-label{
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  font-size: var(--text-md);
+  color: var(--color-gray);
+  transform: translateY(-50%);
+  transition: top 210ms ease-in, color 210ms ease-in;
+}
+.floating-label-msg{
+  position: absolute;
+  top: 1.5rem;
+}
+
+textarea:focus + .floating-label,
+input:focus + .floating-label,
+textarea:valid + .floating-label,
+input:valid + .floating-label{
+  top: -1rem;
+  color: var(--color-base);
+  font-size: var(--text-xs);
 }
 .social-container {
   display: flex;

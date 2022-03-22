@@ -325,21 +325,19 @@
               <input type="hidden" name="redirect" value="https://web3forms.com/success" />
               <input type="checkbox" name="botcheck" id="" style="display: none;" />
               <div class="contact-input-fields">
-                <div>
-                  <label for="name">Full Name</label><br>
-                  <input type="text" name="name" id="name" placeholder="John Doe" required />
-                  <br><br>
+                <div class="floating-group">
+                  <input type="text" name="name" id="name" required />
+                  <label for="name" class="floating-label">Full Name</label>
                 </div>
-                <div>
-                  <label for="email">Email Address</label><br>
-                  <input type="email" name="email" id="email" placeholder="you@company.com" required /><br><br>
+                <div class="floating-group">
+                  <input type="email" name="email" id="email" required />
+                  <label for="email" class="floating-label">Email Address</label><br>
                 </div>
               </div>
-              <div>
-                <label for="message">Message</label>
-                <br>
-                <textarea rows="5" name="message" id="message" placeholder="Your Message..."
-                  required></textarea><br><br>
+              <div class="floating-group">
+                <textarea rows="5" name="message" id="message"
+                  required></textarea>
+                <label for="message" class="floating-label floating-label-msg">Message</label>
               </div>
 
               <button type="submit" class="block-button block-button__link has-base-background-color has-background"> Send message </button>
