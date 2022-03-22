@@ -22,9 +22,9 @@ function optimizeimg() {
       imagemin.mozjpeg({ quality: 80, progressive: true }),
       imagemin.optipng({ optimizationLevel: 2 }),
       imagemin.svgo({
-		plugins: [
-                {removeViewBox: true},
-                {cleanupIDs: false}
+		    plugins: [
+          {removeViewBox: true},
+          {cleanupIDs: false}
 		    ]
 	    })
     ]))
