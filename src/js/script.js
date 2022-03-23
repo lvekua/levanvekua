@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 !(function (e, t) {
 	t.addEventListener("keydown", function (e) {
 		const s = t.querySelector(".nav");

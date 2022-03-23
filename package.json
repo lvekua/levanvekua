@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/lvekua/levanvekua#readme",
   "devDependencies": {
+    "eslint": "^8.11.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
