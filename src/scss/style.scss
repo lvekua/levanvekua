@@ -54,6 +54,7 @@ html {
 	overflow-x: hidden;
 }
 body {
+	background-color: var(--color-lightest);
 	margin: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -141,7 +142,6 @@ a:hover {
 body {
 	box-sizing: border-box;
 	word-break: break-word;
-	background: #fff;
 	overflow-x: hidden;
 }
 :focus {
@@ -253,7 +253,7 @@ svg {
 	word-wrap: normal !important;
 }
 .screen-reader-text:focus {
-	background-color: #eee;
+	background-color: var(--color-lighter);
 	clip: auto !important;
 	-webkit-clip-path: none;
 	clip-path: none;
@@ -296,7 +296,7 @@ svg {
 }
 .block-button__link {
 	background: var(--color-accent);
-	color: #fff;
+	color: var(--color-lightest);
 	border-radius: 0;
 	border: 1px solid transparent;
 	padding: 8px 22px;
@@ -314,7 +314,7 @@ svg {
 	color: var(--color-base);
 }
 .block-cover .is-style-outline {
-	color: #fff;
+	color: var(--color-lightest);
 }
 .is-style-outline .block-button__link {
 	padding-top: 7px;
@@ -419,13 +419,14 @@ svg {
 	padding-bottom: 8px;
 }
 .header-inner-color {
-	background-color: rgba(255, 255, 255, 0.7);
+	background-color: var(--color-lightest);
+	opacity: 0.75;
 }
 .header-sticky .header {
 	width: 100vw;
 	position: fixed;
 	top: 0;
-	background: #fff;
+	background: var(--color-lightest);
 	z-index: 9999;
 	transition: top 300ms ease-out;
 }
@@ -688,7 +689,7 @@ input:valid + .floating-label {
 	}
 }
 .site-info {
-	background: #fff;
+	background: var(--color-lightest);
 	font-size: var(--text-sm);
 	text-align: center;
 	padding: 12px;
@@ -700,7 +701,7 @@ input:valid + .floating-label {
 	justify-content: center;
 	width: 48px;
 	height: 48px;
-	background: rgba(0, 0, 0, 0.2);
+	background: var(--color-gray);
 	position: fixed;
 	right: 1.2em;
 	bottom: 1em;
@@ -713,14 +714,13 @@ input:valid + .floating-label {
 	visibility: visible;
 }
 .go-to-top:hover {
-	background: rgba(0, 0, 0, 0.3);
+	background: var(--color-base);
 }
 .go-to-top svg {
-	stroke: #fff;
+	stroke: var(--color-lightest);
 	width: 24px;
 	height: 24px;
 }
-
 .gs_reveal {
 	opacity: 0;
 	visibility: hidden;
