@@ -1,6 +1,4 @@
 .block-button__link {
-	color: #fff;
-	background-color: #32373c;
 	border: none;
 	border-radius: 1.55em;
 	box-shadow: none;
@@ -12,12 +10,7 @@
 	text-decoration: none;
 	overflow-wrap: break-word;
 }
-.block-button__link:active,
-.block-button__link:focus,
-.block-button__link:hover,
-.block-button__link:visited {
-	color: #fff;
-}
+
 .is-style-outline > .block-button__link {
 	border: 2px solid;
 }

@@ -34,6 +34,7 @@
   <link rel="icon" type="image/x-icon" href="src/img/favicon.ico">
   <link rel="stylesheet" id="block-library-css" href="dist/css/layout.css" media="all" />
   <link rel="stylesheet" id="estar-css" href="dist/css/style.css" media="all" />
+  <link rel="stylesheet" id="estar-css" href="dist/css/theme.css" media="all" />
   <link rel="canonical" href="https://levanvekua.com/" />
   <link rel="shortlink" href="https://levanvekua.com/" />
   <script src="dist/js/script.js" defer></script>
@@ -58,7 +59,7 @@
         <a href="/" class="custom-logo-link" rel="home" aria-current="page">
           <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 44.97">
             <g data-name="Layer 2">
-              <path style="fill:#4a5568"
+              <path
                 d="M17.24 10.55 27.79 0 45 17.21 17.24 44.97 0 27.73l8.99-9 10.03 10.03L33.58 14.2l-6.99-6.99-3.62 3.63 1.29 1.29 1.23-1.23 2.33 2.33-4.04 4.04-6.54-6.72z"
                 data-name="Layer 1" />
             </g>
@@ -87,6 +88,19 @@
             <a href="#contact">Contact</a>
           </li>
         </ul>
+
+        <button id="theme-toggle" aria-label="Switch to dark theme">
+          <svg xmlns="http://www.w3.org/2000/svg" width="472.39" height="472.39" viewBox="0 0 472.39 472.39">
+            <g class="toggle-sun">
+              <path
+                d="M403.21,167V69.18H305.38L236.2,0,167,69.18H69.18V167L0,236.2l69.18,69.18v97.83H167l69.18,69.18,69.18-69.18h97.83V305.38l69.18-69.18Zm-167,198.17a129,129,0,1,1,129-129A129,129,0,0,1,236.2,365.19Z" />
+            </g>
+            <g class="toggle-circle">
+              <circle class="cls-1" cx="236.2" cy="236.2" r="103.78" />
+            </g>
+          </svg>
+        </button>
+
       </nav>
 
       <button id="menu-toggle" class="menu-toggle header-icon" aria-controls="primary-menu" aria-expanded="false">
@@ -111,7 +125,7 @@
                 href="dist/img/Levan_Vekua_Resume.pdf" target="_blank" rel="noreferrer noopener">View Resume</a>
             </div>
             <div class="block-button is-style-outline">
-              <a class="block-button__link has-text-color" href="#work" style="color: #4a5567">Recent Work</a>
+              <a class="block-button__link has-text-color" href="#work">Recent Work</a>
             </div>
           </div>
         </div>
@@ -136,7 +150,7 @@
               best practices.
             </p>
             <p class="has-base-color has-text-color">
-              I design and build websites that are visually pristine, easy to use, and deliver an exceptional end-user
+              I design and build websites that are visually minimal, easy to use, and deliver an exceptional end-user
               experience.
             </p>
           </div>
@@ -387,7 +401,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.21/dist/vanta.birds.min.js"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
-    VANTA.BIRDS({
+    const birdEffect = VANTA.BIRDS({
       el: ".header-img",
       mouseControls: true,
       touchControls: true,
