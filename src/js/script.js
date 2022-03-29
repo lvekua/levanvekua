@@ -59,9 +59,9 @@ navigationToggle();
 
 function loaderSpinner() {
 	window.addEventListener("load", () => {
-		const loader = document.querySelector(".loader");
+		const loader = document.getElementById("spinner");
 		loader.classList.add("loader--hidden");
-		loader.addEventListener("transitionend", () => {
+		loader.addEventListener("transitionend", function(){
 			document.body.removeChild(loader);
 		});
 	});
@@ -78,7 +78,7 @@ function scrollIndicator() {
 	document.querySelector(".progress-bar").style.width = scrolled + "%";
 }
 
-function navigationScroll() {
+function stickyNavigation() {
 	const headerNavigation = document.querySelector(".header-inner");
 	if (
 		document.documentElement.scrollTop > 750 ||
@@ -92,7 +92,7 @@ function navigationScroll() {
 
 window.onscroll = function () {
 	scrollIndicator();
-	navigationScroll();
+	stickyNavigation();
 };
 
 // Light/Dark Theme Toggle
