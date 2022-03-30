@@ -125,13 +125,12 @@
 }
 .blocks-gallery-grid .blocks-gallery-item,
 .block-gallery .blocks-gallery-item {
-	margin: 0 1em 1em 0;
+	margin: 0 0 1em 0;
 	display: flex;
 	flex-grow: 1;
 	flex-direction: column;
 	justify-content: center;
 	position: relative;
-	width: calc(50% - 1em);
 }
 .blocks-gallery-grid .blocks-gallery-item:nth-of-type(2n),
 .block-gallery .blocks-gallery-item:nth-of-type(2n) {
