@@ -181,6 +181,57 @@
 @supports ((-webkit-mask-image: none) or (mask-image: none)) or
 	(-webkit-mask-image: none) {
 }
+
+.folio-item{
+	position: relative;
+	overflow: hidden;
+}
+
+.folio-item_wrap{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	inset: 0;
+	background-color: var(--color-base);
+	color: var(--color-light);
+	opacity: 0;
+	transform: translateY(-50%);
+	transition: opacity 550ms ease-in-out, transform 350ms ease;
+}
+
+.folio-item:hover > .folio-item_wrap{
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.folio-item_title{
+	color: var(--color-lightest);
+}
+.folio-item_description{
+	color: var(--color-lightest);
+}
+.link-icon {
+  background-image: url("/dist/img/external-link.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 45px;
+  height: 45px;
+  display: inline-block;
+  color: var(--color-lightest);
+  background-color: var(--color-dark);
+  border-radius: 50%;
+  outline: 0;
+  cursor: pointer;
+  transition: filter 200ms ease-in;
+}
+
+.link-icon:hover{
+	filter: invert(1);
+	opacity: 0.7;
+}
+
 .block-media-text {
 	/*!rtl:begin:ignore*/
 	direction: ltr;
