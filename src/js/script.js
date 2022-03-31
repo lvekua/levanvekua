@@ -1,3 +1,4 @@
+// Setup variables
 !(function (e, t) {
 	t.addEventListener("keydown", function (e) {
 		const s = t.querySelector(".nav");
@@ -11,6 +12,7 @@
 		!c && o && n === i && (e.preventDefault(), a.focus()),
 			c && o && a === i && (e.preventDefault(), n.focus());
 	}),
+		// Add attribute to nav when its opened or closed
 		(function () {
 			const e = t.querySelector(".nav");
 			if (!e) return;
@@ -26,6 +28,8 @@
 						e.classList.toggle("is-open");
 				});
 		})(),
+
+		// Go to top button
 		(function () {
 			const s = t.querySelector(".go-to-top");
 			s &&
@@ -41,6 +45,7 @@
 		})();
 })(window, document);
 
+// Navigation toggler for mobile
 function navigationToggle() {
 	const nav = document.querySelector("nav");
 	const menuItem = document.querySelectorAll(".menu-item");
@@ -57,6 +62,7 @@ function navigationToggle() {
 }
 navigationToggle();
 
+// Page loader spinner 
 function loaderSpinner() {
 	window.addEventListener("load", () => {
 		const loader = document.getElementById("spinner");
@@ -68,6 +74,7 @@ function loaderSpinner() {
 }
 loaderSpinner();
 
+// Scroll Progress bar
 function scrollIndicator() {
 	let winScroll =
 		document.body.scrollTop || document.documentElement.scrollTop;
@@ -78,6 +85,7 @@ function scrollIndicator() {
 	document.querySelector(".progress-bar").style.width = scrolled + "%";
 }
 
+// Navigation sticky when scrolling
 function stickyNavigation() {
 	const headerNavigation = document.querySelector(".header-inner");
 	if (
