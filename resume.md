@@ -33,12 +33,12 @@ while satisfying client desires and producing robust, sophisticated designs.
 - Website redesign, optimisation, UI/UX implementation for mobile/desktop screens.
 - Third party plugin integration and customisation.
 - Collaborated with project and product managers to set goals and scope projects.
-- Translated mock-ups to functional HTML CSS and JavaScript interfacecs.
+- Translated mock-ups to functional HTML CSS and JavaScript interfaces.
 
 **Front End Developer, Alexander Wang,** *May 2016 - September 2016* | New York, NY
 - Worked with product manager to develop and implement responsive lookbooks.
 - Applied custom script for interface animation and end-user interaction.
-- Colaborated with product managers and designers to implement UI features.
+- Collaborated with product managers and designers to implement UI features.
 
 ### EDUCATION AND TRAINING
 **Associate Web Master**
