@@ -26,17 +26,17 @@ while satisfying client desires and producing robust, sophisticated designs.
 **Front End Developer, OAK,** *February 2010 - May 2019* | Brooklyn, NY
 - Magento M1 e-commerce site design update and maintenance.
 - User journey and usability enhancement, performance and SEO optimization.
-- Responsive landing page designs, Wordpress blog layout updates and Ul improvements.
-- Improved and designed new layouts to achieve usability and performance objectives.
+- Responsive landing page designs, Wordpress blog redesign and Ul improvements.
+- Improved and designed layouts to enhance site usability and performance.
 
 **Front End Developer, Nili Lotan,** *August 2017 - October 2018* | New York, NY
-- Website redesign, optimization, UI/UX implementation for mobile/desktop screens.
+- Website redesign, UI/UX updates for mobile/desktop screens.
 - Third party plugin integration and customization.
 - Collaborated with project and product managers to set goals and scope projects.
 - Translated mock-ups to functional HTML CSS and JavaScript interfaces.
 
 **Front End Developer, Alexander Wang,** *May 2016 - September 2016* | New York, NY
-- Worked with product manager to develop and implement responsive lookbook layouts.
+- Worked with product manager to develop responsive lookbook layouts.
 - Applied custom script for interface animation and end-user interaction.
 - Collaborated with product managers and designers to implement UI features.
 
