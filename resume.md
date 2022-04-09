@@ -30,13 +30,13 @@ while satisfying client desires and producing robust, sophisticated designs.
 - Improved and designed new layouts to achieve usability and performance objectives.
 
 **Front End Developer, Nili Lotan,** *August 2017 - October 2018* | New York, NY
-- Website redesign, optimisation, UI/UX implementation for mobile/desktop screens.
-- Third party plugin integration and customisation.
+- Website redesign, optimization, UI/UX implementation for mobile/desktop screens.
+- Third party plugin integration and customization.
 - Collaborated with project and product managers to set goals and scope projects.
 - Translated mock-ups to functional HTML CSS and JavaScript interfaces.
 
 **Front End Developer, Alexander Wang,** *May 2016 - September 2016* | New York, NY
-- Worked with product manager to develop and implement responsive lookbooks.
+- Worked with product manager to develop and implement responsive lookbook layouts.
 - Applied custom script for interface animation and end-user interaction.
 - Collaborated with product managers and designers to implement UI features.
 
