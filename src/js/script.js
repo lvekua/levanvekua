@@ -76,8 +76,7 @@ loaderSpinner();
 
 // Scroll Progress bar
 function scrollIndicator() {
-	let winScroll =
-		document.body.scrollTop || document.documentElement.scrollTop;
+	let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
 	let scrollingHeight = document.documentElement.scrollHeight;
 	let clientWindowHeight = document.documentElement.clientHeight;
 	let totalHeight = scrollingHeight - clientWindowHeight;
