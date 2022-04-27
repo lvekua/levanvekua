@@ -68,7 +68,7 @@ function loaderSpinner() {
 		const loader = document.getElementById("spinner");
 		loader.classList.add("loader--hidden");
 		loader.addEventListener("transitionend", function(){
-			document.body.removeChild(loader);
+			this.remove();
 		});
 	});
 }
