@@ -730,6 +730,12 @@ input:valid + .floating-label {
 	color: var(--color-base);
 	font-size: var(--text-xs);
 }
+
+.recapcha-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .social-container {
 	display: flex;
 	gap: 1em;
