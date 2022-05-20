@@ -38,7 +38,6 @@
   <link rel="canonical" href="https://levanvekua.com/" />
   <link rel="shortlink" href="https://levanvekua.com/" />
   <script src="dist/js/script.js" defer></script>
-  
 </head>
 
 <body
@@ -453,7 +452,7 @@
         </div>
       </section>
       <div style="height: 100px; display: block" aria-hidden="true" id="contact" class="block-spacer"></div>
-      <section data-aos="fade-up" class="contact">
+      <section class="contact">
         <div class="contact-form-container">
           <h2 class="has-text-align-center has-4-xl-font-size has-base-color has-text-color">Contact</h2>
           <div style="height: 30px" aria-hidden="true" class="block-spacer"></div>
@@ -461,11 +460,9 @@
             <fieldset>
               <legend>Contact Form</legend>
               <input type="hidden" name="access_key" value="d7403b7b-2767-433f-99ea-b8673e430fc8" />
-              <input type="hidden" name="subject" value="New Submission from Web3Forms" />
+              <input type="hidden" name="subject" value="New Submission from levanvekua.com" />
               <input type="hidden" name="redirect" value="https://web3forms.com/success" />
-              <input type="checkbox" name="botcheck" id="" style="display: none;" />
-              <!-- Google reCaptcha v3: To Prevent SPAM Submission.PRO Plan only -->
-              <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
               <div class="contact-input-fields">
                 <div class="floating-group">
                   <input type="text" name="name" id="name" required />
@@ -481,7 +478,11 @@
                 <label for="message" class="floating-label floating-label-msg">Message</label>
               </div>
               
-              <button type="submit" class="block-button block-button__link has-base-background-color has-background">
+              <button 
+                type="submit"
+                id="submit_btn" 
+                class="block-button block-button__link has-base-background-color has-background
+              ">
                 Send message
               </button>
             
@@ -563,15 +564,10 @@
       anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
     });
   </script>
-  <script src="https://www.google.com/recaptcha/api.js?render=6LcoPwYgAAAAAHH-LP9d8Ak5Cd2CEJNDFtEiRFJZ"></script>
   <script>
-    grecaptcha.ready(function () {
-      grecaptcha.execute('6LcoPwYgAAAAAHH-LP9d8Ak5Cd2CEJNDFtEiRFJZ', {
-        action: 'contact'
-      }).then(function (token) {
-        recaptchaResponse.value = token;
-      });
-    });
+    const contactName = document.getElementById('name').value = '';
+    const contactEmail = document.getElementById('email').value = '';
+    const contactMessage = document.getElementById('message').value = '';
   </script>
 </body>
 
