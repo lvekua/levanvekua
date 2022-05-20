@@ -38,7 +38,7 @@
   <link rel="canonical" href="https://levanvekua.com/" />
   <link rel="shortlink" href="https://levanvekua.com/" />
   <script src="dist/js/script.js" defer></script>
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  
 </head>
 
 <body
@@ -464,6 +464,8 @@
               <input type="hidden" name="subject" value="New Submission from Web3Forms" />
               <input type="hidden" name="redirect" value="https://web3forms.com/success" />
               <input type="checkbox" name="botcheck" id="" style="display: none;" />
+              <!-- Google reCaptcha v3: To Prevent SPAM Submission.PRO Plan only -->
+              <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
               <div class="contact-input-fields">
                 <div class="floating-group">
                   <input type="text" name="name" id="name" required />
@@ -478,12 +480,11 @@
                 <textarea rows="5" name="message" id="message" required></textarea>
                 <label for="message" class="floating-label floating-label-msg">Message</label>
               </div>
-              <div class="recapcha-container">
-                <div class="g-recaptcha" data-sitekey="6LcI8TQaAAAAADwZIETjWk7Irp-5V-0Puqmc25vc"></div>
-                <button type="submit" class="block-button block-button__link has-base-background-color has-background">
-                  Send message
-                </button>
-              </div>
+              
+              <button type="submit" class="block-button block-button__link has-base-background-color has-background">
+                Send message
+              </button>
+            
             </fieldset>
           </form>
         </div>
@@ -562,7 +563,16 @@
       anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
     });
   </script>
-
+  <script src="https://www.google.com/recaptcha/api.js?render=6LcoPwYgAAAAAHH-LP9d8Ak5Cd2CEJNDFtEiRFJZ"></script>
+  <script>
+    grecaptcha.ready(function () {
+      grecaptcha.execute('6LcoPwYgAAAAAHH-LP9d8Ak5Cd2CEJNDFtEiRFJZ', {
+        action: 'contact'
+      }).then(function (token) {
+        recaptchaResponse.value = token;
+      });
+    });
+  </script>
 </body>
 
 </html>
