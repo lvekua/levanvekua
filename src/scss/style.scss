@@ -29,8 +29,7 @@
 	--shadow-elevation-low: -0.5px 0.6px 0.9px hsl(var(--shadow-color) / 0.34),
 		-0.8px 1.1px 1.5px -1.2px hsl(var(--shadow-color) / 0.34),
 		-2px 2.6px 3.7px -2.5px hsl(var(--shadow-color) / 0.34);
-	--shadow-elevation-medium: -0.5px 0.6px 0.9px
-			hsl(var(--shadow-color) / 0.36),
+	--shadow-elevation-medium: -0.5px 0.6px 0.9px hsl(var(--shadow-color) / 0.36),
 		-1.6px 2.1px 3px -0.8px hsl(var(--shadow-color) / 0.36),
 		-4.1px 5.3px 7.5px -1.7px hsl(var(--shadow-color) / 0.36),
 		-9.9px 12.9px 18.3px -2.5px hsl(var(--shadow-color) / 0.36);
@@ -91,19 +90,19 @@ html {
 	scrollbar-color: var(--color-lightest) var(--color-light);
 }
 
-html::-webkit-scrollbar{
+html::-webkit-scrollbar {
 	width: 1.2vw;
 	background-color: var(--color-light);
 }
-html::-webkit-scrollbar-thumb{
+html::-webkit-scrollbar-thumb {
 	border-radius: 100vw;
 	border: 0.2vw solid var(--color-base);
 }
-html::-webkit-scrollbar-thumb:hover{
+html::-webkit-scrollbar-thumb:hover {
 	background-color: var(--color-lightest);
 	border-color: var(--color-base);
 }
-html::-webkit-scrollbar-track{
+html::-webkit-scrollbar-track {
 	background-color: var(--color-light);
 	margin-block: 0.5rem;
 	border-radius: 100vw;
@@ -481,12 +480,17 @@ svg {
 	padding-top: 8px;
 	padding-bottom: 8px;
 }
+
+.header-inner.container {
+	padding-inline-end: calc(12px * 2);
+}
+
 .header-inner-color {
 	background-color: var(--color-lightest);
 	opacity: 0.7;
 }
 .header-sticky .header {
-	width: 100vw;
+	width: 100dvw;
 	position: fixed;
 	top: 0;
 	background: var(--color-lightest);
@@ -602,12 +606,11 @@ svg {
 
 .header-img {
 	min-height: 100vh;
-	background-color: var(--color-base);
-	background-image: url("../img/bg_triad.jpg");
+	background-color: var(--color-light);
+	// background-image: url("../img/bg_triad.jpg");
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-blend-mode: exclusion;
 }
 
 .main-heading {
@@ -676,7 +679,7 @@ p.has-text-color {
 }
 
 .contact-form-container {
-	width: 95vw;
+	width: 100%;
 	margin: 0 auto;
 }
 .contact-form {
@@ -732,8 +735,8 @@ input:valid + .floating-label {
 }
 
 .recapcha-container {
-  display: flex;
-  justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
 }
 
 .social-container {
@@ -779,9 +782,6 @@ input:valid + .floating-label {
 	}
 	.nav li:hover > a {
 		opacity: 0.7;
-	}
-	.contact-form-container {
-		width: 55vw;
 	}
 }
 .site-info {
