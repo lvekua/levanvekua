@@ -48,7 +48,7 @@
       style="display:none;visibility:hidden"></iframe>
   </noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+  <a class="skip-link screen-reader-text" href="#main-content">Skip to content</a>
   <header id="header" class="header header-sticky " role="banner">
     <div class="progress-container">
       <div class="progress-bar"></div>
@@ -109,7 +109,7 @@
   </header>
 
   <main>
-    <div class="content container" id="content">
+    <div class="content container">
       <div class="block-cover alignfull has-light-background-color has-parallax header-img lazy">
         <div class="block-cover__inner-container">
           <h1 class="has-text-align-center main-heading has-base-color has-text-color">
@@ -130,7 +130,7 @@
         </div>
       </div>
       <div style="height: 100px" aria-hidden="true" id="about" class="block-spacer"></div>
-      <section class="about">
+      <section class="about" id="main-content">
         <h2 class="has-text-align-center has-4-xl-font-size has-base-color has-text-color">About</h2>
         <div style="height: 30px" aria-hidden="true" class="block-spacer"></div>
         <div
@@ -496,32 +496,7 @@
       <polyline points="18 15 12 9 6 15"></polyline>
     </svg></a>
 
-  <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.21/vendor/three.r119.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.21/dist/vanta.birds.min.js"></script>
-
   <script>
-    const birdEffect = VANTA.BIRDS({
-      el: ".header-img",
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 200.00,
-      minWidth: 200.00,
-      scale: 1.00,
-      scaleMobile: 1.00,
-      backgroundColor: 0xeff1f5,
-      color1: 0x4a5568,
-      color2: 0xc5dae3,
-      colorMode: "lerpGradient",
-      birdSize: 1.00,
-      wingSpan: 17.00,
-      separation: 41.00,
-      alignment: 1.00,
-      cohesion: 1.00,
-      backgroundAlpha: 0.7,
-      quantity: 3.00
-    });
-
     const contactName = document.getElementById('name').value = '';
     const contactEmail = document.getElementById('email').value = '';
     const contactMessage = document.getElementById('message').value = '';

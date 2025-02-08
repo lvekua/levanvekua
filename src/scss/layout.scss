@@ -200,7 +200,7 @@
 	transition: opacity 550ms ease-in-out, transform 350ms ease;
 }
 
-.folio-item a:has(:hover, :focus-visible) > .folio-item_wrap {
+.folio-item a:is(:hover, :focus-visible) > .folio-item_wrap {
 	opacity: 1;
 	transform: translateY(0);
 }
