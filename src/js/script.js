@@ -28,7 +28,6 @@
 						e.classList.toggle("is-open");
 				});
 		})(),
-
 		// Go to top button
 		(function () {
 			const s = t.querySelector(".go-to-top");
@@ -62,12 +61,12 @@ function navigationToggle() {
 }
 navigationToggle();
 
-// Page loader spinner 
+// Page loader spinner
 function loaderSpinner() {
 	window.addEventListener("load", () => {
 		const loader = document.getElementById("spinner");
 		loader.classList.add("loader--hidden");
-		loader.addEventListener("transitionend", function(){
+		loader.addEventListener("transitionend", function () {
 			this.remove();
 		});
 	});
@@ -86,7 +85,7 @@ function scrollIndicator() {
 
 // Navigation sticky when scrolling
 function stickyNavigation() {
-	const headerNavigation = document.querySelector(".header-inner");
+	const headerNavigation = document.querySelector(".header");
 	if (
 		document.documentElement.scrollTop > 750 ||
 		document.body.scrollTop > 750

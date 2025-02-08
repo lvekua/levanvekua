@@ -182,9 +182,7 @@ textarea {
 	border: 1px solid var(--color-base);
 	color: var(--color-base);
 }
-select:focus,
-textarea:focus,
-input:focus {
+:is(input, select, textarea):is(:focus, :focus-visible) {
 	outline: none;
 	box-shadow: 0 0 0 3px var(--color-lightest), 0 0 0 5px var(--color-base);
 }
@@ -196,14 +194,21 @@ a {
 a:hover {
 	text-decoration: underline;
 }
+
+a:is(:focus, :focus-visible) {
+	outline: none;
+	box-shadow: 0 0 0 3px var(--color-lightest), 0 0 0 5px var(--color-base);
+}
+
 body {
 	box-sizing: border-box;
 	word-break: break-word;
 	background-color: var(--background-color);
 	overflow-x: hidden;
 }
-:focus {
-	outline: 1px dotted;
+:focus,
+:focus-visible {
+	outline: none;
 }
 *,
 :after,
@@ -316,7 +321,7 @@ svg {
 	clip: auto !important;
 	-webkit-clip-path: none;
 	clip-path: none;
-	color: var(--color-base);
+	color: var(--color-light);
 	display: block;
 	font-size: 1em;
 	height: auto;
@@ -446,7 +451,7 @@ svg {
 	margin-bottom: 1.5em;
 }
 .header-full .header-inner {
-	max-width: none;
+	max-width: var(--container);
 }
 .progress-container {
 	width: 100%;
@@ -485,19 +490,20 @@ svg {
 	padding-inline-end: calc(12px * 2);
 }
 
-.header-inner-color {
-	background-color: var(--color-lightest);
-	opacity: 0.7;
-}
 .header-sticky .header {
 	width: 100dvw;
 	position: fixed;
 	top: 0;
-	// background: var(--color-lightest);
 	z-index: 9999;
-	transition: top 300ms ease-out;
+	background-color: transparent;
+	transition: top, background-color 300ms ease-out;
 }
-.header-transparent .site-title a:hove {
+
+.header-inner-color {
+	background-color: var(--color-lightest) !important;
+}
+
+.header-transparent .site-title a:hover {
 	opacity: 0.75;
 }
 .branding {
@@ -607,10 +613,11 @@ svg {
 .header-img {
 	min-height: 100vh;
 	background-color: var(--color-light);
-	// background-image: url("../img/bg_triad.jpg");
+	background-image: url("../img/hero-bg.webp");
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
+	background-blend-mode: hard-light;
 }
 
 .main-heading {
