@@ -26,11 +26,28 @@
   <meta property="og:image" content="https://www.levanvekua.com/dist/img/logo.svg">
   <meta name="twitter:image" content="https://www.levanvekua.com/dist/img/logo.svg">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&family=Roboto+Mono&display=swap"
-    rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="src/img/favicon.ico">
+  <link rel="preload" href="/dist/fonts/roboto-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/dist/fonts/heebo-700.woff2" as="font" type="font/woff2" crossorigin>
+  <style>
+    /* Roboto 400 - latin */
+    @font-face {
+      font-display: swap;
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      src: url('/dist/fonts/roboto-400.woff2') format('woff2');
+    }
+
+    /* Heebo 700 - latin */
+    @font-face {
+      font-display: swap;
+      font-family: 'Heebo';
+      font-style: normal;
+      font-weight: 700;
+      src: url('/dist/fonts/heebo-700.woff2') format('woff2');
+    }
+  </style>
   <link rel="stylesheet" id="block-library-css" href="dist/css/layout.css" media="all" />
   <link rel="stylesheet" id="estar-css" href="dist/css/style.css" media="all" />
   <link rel="stylesheet" id="estar-css" href="dist/css/theme.css" media="all" />
@@ -55,7 +72,7 @@
     </div>
     <div class="header-inner container">
       <div class="branding">
-        <a href="/" class="custom-logo-link" rel="home" aria-current="page">
+        <a href="/" class="custom-logo-link" rel="home" aria-current="page" aria-label="go back to homepage">
           <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 44.97">
             <g data-name="Layer 2">
               <path
@@ -140,7 +157,7 @@
               width="600" height="600" />
           </figure>
           <div class="block-media-text__content">
-            <h2 class="has-2-xl-font-size has-base-color has-text-color">
+            <h2 class="has-3-xl-font-size has-base-color has-text-color">
               Hey, I’m Levan.
             </h2>
             <p class="has-base-color has-text-color">

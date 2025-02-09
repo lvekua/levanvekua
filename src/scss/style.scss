@@ -1,8 +1,8 @@
 :root {
 	--background-color: var(--color-lightest);
 	--container: 1134px;
-	--font-body: "Roboto Mono", monospace, "Helvetica Neue", sans-serif;
-	--font-heading: "Heebo", "Helvetica Neue", sans-serif;
+	--font-body: "Roboto Mono", sans-serif;
+	--font-heading: "Heebo", sans-serif;
 	--text-xs: 12px;
 	--text-sm: 14px;
 	--text-md: 16px;
@@ -69,6 +69,16 @@
 	--color-light: #e2e8f0;
 	--color-lighter: #edf2f7;
 	--color-lightest: #f7fafc;
+
+	.header-img {
+		min-height: 100vh;
+		background-color: var(--color-light);
+		background-image: url("../img/hero-bg.webp");
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-blend-mode: overlay;
+	}
 }
 
 .dark-theme {
@@ -636,9 +646,9 @@ svg {
 	padding-top: 2em;
 }
 
-p.has-text-color {
-	opacity: 0.75;
-}
+// p.has-text-color {
+// 	opacity: 0.75;
+// }
 
 .skills-top-row,
 .skills-bottom-row {
