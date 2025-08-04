@@ -1,29 +1,21 @@
 {
-  "name": "levanvekua",
-  "version": "1.0.0",
-  "description": "Portfolio Site",
-  "main": "index.js",
+  "name": "lv-web-astro",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "analyze-css": "node css-analyzer.js",
+    "cleanup-css": "node cleanup-css.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lvekua/levanvekua.git"
+  "dependencies": {
+    "astro": "^4.0.0"
   },
-  "author": "Levan Vekua",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/lvekua/levanvekua/issues"
-  },
-  "homepage": "https://github.com/lvekua/levanvekua#readme",
   "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^8.0.0",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-imagemin": "^7.1.0",
-    "gulp-sass": "^5.1.0",
-    "gulp-terser": "^2.1.0",
-    "gulp-webp": "^4.0.1",
-    "sass": "^1.49.9"
+    "purgecss": "^7.0.2",
+    "sass": "^1.89.2"
   }
 }

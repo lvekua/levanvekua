@@ -1,0 +1,24 @@
+---
+export interface Props {
+  href: string;
+  imageSrc: string;
+  imageAlt: string;
+  title: string;
+  description: string;
+}
+
+const { href, imageSrc, imageAlt, title, description } = Astro.props;
+---
+
+<figure class="folio-item">
+  <a href={href} target="_blank">
+    <img loading="lazy" src={imageSrc} alt={imageAlt} />
+    <div class="folio-item_wrap">
+      <h3 class="folio-item_title">{title}</h3>
+      <p class="folio-item_description" set:html={description} />
+      <div class="external-link">
+        <i class="link-icon"></i>
+      </div>
+    </div>
+  </a>
+</figure>
