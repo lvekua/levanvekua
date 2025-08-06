@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
 import Card from '../components/Card.astro';
 import SkillColumn from '../components/SkillColumn.astro';
 
@@ -7,63 +8,63 @@ import SkillColumn from '../components/SkillColumn.astro';
 const portfolioItems = [
   {
     href: "https://www.bonnemaman.us",
-    imageSrc: "/img/project-thumbs/bm-thumb.jpg",
+    imageSrc: "/img/project-thumbs/bm-thumb.avif",
     imageAlt: "Bonne Maman",
     title: "UI Design/Development",
     description: "Magento &diams; WordPress"
   },
   {
     href: "https://www.1000storieswines.com",
-    imageSrc: "/img/project-thumbs/1k-thumb.jpg",
+    imageSrc: "/img/project-thumbs/1k-thumb.avif",
     imageAlt: "1000 Stories",
     title: "UI Design/Development",
     description: "WordPress"
   },
   {
     href: "https://www.bonterra.com",
-    imageSrc: "/img/project-thumbs/bonterra-thumb.jpg",
+    imageSrc: "/img/project-thumbs/bonterra-thumb.avif",
     imageAlt: "Bonterra",
     title: "UI Design/Development",
     description: "WordPress"
   },
   {
     href: "https://www.oaknyc.com",
-    imageSrc: "/img/project-thumbs/oak-thumb.jpg",
+    imageSrc: "/img/project-thumbs/oak-thumb.avif",
     imageAlt: "OAK NYC",
     title: "UI/UX Development",
     description: "Magento &diams; WordPress"
   },
   {
     href: "https://www.nililotan.com",
-    imageSrc: "/img/project-thumbs/nl-thumb.jpg",
+    imageSrc: "/img/project-thumbs/nl-thumb.avif",
     imageAlt: "Nili Lotan",
     title: "UI/UX Development",
     description: "Shopify &diams; WordPress"
   },
   {
     href: "https://www.alexanderwang.com/us-en/projects",
-    imageSrc: "/img/project-thumbs/aw-thumb.jpg",
+    imageSrc: "/img/project-thumbs/aw-thumb.avif",
     imageAlt: "Alexander Wang",
     title: "UI/UX Development",
     description: "Demandware"
   },
   {
     href: "https://jiujiedecor.com",
-    imageSrc: "/img/project-thumbs/jj-thumb.jpg",
+    imageSrc: "/img/project-thumbs/jj-thumb.avif",
     imageAlt: "Jiu Jie",
     title: "UX/UI Design",
     description: "Shopify"
   },
   {
     href: "https://www.standardissuenyc.com",
-    imageSrc: "/img/project-thumbs/si-thumb.jpg",
+    imageSrc: "/img/project-thumbs/si-thumb.avif",
     imageAlt: "Standard Issue",
     title: "UI Design",
     description: "Magento &diams; WordPress"
   },
   {
     href: "https://hydenyoo.com",
-    imageSrc: "/img/project-thumbs/hy-thumb.jpg",
+    imageSrc: "/img/project-thumbs/hy-thumb.avif",
     imageAlt: "Hyden Yoo",
     title: "UI Design",
     description: "Magento &diams; WordPress"
@@ -137,63 +138,7 @@ const skillsData = [
   </noscript>
   <!-- End Google Tag Manager (noscript) -->
   <a class="skip-link screen-reader-text" href="#main-content">Skip to content</a>
-  <header id="header" class="header header-sticky " role="banner">
-    <div class="progress-container">
-      <div class="progress-bar"></div>
-    </div>
-    <div class="header-inner container">
-      <div class="branding">
-        <a href="/" class="custom-logo-link" rel="home" aria-current="page" aria-label="go back to homepage">
-          <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 44.97">
-            <g data-name="Layer 2">
-              <path
-                d="M17.24 10.55 27.79 0 45 17.21 17.24 44.97 0 27.73l8.99-9 10.03 10.03L33.58 14.2l-6.99-6.99-3.62 3.63 1.29 1.29 1.23-1.23 2.33 2.33-4.04 4.04-6.54-6.72z"
-                data-name="Layer 1" />
-            </g>
-          </svg>
-        </a>
-        <div class="site-name sr-only">
-          <div class="site-title">
-            <a href="/">Levan Vekua</a>
-          </div>
-          <div class="site-description">Web Designer / Developer</div>
-        </div>
-      </div>
-
-      <nav id="nav" class="nav" aria-label="Primary Navigation">
-        <ul id="primary-menu" class="menu" aria-expanded="false">
-          <li class="menu-item">
-            <a class="nav-link" href="#about">About</a>
-          </li>
-          <li class="menu-item">
-            <a class="nav-link" href="#skills">Skills</a>
-          </li>
-          <li class="menu-item">
-            <a class="nav-link" href="#work">Work</a>
-          </li>
-          <li class="menu-item">
-            <a class="nav-link" href="#contact">Contact</a>
-          </li>
-        </ul>
-
-        <button id="theme-toggle" aria-label="Switch to dark theme">
-          <svg xmlns="http://www.w3.org/2000/svg" width="472.39" height="472.39" viewBox="0 0 472.39 472.39">
-            <g class="toggle-sun">
-              <path
-                d="M403.21,167V69.18H305.38L236.2,0,167,69.18H69.18V167L0,236.2l69.18,69.18v97.83H167l69.18,69.18,69.18-69.18h97.83V305.38l69.18-69.18Zm-167,198.17a129,129,0,1,1,129-129A129,129,0,0,1,236.2,365.19Z" />
-            </g>
-            <g class="toggle-circle">
-              <circle class="cls-1" cx="236.2" cy="236.2" r="103.78" />
-            </g>
-          </svg>
-        </button>
-      </nav>
-
-      <button id="menu-toggle" class="menu-toggle header-icon" aria-controls="primary-menu" aria-expanded="false">
-        <span class="screen-reader-text">Menu</span>
-      </button>
-    </div>
-  </header>
+  <Header />
 
   <main>
     <div class="content container">

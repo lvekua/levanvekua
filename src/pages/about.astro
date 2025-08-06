@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+
+// Custom navigation for an about page
+const aboutNavItems = [
+  { href: "/", label: "Home" },
+  { href: "#experience", label: "Experience" },
+  { href: "#education", label: "Education" },
+  { href: "#contact", label: "Contact" }
+];
+---
+
+<Layout title="About - Levan Vekua">
+  <Header navItems={aboutNavItems} currentPage="/about" />
+  
+  <main>
+    <div class="content container">
+      <h1>About Page Example</h1>
+      <p>This demonstrates how the Header component can be reused with different navigation items.</p>
+    </div>
+  </main>
+</Layout>
