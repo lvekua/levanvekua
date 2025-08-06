@@ -10,7 +10,7 @@ const __dirname = path.dirname(__filename);
 // Simple CSS class usage analyzer
 function analyzeCSSUsage() {
 	const srcDir = "./src";
-	const stylesDir = "./src/styles";
+	const stylesDir = "./src/scss"; // Updated to use scss directory
 
 	// Read all CSS/SCSS files
 	const cssFiles = ["main.scss", "layout.scss", "style.scss", "theme.scss"];

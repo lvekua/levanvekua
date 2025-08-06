@@ -1,21 +1,47 @@
 {
-  "name": "lv-web-astro",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "analyze-css": "node css-analyzer.js",
-    "cleanup-css": "node cleanup-css.js"
-  },
-  "dependencies": {
-    "astro": "^4.0.0"
-  },
-  "devDependencies": {
-    "purgecss": "^7.0.2",
-    "sass": "^1.89.2"
-  }
+	"name": "lv-web-astro",
+	"type": "module",
+	"version": "0.0.1",
+	"description": "Portfolio website for Levan Vekua - Web Designer & Developer",
+	"author": "Levan Vekua",
+	"license": "MIT",
+	"homepage": "https://levanvekua.com",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/lvekua/levanvekua.git"
+	},
+	"keywords": [
+		"portfolio",
+		"web-design",
+		"astro",
+		"typescript",
+		"scss"
+	],
+	"engines": {
+		"node": ">=18.0.0",
+		"npm": ">=8.0.0"
+	},
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"build:css": "node scripts/build-css.mjs",
+		"preview": "astro preview",
+		"astro": "astro",
+		"analyze-css": "node css-analyzer.js",
+		"cleanup-css": "node cleanup-css.js"
+	},
+	"dependencies": {
+		"astro": "^4.0.0"
+	},
+	"devDependencies": {
+		"autoprefixer": "^10.4.21",
+		"cssnano": "^7.1.0",
+		"form-data": "^4.0.0",
+		"node-fetch": "^3.3.2",
+		"postcss": "^8.5.6",
+		"purgecss": "^7.0.2",
+		"sass": "^1.90.0",
+		"terser": "^5.43.1"
+	}
 }

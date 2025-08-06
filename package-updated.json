@@ -1,0 +1,27 @@
+{
+	"name": "lv-web-astro",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "npm run build:css && astro build",
+		"build:css": "node scripts/build-css.js",
+		"preview": "astro preview",
+		"astro": "astro",
+		"analyze-css": "node css-analyzer.js",
+		"cleanup-css": "node cleanup-css.js"
+	},
+	"dependencies": {
+		"astro": "^4.16.18"
+	},
+	"devDependencies": {
+		"@astrojs/check": "^0.9.4",
+		"purgecss": "^6.0.0",
+		"sass": "^1.80.6",
+		"typescript": "^5.6.3",
+		"postcss": "^8.4.47",
+		"autoprefixer": "^10.4.20",
+		"cssnano": "^7.0.6"
+	}
+}

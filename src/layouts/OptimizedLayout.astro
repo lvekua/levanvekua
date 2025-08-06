@@ -1,0 +1,232 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+
+// Extract critical CSS that's needed for above-the-fold content
+const criticalCSS = `
+/* Critical CSS for above-the-fold content */
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	font-family: system-ui, sans-serif;
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Header critical styles */
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	background: rgba(255, 255, 255, 0.95);
+	backdrop-filter: blur(10px);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.header-inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 2rem;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.logo {
+	width: 40px;
+	height: 40px;
+}
+
+.nav {
+	display: none;
+}
+
+@media (min-width: 768px) {
+	.nav {
+		display: block;
+	}
+}
+
+.menu {
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	gap: 2rem;
+}
+
+.nav-link {
+	text-decoration: none;
+	color: #333;
+	font-weight: 500;
+	transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+	color: #0066cc;
+}
+
+/* Hero section critical styles */
+.block-cover {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+}
+
+.main-heading {
+	font-size: clamp(2rem, 5vw, 4rem);
+	margin: 0 0 1rem 0;
+	font-weight: 700;
+}
+
+.main-intro-text {
+	font-size: clamp(1rem, 2.5vw, 1.5rem);
+	margin: 0 0 2rem 0;
+}
+
+/* Button critical styles */
+.block-button__link {
+	display: inline-block;
+	padding: 0.75rem 1.5rem;
+	border-radius: 2rem;
+	text-decoration: none;
+	font-weight: 500;
+	transition: all 0.2s ease;
+	border: 2px solid transparent;
+}
+
+.has-base-background-color {
+	background-color: #0066cc;
+	color: white;
+}
+
+.is-style-outline .block-button__link {
+	background: transparent;
+	border-color: #0066cc;
+	color: #0066cc;
+}
+
+.block-buttons {
+	display: flex;
+	gap: 1rem;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+/* Loading spinner */
+.loader {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 9999;
+	width: 40px;
+	height: 40px;
+	border: 4px solid #f3f3f3;
+	border-top: 4px solid #0066cc;
+	border-radius: 50%;
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	0% { transform: translate(-50%, -50%) rotate(0deg); }
+	100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Container */
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+
+/* Hide elements until non-critical CSS loads */
+.skills, .recent-work, .contact, .footer {
+	visibility: hidden;
+}
+
+.css-loaded .skills,
+.css-loaded .recent-work,
+.css-loaded .contact,
+.css-loaded .footer {
+	visibility: visible;
+}
+`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Levan Vekua - Web Designer & Developer based in New York. Specializing in modern web development, UI/UX design, and creating exceptional digital experiences." />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- Preload critical resources -->
+		<link rel="preload" href="/img/logo.svg" as="image" type="image/svg+xml" />
+		<link rel="preload" href="/img/lv-background.webp" as="image" type="image/webp" />
+		
+		<!-- Critical CSS inlined -->
+		<style>{criticalCSS}</style>
+		
+		<!-- Preload main CSS file -->
+		<link rel="preload" href="/_astro/main.css" as="style" onload="this.onload=null;this.rel='stylesheet';" />
+		<noscript><link rel="stylesheet" href="/_astro/main.css" /></noscript>
+		
+		<!-- Load non-critical CSS asynchronously -->
+		<script is:inline>
+			// Function to load CSS asynchronously
+			function loadCSS(href) {
+				const link = document.createElement('link');
+				link.rel = 'stylesheet';
+				link.href = href;
+				link.onload = function() {
+					document.documentElement.classList.add('css-loaded');
+				};
+				document.head.appendChild(link);
+			}
+			
+			// Load main CSS after critical rendering
+			if ('requestIdleCallback' in window) {
+				requestIdleCallback(function() { loadCSS('/src/styles/main.scss'); });
+			} else {
+				setTimeout(function() { loadCSS('/src/styles/main.scss'); }, 100);
+			}
+		</script>
+		
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+		
+		<!-- Load remaining JavaScript after page load -->
+		<script is:inline>
+			// Hide loader when page is loaded
+			window.addEventListener('load', function() {
+				const spinner = document.getElementById('spinner');
+				if (spinner) {
+					spinner.style.display = 'none';
+				}
+			});
+		</script>
+	</body>
+</html>

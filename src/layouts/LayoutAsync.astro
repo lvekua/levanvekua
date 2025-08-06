@@ -1,0 +1,52 @@
+---
+import '../styles/main.scss';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Levan Vekua - Web Designer & Developer based in New York." />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- Resource hints for better performance -->
+		<link rel="preload" href="/img/logo.svg" as="image" type="image/svg+xml" />
+		<link rel="preload" href="/img/lv-background.webp" as="image" type="image/webp" />
+		<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+		<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+		
+		<!-- Load fonts asynchronously to reduce render blocking -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+		
+		<!-- Async font loading to prevent render blocking -->
+		<script is:inline>
+			// Load Google Fonts asynchronously if you use them
+			const fontLink = document.createElement('link');
+			fontLink.rel = 'stylesheet';
+			fontLink.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap';
+			fontLink.media = 'print';
+			fontLink.onload = function() { this.media = 'all'; };
+			document.head.appendChild(fontLink);
+			
+			// Hide loader when page loads
+			window.addEventListener('load', function() {
+				const spinner = document.getElementById('spinner');
+				if (spinner) spinner.style.display = 'none';
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://levanvekua.com/sitemap.xml
+
+# Performance optimization
+Crawl-delay: 1
+
+# Disallow sensitive areas
+Disallow: /scripts/
+Disallow: /_astro/
+Disallow: /admin/

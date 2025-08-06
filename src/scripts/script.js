@@ -47,11 +47,18 @@
 // Navigation toggler for mobile
 function navigationToggle() {
 	const nav = document.querySelector("nav");
-	const menuItem = document.querySelectorAll(".menu-item");
+	const menuItems = document.querySelectorAll(".menu-item");
 
-	menuItem.forEach(function (item) {
+	if (!nav || !menuItems.length) {
+		console.warn("Navigation elements not found");
+		return;
+	}
+
+	menuItems.forEach(function (item) {
 		item.addEventListener("click", function () {
 			const menuToggle = document.querySelector(".menu-toggle");
+			if (!menuToggle) return;
+
 			if (nav.classList.contains("is-open")) {
 				nav.classList.toggle("is-open");
 				menuToggle.toggleAttribute("aria-expanded");
@@ -59,15 +66,25 @@ function navigationToggle() {
 		});
 	});
 }
-navigationToggle();
+
+// Safe DOM ready check
+if (document.readyState === "loading") {
+	document.addEventListener("DOMContentLoaded", navigationToggle);
+} else {
+	navigationToggle();
+}
 
 // Page loader spinner
 function loaderSpinner() {
 	window.addEventListener("load", () => {
 		const loader = document.getElementById("spinner");
+		if (!loader) return;
+
 		loader.classList.add("loader--hidden");
 		loader.addEventListener("transitionend", function () {
-			this.remove();
+			if (this.parentNode) {
+				this.remove();
+			}
 		});
 	});
 }
@@ -75,21 +92,29 @@ loaderSpinner();
 
 // Scroll Progress bar
 function scrollIndicator() {
+	const progressBar = document.querySelector(".progress-bar");
+	if (!progressBar) return;
+
 	let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
 	let scrollingHeight = document.documentElement.scrollHeight;
 	let clientWindowHeight = document.documentElement.clientHeight;
 	let totalHeight = scrollingHeight - clientWindowHeight;
+
+	if (totalHeight <= 0) return;
+
 	let scrolled = (winScroll / totalHeight) * 100;
-	document.querySelector(".progress-bar").style.width = scrolled + "%";
+	progressBar.style.width = Math.min(scrolled, 100) + "%";
 }
 
 // Navigation sticky when scrolling
 function stickyNavigation() {
 	const headerNavigation = document.querySelector(".header");
-	if (
-		document.documentElement.scrollTop > 750 ||
-		document.body.scrollTop > 750
-	) {
+	if (!headerNavigation) return;
+
+	const scrollTop =
+		document.documentElement.scrollTop || document.body.scrollTop;
+
+	if (scrollTop > 750) {
 		headerNavigation.classList.add("header-inner-color");
 	} else {
 		headerNavigation.classList.remove("header-inner-color");
@@ -102,32 +127,77 @@ window.onscroll = function () {
 };
 
 // Light/Dark Theme Toggle
-const themeToggle = document.querySelector("#theme-toggle");
+function initThemeToggle() {
+	const themeToggle = document.querySelector("#theme-toggle");
 
-themeToggle.addEventListener("click", () => {
-	document.body.classList.contains("light-theme")
-		? enableDarkMode()
-		: enableLightMode();
-});
-
-function enableDarkMode() {
-	document.body.classList.remove("light-theme");
-	document.body.classList.add("dark-theme");
-	themeToggle.setAttribute("aria-label", "Switch to light theme");
-}
-
-function enableLightMode() {
-	document.body.classList.remove("dark-theme");
-	document.body.classList.add("light-theme");
-	themeToggle.setAttribute("aria-label", "Switch to dark theme");
-}
-
-function setThemePreference() {
-	if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-		enableDarkMode();
+	if (!themeToggle) {
+		console.warn("Theme toggle button not found");
 		return;
 	}
-	enableLightMode();
+
+	themeToggle.addEventListener("click", () => {
+		document.body.classList.contains("light-theme")
+			? enableDarkMode()
+			: enableLightMode();
+	});
+
+	function enableDarkMode() {
+		document.body.classList.remove("light-theme");
+		document.body.classList.add("dark-theme");
+		themeToggle.setAttribute("aria-label", "Switch to light theme");
+		// Store preference
+		try {
+			localStorage.setItem("theme", "dark");
+		} catch (e) {
+			console.warn("Could not save theme preference:", e);
+		}
+	}
+
+	function enableLightMode() {
+		document.body.classList.remove("dark-theme");
+		document.body.classList.add("light-theme");
+		themeToggle.setAttribute("aria-label", "Switch to dark theme");
+		// Store preference
+		try {
+			localStorage.setItem("theme", "light");
+		} catch (e) {
+			console.warn("Could not save theme preference:", e);
+		}
+	}
+
+	function setThemePreference() {
+		// Check for saved preference first
+		try {
+			const savedTheme = localStorage.getItem("theme");
+			if (savedTheme === "dark") {
+				enableDarkMode();
+				return;
+			} else if (savedTheme === "light") {
+				enableLightMode();
+				return;
+			}
+		} catch (e) {
+			console.warn("Could not access localStorage:", e);
+		}
+
+		// Fall back to system preference
+		if (
+			window.matchMedia &&
+			window.matchMedia("(prefers-color-scheme: dark)").matches
+		) {
+			enableDarkMode();
+			return;
+		}
+		enableLightMode();
+	}
+
+	// Set initial theme
+	setThemePreference();
 }
 
-document.onload = setThemePreference();
+// Initialize theme toggle when DOM is ready
+if (document.readyState === "loading") {
+	document.addEventListener("DOMContentLoaded", initThemeToggle);
+} else {
+	initThemeToggle();
+}
