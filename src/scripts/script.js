@@ -114,18 +114,12 @@ function enableDarkMode() {
 	document.body.classList.remove("light-theme");
 	document.body.classList.add("dark-theme");
 	themeToggle.setAttribute("aria-label", "Switch to light theme");
-	birdEffect.setOptions({
-		backgroundColor: 0x4a5568,
-	});
 }
 
 function enableLightMode() {
 	document.body.classList.remove("dark-theme");
 	document.body.classList.add("light-theme");
 	themeToggle.setAttribute("aria-label", "Switch to dark theme");
-	birdEffect.setOptions({
-		backgroundColor: 0xeff1f5,
-	});
 }
 
 function setThemePreference() {

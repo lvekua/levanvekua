@@ -368,12 +368,19 @@ const skillsData = [
     </svg></a>
 
   <script is:inline>
-    const contactName = document.getElementById('name').value = '';
-    const contactEmail = document.getElementById('email').value = '';
-    const contactMessage = document.getElementById('message').value = '';
+    // Only set form values if the elements exist
+    const contactName = document.getElementById('name');
+    const contactEmail = document.getElementById('email');
+    const contactMessage = document.getElementById('message');
+    
+    if (contactName) contactName.value = '';
+    if (contactEmail) contactEmail.value = '';
+    if (contactMessage) contactMessage.value = '';
 
     const currentYear = document.getElementById('currentYear');
-    currentYear.innerHTML = new Date().getFullYear();
+    if (currentYear) {
+      currentYear.innerHTML = new Date().getFullYear();
+    }
   </script>
   <script src="../scripts/script.js"></script>
 </Layout>

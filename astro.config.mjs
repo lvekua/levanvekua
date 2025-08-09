@@ -16,6 +16,10 @@ export default defineConfig({
 					"hj",
 					"_linkedin_partner_id",
 				],
+				// Debug mode to help identify issues
+				debug: false,
+				// Fallback timeout for problematic scripts
+				fallbackTimeout: 3000,
 			},
 		}),
 		// Critters integration as an Astro integration
