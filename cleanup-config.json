@@ -1,7 +1,0 @@
-{
-  "name": "css-cleanup",
-  "scripts": {
-    "analyze-css": "node css-analyzer.js",
-    "purge-css": "purgecss --content './dist/**/*.html' './src/**/*.{astro,html,js,jsx,ts,tsx}' --css './dist/_astro/*.css' --output './dist/cleaned-css/' --safelist 'dark-theme' 'light-theme' 'is-open' 'is-visible' 'loader--hidden' 'gs_reveal'"
-  }
-}

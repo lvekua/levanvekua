@@ -1,21 +1,19 @@
 {
-  "name": "lv-web-astro",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "analyze-css": "node css-analyzer.js",
-    "cleanup-css": "node cleanup-css.js"
-  },
-  "dependencies": {
-    "astro": "^4.0.0"
-  },
-  "devDependencies": {
-    "purgecss": "^7.0.2",
-    "sass": "^1.89.2"
-  }
+	"name": "lv-web-astro",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/partytown": "^2.1.4",
+		"astro": "^4.0.0"
+	},
+	"devDependencies": {
+		"sass": "^1.89.2"
+	}
 }
