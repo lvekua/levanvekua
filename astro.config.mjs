@@ -1,5 +1,5 @@
 import { defineConfig } from "astro/config";
-import partytown from '@astrojs/partytown';
+import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,7 +14,7 @@ export default defineConfig({
 					"fbq",
 					"_hsq.push",
 					"hj",
-					"_linkedin_partner_id"
+					"_linkedin_partner_id",
 				],
 			},
 		}),
