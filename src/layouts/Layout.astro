@@ -18,7 +18,7 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<!-- Google Tag Manager -->
-		<script type="text/partytown">
+		<script is:inline>
 			(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -26,27 +26,6 @@ const { title } = Astro.props;
 			})(window,document,'script','dataLayer','GTM-WLB3LWS');
 		</script>
 		<!-- End Google Tag Manager -->
-		
-		<!-- Error handling for console warnings -->
-		<script is:inline>
-			// Suppress common third-party console errors
-			const originalError = console.error;
-			console.error = function(...args) {
-				const message = args.join(' ');
-				// Don't log CORS errors from third-party scripts
-				if (message.includes('CORS policy') && 
-					(message.includes('google-analytics.com') || 
-					 message.includes('googletagmanager.com'))) {
-					return;
-				}
-				// Don't log partytown-related fetch errors
-				if (message.includes('Failed to fetch') && 
-					message.includes('partytown')) {
-					return;
-				}
-				originalError.apply(console, args);
-			};
-		</script>
 	</head>
 	<body>
 		<slot />

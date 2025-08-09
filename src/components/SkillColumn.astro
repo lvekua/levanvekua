@@ -16,3 +16,9 @@ const { icon, title, skills } = Astro.props;
     <p class="has-base-color has-text-color">{skill}</p>
   ))}
 </div>
+
+<style>
+  p:not(:last-child) {
+    margin-block-end: 0.5rem;
+  }
+</style>
