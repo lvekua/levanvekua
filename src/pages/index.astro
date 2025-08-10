@@ -130,12 +130,6 @@ const skillsData = [
 
 <Layout title="Levan Vekua – Web Designer / Developer">
   <div id="spinner" class="loader"></div>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLB3LWS" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe>
-  </noscript>
-  <!-- End Google Tag Manager (noscript) -->
   <a class="skip-link screen-reader-text" href="#main-content">Skip to content</a>
   <header id="header" class="header header-sticky " role="banner">
     <div class="progress-container">
@@ -175,20 +169,19 @@ const skillsData = [
             <a class="nav-link" href="#contact">Contact</a>
           </li>
         </ul>
-
-        <button id="theme-toggle" aria-label="Switch to dark theme">
-          <svg xmlns="http://www.w3.org/2000/svg" width="472.39" height="472.39" viewBox="0 0 472.39 472.39">
-            <g class="toggle-sun">
-              <path
-                d="M403.21,167V69.18H305.38L236.2,0,167,69.18H69.18V167L0,236.2l69.18,69.18v97.83H167l69.18,69.18,69.18-69.18h97.83V305.38l69.18-69.18Zm-167,198.17a129,129,0,1,1,129-129A129,129,0,0,1,236.2,365.19Z" />
-            </g>
-            <g class="toggle-circle">
-              <circle class="cls-1" cx="236.2" cy="236.2" r="103.78" />
-            </g>
-          </svg>
-        </button>
-
       </nav>
+
+      <button id="theme-toggle" aria-label="Switch to dark theme">
+        <svg xmlns="http://www.w3.org/2000/svg" width="472.39" height="472.39" viewBox="0 0 472.39 472.39">
+          <g class="toggle-sun">
+            <path
+              d="M403.21,167V69.18H305.38L236.2,0,167,69.18H69.18V167L0,236.2l69.18,69.18v97.83H167l69.18,69.18,69.18-69.18h97.83V305.38l69.18-69.18Zm-167,198.17a129,129,0,1,1,129-129A129,129,0,0,1,236.2,365.19Z" />
+          </g>
+          <g class="toggle-circle">
+            <circle class="cls-1" cx="236.2" cy="236.2" r="103.78" />
+          </g>
+        </svg>
+      </button>
 
       <button id="menu-toggle" class="menu-toggle header-icon" aria-controls="primary-menu" aria-expanded="false">
         <span class="screen-reader-text">Menu</span>
@@ -198,7 +191,7 @@ const skillsData = [
 
   <main>
     <div class="content container">
-      <div class="block-cover alignfull has-light-background-color has-parallax header-img">
+      <div class="block-cover alignfull has-parallax header-img">
         <div class="block-cover__inner-container">
           <h1 class="has-text-align-center main-heading has-base-color has-text-color">
             Levan Vekua
@@ -206,21 +199,21 @@ const skillsData = [
           <p class="has-text-align-center main-intro-text has-dark-color has-text-color">
             Web Designer / Developer based in New York
           </p>
-          <div class="block-buttons is-content-justification-center">
-            <div class="block-button is-style-fill">
-              <a class="block-button__link has-base-background-color has-background"
+          <div class="cta-group is-content-justification-center">
+            <div class="is-style-fill">
+              <a class="btn-link"
                 href="/img/Levan_Vekua_Resume.pdf" target="_blank" rel="noreferrer noopener">View Resume</a>
             </div>
-            <div class="block-button is-style-outline">
-              <a class="block-button__link has-text-color" href="#work">Recent Work</a>
+            <div class="is-style-outline">
+              <a class="btn-link btn-link--outline" href="#work">Recent Work</a>
             </div>
           </div>
         </div>
       </div>
-      <div style="height: 100px" aria-hidden="true" id="about" class="block-spacer"></div>
+      
       <section class="about" id="main-content">
         <h2 class="has-text-align-center has-4-xl-font-size has-base-color has-text-color">About</h2>
-        <div style="height: 30px" aria-hidden="true" class="block-spacer"></div>
+        
         <div
           class="block-media-text alignwide has-media-on-the-right is-stacked-on-mobile has-base-color has-text-color">
           <figure class="block-media-text__media">
@@ -228,9 +221,9 @@ const skillsData = [
               width="600" height="600" />
           </figure>
           <div class="block-media-text__content">
-            <h2 class="has-3-xl-font-size has-base-color has-text-color">
+            <h3 class="has-3-xl-font-size has-base-color has-text-color">
               Hey, I’m Levan.
-            </h2>
+            </h3>
             <p class="has-base-color has-text-color">
               I am a passionate web designer and developer with a strong understanding of today's front-end development
               trends and
@@ -241,16 +234,16 @@ const skillsData = [
               experience.
             </p>
           </div>
-          <div style="height: 30px" aria-hidden="true" class="block-spacer"></div>
+          
         </div>
         <div class="block-media-text alignwide is-stacked-on-mobile">
           <figure class="block-media-text__media">
             <img loading="lazy" src="/img/philosophy.svg" alt="" class="size-full" width="600" height="600" />
           </figure>
           <div class="block-media-text__content">
-            <h2 class="has-3-xl-font-size has-base-color has-text-color">
+            <h3 class="has-3-xl-font-size has-base-color has-text-color">
               Vision and Philosophy
-            </h2>
+            </h3>
             <p class="has-base-color has-text-color">
               Every project is unique, distinctive, and personal, just like a fingerprint.
             </p>
@@ -265,10 +258,9 @@ const skillsData = [
           </div>
         </div>
       </section>
-      <div style="height: 100px" aria-hidden="true" id="skills" class="block-spacer"></div>
+      
       <section class="skills">
         <h2 class="has-text-align-center has-4-xl-font-size has-base-color has-text-color">Skills</h2>
-        <div style="height: 30px" aria-hidden="true" class="block-spacer"></div>
         <div class="block-columns alignwide skills-top-row">
           {skillsData.map((skill) => (
             <SkillColumn 
@@ -279,11 +271,10 @@ const skillsData = [
           ))}
         </div>
       </section>
-      <div style="height: 100px" aria-hidden="true" id="work" class="block-spacer"></div>
+      
       <section class="recent-work">
         <div class="recent-work-gallery">
           <h2 class="has-text-align-center has-4-xl-font-size has-base-color has-text-color">Recent Work</h2>
-          <div style="height: 30px" aria-hidden="true" class="block-spacer"></div>
           <figure class="block-gallery alignwide columns-3">
             <ul class="blocks-gallery-grid">
               {portfolioItems.map((item) => (
@@ -301,11 +292,10 @@ const skillsData = [
           </figure>
         </div>
       </section>
-      <div style="height: 100px; display: block" aria-hidden="true" id="contact" class="block-spacer"></div>
+      
       <section class="contact">
         <div class="contact-form-container">
           <h2 class="has-text-align-center has-4-xl-font-size has-base-color has-text-color">Contact</h2>
-          <div style="height: 30px" aria-hidden="true" class="block-spacer"></div>
           <form action="https://api.web3forms.com/submit" method="POST" id="form" class="contact-form">
             <fieldset>
               <legend>Contact Form</legend>
@@ -331,9 +321,9 @@ const skillsData = [
               <button 
                 type="submit"
                 id="submit_btn" 
-                class="block-button block-button__link has-base-background-color has-background"
+                class="btn-link"
               >
-                Send message
+                Submit
               </button>
             
             </fieldset>
@@ -341,7 +331,6 @@ const skillsData = [
         </div>
       </section>
 
-      <div style="height: 30px" aria-hidden="true" class="block-spacer"></div>
 
       <section class="social">
         <div class="social-container alignwide columns-3">
@@ -356,7 +345,6 @@ const skillsData = [
           </a>
         </div>
       </section>
-      <div style="height: 30px" aria-hidden="true" class="block-spacer"></div>
     </div>
   </main>
   <!-- .content -->
