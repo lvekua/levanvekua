@@ -868,6 +868,11 @@ input:valid + .floating-label {
 .social-container img {
 	width: 24px;
 	aspect-ratio: 1;
+	mix-blend-mode: screen;
+}
+
+.light-theme .social-container img {
+	mix-blend-mode: normal;
 }
 
 .social-container a {

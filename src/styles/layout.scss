@@ -60,8 +60,8 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 95vh;
-	height: 95dvh;
+	height: 100vh;
+	height: 100dvh;
 	padding: 1em;
 	box-sizing: border-box;
 }
@@ -75,7 +75,7 @@
 
 .scroll-down {
 	margin-block-end: 2rem;
-	max-width: 2.5rem;
+	max-width: 2rem;
 	height: auto;
 	fill: var(--color-dark);
 }
