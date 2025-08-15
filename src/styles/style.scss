@@ -267,7 +267,7 @@ textarea {
 	border-radius: 0.5rem;
 }
 
-:is(input, select, textarea):is(:focus, :focus-visible) {
+:is(input, select, textarea):is(:focus-visible) {
 	outline: none;
 	box-shadow: 0 0 0 3px var(--color-lightest), 0 0 0 5px var(--color-base);
 }
@@ -277,7 +277,7 @@ textarea {
 // 	transition: all 0.25s;
 // }
 
-a:is(:focus, :focus-visible) {
+a:is(:focus-visible) {
 	outline: none;
 	box-shadow: 0 0 0 3px var(--color-lightest), 0 0 0 5px var(--color-base);
 }
@@ -464,9 +464,14 @@ svg {
 	text-decoration: none;
 	transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
 
-	&:hover {
+	&:is(:hover, :focus-visible) {
 		background: var(--color-light);
 		color: var(--color-dark);
+	}
+
+	&:is(:focus-visible) {
+		outline: none;
+		box-shadow: 0 0 0 3px var(--color-lightest), 0 0 0 5px var(--color-base);
 	}
 }
 
