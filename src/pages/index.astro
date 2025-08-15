@@ -191,7 +191,7 @@ const skillsData = [
 
   <main>
     <div class="content container">
-      <div class="block-cover alignfull has-parallax header-img">
+      <div class="block-cover header-img">
         <div class="block-cover__inner-container">
           <h1 class="has-text-align-center main-heading has-base-color has-text-color">
             Levan Vekua
@@ -209,9 +209,13 @@ const skillsData = [
             </div>
           </div>
         </div>
+
+        <svg class="scroll-down" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 468 668">
+          <path fill-rule="evenodd" d="M.667 234C.667 105.134 105.134.667 234 .667 362.867.667 467.334 105.134 467.334 234v200c0 128.867-104.467 233.333-233.334 233.333C105.134 667.333.667 562.867.667 434V234ZM234 67.333c-92.047 0-166.666 74.62-166.666 166.667v200c0 92.047 74.619 166.667 166.666 166.667S400.667 526.047 400.667 434V234c0-92.047-74.62-166.667-166.667-166.667Zm0 100c18.41 0 33.334 14.924 33.334 33.334v100C267.334 319.077 252.41 334 234 334c-18.41 0-33.333-14.923-33.333-33.333v-100c0-18.41 14.923-33.334 33.333-33.334Z" clip-rule="evenodd"/>
+        </svg>
       </div>
       
-      <section class="about" id="main-content">
+      <section class="about" id="about">
         <h2 class="has-text-align-center has-4-xl-font-size has-base-color has-text-color">About</h2>
         
         <div
@@ -258,8 +262,8 @@ const skillsData = [
           </div>
         </div>
       </section>
-      
-      <section class="skills">
+
+      <section class="skills" id="skills">
         <h2 class="has-text-align-center has-4-xl-font-size has-base-color has-text-color">Skills</h2>
         <div class="block-columns alignwide skills-top-row">
           {skillsData.map((skill) => (
@@ -271,8 +275,8 @@ const skillsData = [
           ))}
         </div>
       </section>
-      
-      <section class="recent-work">
+
+      <section class="recent-work" id="work">
         <div class="recent-work-gallery">
           <h2 class="has-text-align-center has-4-xl-font-size has-base-color has-text-color">Recent Work</h2>
           <figure class="block-gallery alignwide columns-3">
@@ -292,8 +296,8 @@ const skillsData = [
           </figure>
         </div>
       </section>
-      
-      <section class="contact">
+
+      <section class="contact" id="contact">
         <div class="contact-form-container">
           <h2 class="has-text-align-center has-4-xl-font-size has-base-color has-text-color">Contact</h2>
           <form action="https://api.web3forms.com/submit" method="POST" id="form" class="contact-form">
@@ -369,6 +373,17 @@ const skillsData = [
     if (currentYear) {
       currentYear.innerHTML = new Date().getFullYear();
     }
+
+    // if scrolling down more than 100px fade out .scroll-down if 0 < scrollY < 100 fade in .scroll-down
+    const scrollDown = document.querySelector('.scroll-down');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        scrollDown.classList.add('fade-out');
+      } else {
+        scrollDown.classList.remove('fade-out');
+      }
+    });
+
   </script>
   <script src="../scripts/script.js"></script>
 </Layout>
