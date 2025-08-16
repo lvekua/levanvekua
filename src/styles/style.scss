@@ -390,6 +390,13 @@ svg {
 	fill: var(--color-base);
 }
 
+@media (width < 782px) {
+	.skills,
+	.recent-work {
+		padding-block-start: 3rem;
+	}
+}
+
 .icon {
 	fill: none;
 	stroke: currentColor;
@@ -665,7 +672,6 @@ svg {
 	display: flex;
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
-	font-size: var(--text-sm);
 	font-weight: 600;
 	z-index: 1;
 }

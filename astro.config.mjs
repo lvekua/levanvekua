@@ -61,9 +61,7 @@ export default defineConfig({
 	vite: {
 		css: {
 			preprocessorOptions: {
-				scss: {
-					additionalData: `@import "/src/styles/theme.scss";`,
-				},
+				scss: {},
 			},
 		},
 	},

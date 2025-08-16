@@ -1,0 +1,23 @@
+.reveal {
+	--reveal-translate: 18px; /* distance */
+	--reveal-duration: 0.6s; /* speed */
+	--reveal-delay: 0ms; /* delay per element */
+	opacity: 0;
+	transform: translateY(var(--reveal-translate));
+	transition: opacity var(--reveal-duration) cubic-bezier(0.25, 0.1, 0.25, 1)
+			var(--reveal-delay),
+		transform var(--reveal-duration) cubic-bezier(0.25, 0.1, 0.25, 1)
+			var(--reveal-delay);
+	will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.reveal {
+		transition: none;
+	}
+}

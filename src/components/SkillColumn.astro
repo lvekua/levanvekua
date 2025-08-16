@@ -8,10 +8,10 @@ export interface Props {
 const { icon, title, skills } = Astro.props;
 ---
 
-<div class="block-column">
+<div class="reveal block-column">
   <Fragment set:html={icon} />
   <div style="height: 20px" aria-hidden="true" class="block-spacer"></div>
-  <h3 class="has-base-color has-text-color">{title}</h3>
+  <h3 class="skills-title has-base-color has-text-color">{title}</h3>
   {skills.map((skill) => (
     <p class="has-base-color has-text-color">{skill}</p>
   ))}
