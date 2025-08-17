@@ -73,17 +73,6 @@
 	color: #fff;
 }
 
-.scroll-down {
-	margin-block-end: 2rem;
-	max-width: 2rem;
-	height: auto;
-	fill: var(--color-dark);
-}
-
-.light-theme .scroll-down {
-	fill: var(--color-base);
-}
-
 section.about {
 	padding-block-start: var(--space-m-xl);
 }
@@ -349,6 +338,17 @@ section.about {
 
 .has-text-align-center {
 	text-align: center;
+}
+
+.scroll-down {
+	margin-block-end: 2rem;
+	max-width: 2rem;
+	min-height: 2rem;
+	fill: var(--color-dark);
+}
+
+.light-theme .scroll-down {
+	fill: var(--color-base);
 }
 
 .fade-out {
