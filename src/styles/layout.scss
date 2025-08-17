@@ -355,3 +355,38 @@ section.about {
 	opacity: 0;
 	transition: opacity 0.5s ease;
 }
+
+// ...existing code...
+
+// Skip link accessibility fix
+.skip-link {
+	position: absolute;
+	top: -40px;
+	left: 6px;
+	z-index: 999999;
+	padding: 8px 16px;
+	background: var(--color-base);
+	color: var(--color-bg);
+	text-decoration: none;
+	border-radius: 4px;
+	transition: top 0.3s;
+
+	&:focus {
+		top: 6px;
+	}
+}
+
+// Remove or update screen-reader-text if it's hiding the element completely
+.screen-reader-text:not(:focus):not(:active) {
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	padding: 0 !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	clip: rect(0, 0, 0, 0) !important;
+	white-space: nowrap !important;
+	border: 0 !important;
+}
+
+// ...existing code...
