@@ -135,7 +135,7 @@ const skillsData = [
     <div class="progress-container">
       <div class="progress-bar"></div>
     </div>
-    <div class="reveal header-inner container">
+    <div class="header-inner container">
       <div class="branding">
         <a href="/" class="custom-logo-link" rel="home" aria-current="page" aria-label="go back to homepage">
           <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 44.97">
@@ -192,7 +192,7 @@ const skillsData = [
   <main>
     <div class="content container">
       <div class="block-cover header-img">
-        <div class="reveal block-cover__inner-container">
+        <div class="block-cover__inner-container">
           <h1 class="has-text-align-center main-heading has-base-color has-text-color">
             Levan Vekua
           </h1>
@@ -216,14 +216,14 @@ const skillsData = [
       </div>
       
       <section class="about" id="about">
-        <h2 class="reveal has-text-align-center has-4-xl-font-size has-base-color has-text-color">About</h2>
+        <h2 class="has-text-align-center has-4-xl-font-size has-base-color has-text-color">About</h2>
         
         <div class="block-media-text alignwide has-media-on-the-right is-stacked-on-mobile has-base-color has-text-color">
-          <figure class="reveal block-media-text__media">
+          <figure class="block-media-text__media">
             <img loading="lazy" src="/img/productivity.svg" alt="" class="size-full" data-was-processed="true"
               width="600" height="600" />
           </figure>
-          <div class="reveal block-media-text__content">
+          <div class="block-media-text__content">
             <h3 class="has-3-xl-font-size has-base-color has-text-color">
               Hey, I’m Levan.
             </h3>
@@ -240,10 +240,10 @@ const skillsData = [
         </div>
 
         <div class="block-media-text alignwide is-stacked-on-mobile">
-          <figure class="reveal block-media-text__media">
+          <figure class="block-media-text__media">
             <img loading="lazy" src="/img/philosophy.svg" alt="" class="size-full" width="600" height="600" />
           </figure>
-          <div class="reveal block-media-text__content">
+          <div class="block-media-text__content">
             <h3 class="has-3-xl-font-size has-base-color has-text-color">
               Vision and Philosophy
             </h3>
@@ -263,7 +263,7 @@ const skillsData = [
       </section>
 
       <section class="skills" id="skills">
-        <h2 class="reveal has-text-align-center has-4-xl-font-size has-base-color has-text-color">Skills</h2>
+        <h2 class="has-text-align-center has-4-xl-font-size has-base-color has-text-color">Skills</h2>
         <div class="block-columns alignwide skills-top-row">
           {skillsData.map((skill) => (
             <SkillColumn 
@@ -277,11 +277,11 @@ const skillsData = [
 
       <section class="recent-work" id="work">
         <div class="recent-work-gallery">
-          <h2 class="reveal has-text-align-center has-4-xl-font-size has-base-color has-text-color">Recent Work</h2>
+          <h2 class="has-text-align-center has-4-xl-font-size has-base-color has-text-color">Recent Work</h2>
           <figure class="block-gallery alignwide columns-3">
             <ul class="blocks-gallery-grid">
               {portfolioItems.map((item) => (
-                <li class="reveal blocks-gallery-item">
+                <li class="blocks-gallery-item">
                   <Card 
                     href={item.href}
                     imageSrc={item.imageSrc}
@@ -298,8 +298,8 @@ const skillsData = [
 
       <section class="contact" id="contact">
         <div class="contact-form-container">
-          <h2 class="revealhas-text-align-center has-4-xl-font-size has-base-color has-text-color">Contact</h2>
-          <form action="https://api.web3forms.com/submit" method="POST" id="form" class="reveal contact-form">
+          <h2 class="as-text-align-center has-4-xl-font-size has-base-color has-text-color">Contact</h2>
+          <form action="https://api.web3forms.com/submit" method="POST" id="form" class="contact-form">
             <fieldset>
               <legend>Contact Form</legend>
               <input type="hidden" name="access_key" value="d7403b7b-2767-433f-99ea-b8673e430fc8" />
@@ -372,15 +372,6 @@ const skillsData = [
     if (currentYear) {
       currentYear.innerHTML = new Date().getFullYear();
     }
-
-    const scrollDown = document.querySelector('.scroll-down');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 100) {
-        scrollDown.classList.add('fade-out');
-      } else {
-        scrollDown.classList.remove('fade-out');
-      }
-    });
 
   </script>
   <script src="../scripts/script.js"></script>

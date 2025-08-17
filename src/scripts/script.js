@@ -59,6 +59,7 @@ function navigationToggle() {
 		});
 	});
 }
+
 navigationToggle();
 
 // Page loader spinner
@@ -71,6 +72,7 @@ function loaderSpinner() {
 		});
 	});
 }
+
 loaderSpinner();
 
 // Scroll Progress bar
@@ -131,3 +133,12 @@ function setThemePreference() {
 }
 
 document.onload = setThemePreference();
+
+const scrollDown = document.querySelector(".scroll-down");
+window.addEventListener("scroll", () => {
+	if (window.scrollY > 100) {
+		scrollDown.classList.add("fade-out");
+	} else {
+		scrollDown.classList.remove("fade-out");
+	}
+});
