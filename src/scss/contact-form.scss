@@ -1,0 +1,71 @@
+.contact-form-container {
+	margin: 0 auto;
+}
+
+.contact-form {
+	text-align: center;
+}
+
+.contact-form fieldset {
+	border: 0;
+}
+
+.contact-form fieldset > div {
+	text-align: left;
+}
+
+.contact-form legend {
+	display: none;
+	opacity: 0;
+}
+
+.contact-form label {
+	text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+	width: 100%;
+	min-height: 2.8rem;
+	font-family: inherit;
+}
+
+.contact-form textarea {
+	min-height: 8.45rem;
+}
+
+.floating-group {
+	position: relative;
+	margin-bottom: 2em;
+}
+
+.floating-label {
+	position: absolute;
+	top: 50%;
+	left: 1rem;
+	font-size: var(--fs-md);
+	color: var(--clr-primary-200);
+	transform: translateY(-50%);
+	transition:
+		top 210ms ease-in,
+		color 210ms ease-in;
+}
+
+.floating-label-msg {
+	position: absolute;
+	top: 1.5rem;
+}
+
+textarea:focus + .floating-label,
+input:focus + .floating-label,
+textarea:valid + .floating-label,
+input:valid + .floating-label {
+	top: -1rem;
+	color: var(--clr-primary-200);
+	font-size: var(--fs-xs);
+}
+
+.recapcha-container {
+	display: flex;
+	justify-content: space-between;
+}

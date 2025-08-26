@@ -1,24 +1,28 @@
 ---
 export interface Props {
-  icon: string;
-  title: string;
-  skills: string[];
+	icon: string;
+	title: string;
+	skills: string[];
 }
 
 const { icon, title, skills } = Astro.props;
 ---
 
-<div class="reveal block-column">
-  <Fragment set:html={icon} />
-  <div style="height: 20px" aria-hidden="true" class="block-spacer"></div>
-  <h3 class="skills-title has-base-color has-text-color">{title}</h3>
-  {skills.map((skill) => (
-    <p class="has-base-color has-text-color">{skill}</p>
-  ))}
+<div class="list-group__item">
+	<Fragment set:html={icon} />
+	<h3>{title}</h3>
+	{skills.map((skill) => <p class="">{skill}</p>)}
 </div>
 
 <style>
-  p:not(:last-child) {
-    margin-block-end: 0.5rem;
-  }
+	h3 {
+		margin-block: var(--space-xs);
+	}
+	p:not(:last-child) {
+		margin-block-end: 0.5rem;
+	}
+
+	svg {
+		fill: var(--clr-primary-200);
+	}
 </style>

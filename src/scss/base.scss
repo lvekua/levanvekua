@@ -1,0 +1,145 @@
+*,
+:after,
+:before {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	color: var(--clr-primary-200);
+	font-family:
+		system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+		'Apple Color Emoji', 'Segoe UI Emoji';
+	line-height: 1.5;
+	background-color: var(--background-color);
+	scrollbar-gutter: stable;
+	font-size: var(--fs-md);
+}
+
+section {
+	inline-size: min(var(--container), 100% - 2 * var(--inline-padding));
+	margin-inline: auto;
+	min-height: 100vh;
+	align-content: center;
+	scroll-margin-top: var(--header-height);
+}
+
+section.cover {
+	grid-template-rows: 1fr auto;
+}
+
+h1,
+h2 {
+	margin: 0 0 var(--space-m-xl);
+	color: var(--clr-primary-200);
+	line-height: 1;
+	font-weight: 700;
+}
+
+h1 {
+	font-size: var(--fs-6xl);
+}
+
+h2 {
+	font-size: var(--fs-2xl);
+}
+
+h3 {
+	font-size: var(--fs-xl);
+}
+
+p {
+	max-inline-size: 54ch;
+	text-wrap: pretty;
+	margin: 0;
+	opacity: 0.7;
+	&:only-of-type {
+		margin-block-end: 1.25rem;
+	}
+}
+
+p + p {
+	margin-block-start: 1.25rem;
+}
+
+input,
+select,
+textarea {
+	color: var(--clr-primary-200);
+	text-indent: 1rem;
+	border-radius: 0.5rem;
+	border: 1px solid var(--clr-primary-300);
+	background-color: var(--clr-primary-300-3);
+}
+
+:is(input, select, textarea):is(:focus-visible) {
+	outline: none;
+	box-shadow:
+		0 0 0 3px var(--clr-primary-400),
+		0 0 0 5px var(--clr-primary-200);
+}
+
+a:is(:focus-visible) {
+	outline: none;
+	box-shadow:
+		0 0 0 3px var(--clr-primary-400),
+		0 0 0 5px var(--clr-primary-200);
+}
+
+:focus,
+:focus-visible {
+	outline: none;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+img,
+svg {
+	height: auto;
+	max-width: 100%;
+	display: block;
+}
+
+svg {
+	fill: var(--clr-primary-200);
+}
+
+.sr-only {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+.skip-link:is(:focus, :focus-visible) {
+	background-color: #eee;
+	clip: auto !important;
+	-webkit-clip-path: none;
+	clip-path: none;
+	color: var(--clr-primary-500);
+	display: block;
+	font-size: 1em;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+}
