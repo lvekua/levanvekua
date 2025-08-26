@@ -62,19 +62,6 @@ function navigationToggle() {
 
 navigationToggle();
 
-// Page loader spinner
-function loaderSpinner() {
-	window.addEventListener('load', () => {
-		const loader = document.getElementById('spinner');
-		loader.classList.add('loader--hidden');
-		loader.addEventListener('transitionend', function () {
-			this.remove();
-		});
-	});
-}
-
-loaderSpinner();
-
 // Scroll Progress bar
 function scrollIndicator() {
 	let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
