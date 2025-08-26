@@ -5,368 +5,424 @@ import SkillColumn from '../components/SkillColumn.astro';
 
 // Portfolio data
 const portfolioItems = [
-  {
-    href: "https://www.bonnemaman.us",
-    imageSrc: "/img/project-thumbs/bm-thumb-w388.webp",
-    imageAlt: "Bonne Maman",
-    title: "UI Design/Development",
-    description: "Magento &diams; WordPress"
-  },
-  {
-    href: "https://www.1000storieswines.com",
-    imageSrc: "/img/project-thumbs/1k-thumb-w388.webp",
-    imageAlt: "1000 Stories",
-    title: "UI Design/Development",
-    description: "WordPress"
-  },
-  {
-    href: "https://www.bonterra.com",
-    imageSrc: "/img/project-thumbs/bonterra-thumb-w388.webp",
-    imageAlt: "Bonterra",
-    title: "UI Design/Development",
-    description: "WordPress"
-  },
-  {
-    href: "https://www.oaknyc.com",
-    imageSrc: "/img/project-thumbs/oak-thumb-w388.webp",
-    imageAlt: "OAK NYC",
-    title: "UI/UX Development",
-    description: "Magento &diams; WordPress"
-  },
-  {
-    href: "https://www.nililotan.com",
-    imageSrc: "/img/project-thumbs/nl-thumb-w388.webp",
-    imageAlt: "Nili Lotan",
-    title: "UI/UX Development",
-    description: "Shopify &diams; WordPress"
-  },
-  {
-    href: "https://www.alexanderwang.com/us-en/projects",
-    imageSrc: "/img/project-thumbs/aw-thumb-w388.webp",
-    imageAlt: "Alexander Wang",
-    title: "UI/UX Development",
-    description: "Demandware"
-  },
-  {
-    href: "https://jiujiedecor.com",
-    imageSrc: "/img/project-thumbs/jj-thumb-w388.webp",
-    imageAlt: "Jiu Jie",
-    title: "UX/UI Design",
-    description: "Shopify"
-  },
-  {
-    href: "https://www.standardissuenyc.com",
-    imageSrc: "/img/project-thumbs/si-thumb-w388.webp",
-    imageAlt: "Standard Issue",
-    title: "UI Design",
-    description: "Magento &diams; WordPress"
-  },
-  {
-    href: "https://hydenyoo.com",
-    imageSrc: "/img/project-thumbs/hy-thumb-w388.webp",
-    imageAlt: "Hyden Yoo",
-    title: "UI Design",
-    description: "Magento &diams; WordPress"
-  }
+	{
+		href: 'https://www.bonnemaman.us',
+		imageSrc: '/img/project-thumbs/bm-thumb-w388.webp',
+		imageAlt: 'Bonne Maman',
+		title: 'UI Design/Development',
+		description: 'Magento &diams; WordPress',
+	},
+	{
+		href: 'https://www.1000storieswines.com',
+		imageSrc: '/img/project-thumbs/1k-thumb-w388.webp',
+		imageAlt: '1000 Stories',
+		title: 'UI Design/Development',
+		description: 'WordPress',
+	},
+	{
+		href: 'https://www.bonterra.com',
+		imageSrc: '/img/project-thumbs/bonterra-thumb-w388.webp',
+		imageAlt: 'Bonterra',
+		title: 'UI Design/Development',
+		description: 'WordPress',
+	},
+	{
+		href: 'https://www.oaknyc.com',
+		imageSrc: '/img/project-thumbs/oak-thumb-w388.webp',
+		imageAlt: 'OAK NYC',
+		title: 'UI/UX Development',
+		description: 'Magento &diams; WordPress',
+	},
+	{
+		href: 'https://www.nililotan.com',
+		imageSrc: '/img/project-thumbs/nl-thumb-w388.webp',
+		imageAlt: 'Nili Lotan',
+		title: 'UI/UX Development',
+		description: 'Shopify &diams; WordPress',
+	},
+	{
+		href: 'https://www.alexanderwang.com/us-en/projects',
+		imageSrc: '/img/project-thumbs/aw-thumb-w388.webp',
+		imageAlt: 'Alexander Wang',
+		title: 'UI/UX Development',
+		description: 'Demandware',
+	},
+	{
+		href: 'https://jiujiedecor.com',
+		imageSrc: '/img/project-thumbs/jj-thumb-w388.webp',
+		imageAlt: 'Jiu Jie',
+		title: 'UX/UI Design',
+		description: 'Shopify',
+	},
+	{
+		href: 'https://www.standardissuenyc.com',
+		imageSrc: '/img/project-thumbs/si-thumb-w388.webp',
+		imageAlt: 'Standard Issue',
+		title: 'UI Design',
+		description: 'Magento &diams; WordPress',
+	},
+	{
+		href: 'https://hydenyoo.com',
+		imageSrc: '/img/project-thumbs/hy-thumb-w388.webp',
+		imageAlt: 'Hyden Yoo',
+		title: 'UI Design',
+		description: 'Magento &diams; WordPress',
+	},
 ];
 
 // Skills data
 const skillsData = [
-  {
-    icon: `<svg width="50" height="60" xmlns="http://www.w3.org/2000/svg">
+	{
+		icon: `<svg width="50" height="60" xmlns="http://www.w3.org/2000/svg">
       <path d="M41.613 56.129c-.58 0-.968.387-.968.968v.968H1.935V8.71h1.936c.58 0 .968-.387.968-.968 0-.58-.387-.968-.968-.968H1.935A1.941 1.941 0 000 8.71v49.355C0 59.128.871 60 1.935 60h38.71a1.941 1.941 0 001.936-1.935v-.968c0-.58-.388-.968-.968-.968z"></path>
       <path d="M22.064 29.42c-.29-.388-.87-.581-1.354-.194l-6.775 4.839c-.193.193-.387.483-.387.774 0 .29.194.58.387.774l6.775 4.839c.387.29 1.064.193 1.354-.194.29-.387.194-1.065-.193-1.355l-5.71-4.064 5.71-4.065c.387-.29.484-.87.194-1.355z"></path>
       <path d="M49.065 9.871L39.484.291C39.29.096 39.097 0 38.806 0H8.71a1.941 1.941 0 00-1.936 1.935v50.323c0 1.065.871 1.936 1.936 1.936h38.71a1.941 1.941 0 001.935-1.936v-41.71c0-.29-.097-.483-.29-.677zm-9.29-6.58l6.29 6.29h-6.29V3.29zM8.71 52.257V1.935h29.129v8.613c0 .581.387.968.968.968h8.612v40.742H8.71z"></path>
       <path d="M31.839 25.258c-.484-.194-1.065 0-1.258.484l-7.258 17.42c-.194.483 0 1.064.483 1.257.484.194 1.065 0 1.258-.484l7.259-17.419c.193-.484 0-1.064-.484-1.258zM42.194 34.065l-6.775-4.84c-.387-.29-1.064-.193-1.354.194-.29.387-.194 1.065.193 1.355l5.71 4.065-5.71 4.064c-.387.29-.58.871-.194 1.355.29.387.871.58 1.355.194l6.775-4.84c.29-.193.387-.483.387-.773 0-.29-.194-.58-.388-.774z"></path>
     </svg>`,
-    title: "Technologies",
-    skills: ["HTML", "CSS", "JavaScript"]
-  },
-  {
-    icon: `<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+		title: 'Technologies',
+		skills: ['HTML', 'CSS', 'JavaScript'],
+	},
+	{
+		icon: `<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg">
       <path d="M31 41h-2v2h2v-2z"></path>
       <path d="M52 4H8a4 4 0 00-4 4v35a4 4 0 004 4h14.612l-2.333 7H15a3 3 0 00-3 3c.003.341.066.68.184 1H7v2h38a3 3 0 000-6h-5.279l-2.333-7H52a4 4 0 004-4V8a4 4 0 00-4-4zM8 6h44a2 2 0 012 2v29H42.3l3.56-19.088a1 1 0 00-.8-1.167l-5.9-1.1a1 1 0 00-1.167.8L34.159 37h-1.085l.71-9.937a3.806 3.806 0 00-1.008-2.854c-.06-.065-.135-.114-.2-.175A3.973 3.973 0 0034 21c0-3.5-3.3-5.738-3.445-5.832a1 1 0 00-1.11 0C29.305 15.262 26 17.505 26 21a3.971 3.971 0 001.424 3.034c-.065.061-.14.11-.2.175a3.807 3.807 0 00-1.008 2.854l.71 9.937h-1.3l-2.455-15.562a1 1 0 00-.171-.425l-3.9-5.459a1 1 0 00-1.767.279l-2.027 6.4a1.001 1.001 0 00-.035.458L17.529 37H6V8a2 2 0 012-2zm28.842 27.523l1.966.368.367-1.967-1.966-.367.366-1.966 1.967.367.366-1.967-1.966-.366.367-1.966 1.966.366.367-1.966-1.966-.367.366-1.965 1.967.367.366-1.967-1.966-.367.367-1.966 3.932.734L40.263 37h-4.07l.649-3.477zm-8.631-6.6a1.773 1.773 0 01.476-1.35 1.837 1.837 0 012.625 0 1.77 1.77 0 01.477 1.35L31.64 29h-3.28l-.149-2.077zM28 21a5.355 5.355 0 012-3.724A5.354 5.354 0 0132 21a2 2 0 01-4 0zm.931 16l-.431-6h3l-.428 6h-2.141zm-9.377 0L17.4 23.361l3.952-.624L23.6 37h-4.046zM17.7 21.29l.934-2.946 1.8 2.515-2.734.431zM46 57a1 1 0 01-1 1H15a1 1 0 010-2h30a1 1 0 011 1zm-8.388-3H22.388l2.333-7h10.558l2.333 7zM52 45H8a2 2 0 01-2-2v-4h48v4a2 2 0 01-2 2z"></path>
       <path d="M13 17h-2v2h2v-2zM13 21h-2v2h2v-2zM13 25h-2v2h2v-2zM13 29h-2v2h2v-2zM13 33h-2v2h2v-2zM49 17h-2v2h2v-2zM49 21h-2v2h2v-2zM49 25h-2v2h2v-2zM49 29h-2v2h2v-2zM49 33h-2v2h2v-2zM10 15h4a1 1 0 001-1v-4a1 1 0 00-1-1h-4a1 1 0 00-1 1v4a1 1 0 001 1zm1-4h2v2h-2v-2zM46 15h4a1 1 0 001-1v-4a1 1 0 00-1-1h-4a1 1 0 00-1 1v4a1 1 0 001 1zm1-4h2v2h-2v-2zM19 11h-2v2h2v-2zM23 11h-2v2h2v-2zM27 11h-2v2h2v-2zM31 11h-2v2h2v-2zM35 11h-2v2h2v-2zM39 11h-2v2h2v-2zM43 11h-2v2h2v-2zM2 20H0v23h2V20zM53 0h-3v2h3a5.006 5.006 0 015 5v24h2V7a7.008 7.008 0 00-7-7zM2 16H0v2h2v-2zM5 58H3v2h2v-2z"></path>
     </svg>`,
-    title: "Platforms",
-    skills: ["Magento", "Shopify", "WordPress"]
-  },
-  {
-    icon: `<svg width="59" height="60" xmlns="http://www.w3.org/2000/svg">
+		title: 'Platforms',
+		skills: ['Magento', 'Shopify', 'WordPress'],
+	},
+	{
+		icon: `<svg width="59" height="60" xmlns="http://www.w3.org/2000/svg">
       <path d="M22 55h.282a4.67 4.67 0 003.343-1.394A4.76 4.76 0 0027 50.232V50a4.026 4.026 0 00-4.093-4 1.891 1.891 0 01-1.776-1.222A1.954 1.954 0 0121 44a2 2 0 012-2h9a15.017 15.017 0 0015-15A21.024 21.024 0 0026 6 26.029 26.029 0 000 32v1a22.034 22.034 0 0022 22zM2 32A24.028 24.028 0 0126 8a19.021 19.021 0 0119 19 13.015 13.015 0 01-13 13h-9a4.025 4.025 0 00-4 4.09 3.877 3.877 0 001.146 2.764A3.934 3.934 0 0023 48a2 2 0 012 2v.233a2.773 2.773 0 01-.8 1.97 2.68 2.68 0 01-1.922.8H22A20.032 20.032 0 012 33v-1z"></path>
       <path d="M12.5 39a4.5 4.5 0 100 9 4.5 4.5 0 000-9zm0 7a2.5 2.5 0 110-5 2.5 2.5 0 010 5zM14 33a4.999 4.999 0 10-9.998 0A4.999 4.999 0 0014 33zm-8 0a3 3 0 116 0 3 3 0 01-6 0zM14.5 27A5.5 5.5 0 109 21.5a5.507 5.507 0 005.5 5.5zm0-9a3.5 3.5 0 110 7 3.5 3.5 0 010-7zM28 23a6 6 0 100-12 6 6 0 000 12zm0-10a4 4 0 110 8 4 4 0 010-8zM58.527 8.078a9.583 9.583 0 00-3.469-5.913L52.625.219a1 1 0 00-1.554 1.152l.811 2.029a3.3 3.3 0 01-1.007 3.82 5.284 5.284 0 00-1.614 6.125l.262.656H49v2h.883l-.877 7.89a.932.932 0 000 .167l2 35A1 1 0 0052 60h3a1 1 0 001-.943l2-35a.932.932 0 000-.167L57.117 16H58v-2h-.382l.027-.054a9.54 9.54 0 00.882-5.868zM54.056 58h-1.112L51 24.027 51.9 16h3.2l.9 8.027L54.056 58zm1.8-44.948l-.474.948h-3.7l-.559-1.4a3.3 3.3 0 011.007-3.82 5.283 5.283 0 001.95-4.825 7.588 7.588 0 011.775 9.1l.001-.003z"></path>
     </svg>`,
-    title: "Design Apps",
-    skills: ["Photoshop", "Illustrator", "XD / Figma"]
-  },
-  {
-    icon: `<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+		title: 'Design Apps',
+		skills: ['Photoshop', 'Illustrator', 'XD / Figma'],
+	},
+	{
+		icon: `<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg">
       <path d="M7.5 26.25h9.375a1.875 1.875 0 001.875-1.875V15a1.875 1.875 0 00-1.875-1.875H7.5A1.875 1.875 0 005.625 15v9.375A1.875 1.875 0 007.5 26.25zM7.5 15h9.375v9.375H7.5V15zM6.563 30.938h11.25a.938.938 0 000-1.875H6.563a.938.938 0 000 1.875zM6.563 34.688h11.25a.938.938 0 000-1.876H6.563a.938.938 0 000 1.876zM18.75 37.5a.938.938 0 00-.938-.938H6.563a.938.938 0 000 1.876h11.25a.938.938 0 00.938-.938zM25.313 26.25h9.375a1.875 1.875 0 001.874-1.875V15a1.875 1.875 0 00-1.874-1.875h-9.376A1.875 1.875 0 0023.438 15v9.375a1.875 1.875 0 001.875 1.875zm0-11.25h9.375v9.375h-9.376V15zM24.375 30.938h11.25a.938.938 0 000-1.875h-11.25a.938.938 0 000 1.875zM24.375 34.688h11.25a.938.938 0 000-1.876h-11.25a.938.938 0 000 1.876zM24.375 38.438h11.25a.938.938 0 000-1.876h-11.25a.938.938 0 000 1.876zM52.5 13.125h-9.375A1.875 1.875 0 0041.25 15v9.375a1.875 1.875 0 001.875 1.875H52.5a1.875 1.875 0 001.875-1.875V15a1.875 1.875 0 00-1.875-1.875zm-9.375 11.25V15H52.5v9.375h-9.375zM53.438 29.063h-11.25a.938.938 0 000 1.875h11.25a.938.938 0 000-1.875zM53.438 32.813h-11.25a.938.938 0 000 1.874h11.25a.938.938 0 000-1.874zM53.438 36.563h-11.25a.938.938 0 000 1.874h11.25a.938.938 0 000-1.874zM48.281 43.594h-30a.937.937 0 00-.384.084l-8.438 3.75a.938.938 0 000 1.706l8.438 3.75c.12.055.252.084.384.085h30a4.687 4.687 0 100-9.375zM19.22 45.469H44.53v5.625H19.22v-5.625zm-1.875.506v4.65l-5.157-2.344 5.157-2.306zm30.937 5.119h-1.875v-5.625h1.875a2.813 2.813 0 110 5.625z"></path>
       <path d="M55.313 0H4.687A4.687 4.687 0 000 4.688v50.624A4.688 4.688 0 004.688 60h50.624A4.688 4.688 0 0060 55.312V4.688A4.687 4.687 0 0055.312 0zM4.687 1.875h50.626a2.812 2.812 0 012.812 2.813V7.5H1.875V4.687a2.813 2.813 0 012.813-2.812zm50.626 56.25H4.687a2.812 2.812 0 01-2.812-2.813V9.376h56.25v45.938a2.812 2.812 0 01-2.813 2.812z"></path>
       <path d="M19.688 5.625h34.687a.937.937 0 000-1.875H19.687a.937.937 0 000 1.875zM5.625 5.625H7.5a.937.937 0 100-1.875H5.625a.937.937 0 100 1.875z"></path>
     </svg>`,
-    title: "Frameworks",
-    skills: ["React", "Vue", "Tailwind"]
-  },
-  {
-    icon: `<svg width="61" height="61" xmlns="http://www.w3.org/2000/svg">
+		title: 'Frameworks',
+		skills: ['React', 'Vue', 'Tailwind'],
+	},
+	{
+		icon: `<svg width="61" height="61" xmlns="http://www.w3.org/2000/svg">
       <path d="M41.35.1H5.651C2.543.1 0 2.643 0 5.751V54.45C0 57.556 2.543 60.1 5.651 60.1h35.7c3.107 0 5.65-2.543 5.65-5.651V5.75c0-3.108-2.543-5.651-5.65-5.651zM5.651 1.984h35.7a3.779 3.779 0 013.767 3.767v4.993H1.884V5.75A3.779 3.779 0 015.65 1.984zm35.7 56.326H5.65a3.779 3.779 0 01-3.767-3.767V12.722h43.234v41.82a3.779 3.779 0 01-3.768 3.768z"></path>
       <path d="M7.159 7.07a.91.91 0 000-1.319.91.91 0 00-1.32 0 .91.91 0 000 1.32c.378.376 1.037.376 1.32 0zM12.15 7.07a.91.91 0 000-1.319.91.91 0 00-1.318 0 .91.91 0 000 1.32c.283.376.942.376 1.319 0zM17.049 7.07a.91.91 0 000-1.319.91.91 0 00-1.319 0c-.377.377-.377 1.037 0 1.32.282.376.942.376 1.319 0zM25.15 7.353h15.352c.566 0 .942-.377.942-.942s-.377-.942-.942-.942H25.15c-.565 0-.942.377-.942.942 0 .47.377.942.942.942zM7.064 31.843h12.057c.565 0 .942-.377.942-.942V17.714c0-.565-.377-.942-.942-.942H7.064c-.565 0-.942.377-.942.942V30.9c0 .565.471.942.942.942zm.942-13.187H18.18v11.303H8.006V18.656zM41.068 16.772H25.714c-.565 0-.942.377-.942.942s.377.942.942.942h15.354c.565 0 .941-.377.941-.942 0-.471-.47-.942-.941-.942zM41.068 23.648H25.714c-.565 0-.942.377-.942.942s.377.942.942.942h15.354c.565 0 .941-.377.941-.942a.944.944 0 00-.941-.942zM41.068 30.43H25.714c-.565 0-.942.376-.942.942 0 .565.377.941.942.941h15.354c.565 0 .941-.376.941-.942 0-.47-.47-.941-.941-.941zM41.068 37.306H5.934c-.565 0-.942.376-.942.942 0 .565.377.942.942.942h35.04c.564 0 .941-.377.941-.942.094-.566-.377-.942-.847-.942zM41.068 44.558H5.934c-.565 0-.942.377-.942.942v7.724c0 .565.377.942.942.942h35.04c.564 0 .941-.377.941-.942V45.5c.094-.565-.377-.942-.847-.942zm-.942 7.724H6.876v-5.84h33.155v5.84h.095zM57.08 14.605h-.094V11.31c0-.471-.377-.942-.848-.942V9.33a2.935 2.935 0 00-2.92-2.92 2.935 2.935 0 00-2.92 2.92v1.036c-.47 0-.848.47-.848.942v29.858c0 .283-.094-.282 2.826 9.514v2.26c0 .566.377.942.942.942s.942-.377.942-.942v-2.26c2.92-9.796 2.826-9.231 2.826-9.514V16.49h.094c.66 0 1.319.565 1.319 1.319v5.369c0 .565.377.942.942.942s.942-.377.942-.942v-5.37a3.176 3.176 0 00-3.203-3.202zm-3.862 32.59l-1.601-5.18h3.108l-1.507 5.18zm-1.884-34.944h3.768V14.7h-3.768v-2.45zm.848-2.92c0-.565.471-1.036 1.036-1.036.565 0 1.036.47 1.036 1.036v1.036h-1.978V9.33h-.094zm2.92 30.894h-3.768V16.49h3.768v23.736z"></path>
     </svg>`,
-    title: "Tools",
-    skills: ["Visual Studio", "Git", "Terminal"]
-  },
-  {
-    icon: `<svg width="62" height="60" xmlns="http://www.w3.org/2000/svg">
+		title: 'Tools',
+		skills: ['Visual Studio', 'Git', 'Terminal'],
+	},
+	{
+		icon: `<svg width="62" height="60" xmlns="http://www.w3.org/2000/svg">
       <path d="M45.174 23.361a1.01 1.01 0 00-1.463 0l-5.85 5.85c-.94-.627-1.88-.94-3.028-.94-1.463 0-2.82.626-3.865 1.67-1.045 1.045-1.671 2.403-1.671 3.865 0 1.463.626 2.82 1.67 3.865 1.046 1.045 2.403 1.671 3.866 1.671 1.462 0 2.82-.626 3.864-1.67 1.045-1.045 1.672-2.403 1.672-3.866 0-1.149-.314-2.298-1.045-3.133l5.745-5.745c.523-.523.523-1.15.105-1.567zM37.34 36.209c-1.254 1.253-3.552 1.253-4.91 0-.626-.627-1.044-1.567-1.044-2.403 0-.94.313-1.775 1.044-2.402 1.254-1.253 3.552-1.253 4.91 0 .626.627 1.044 1.567 1.044 2.402-.104.94-.418 1.776-1.044 2.403zM5.272 32.866c0 .627.418 1.045 1.045 1.045h18.07c.627 0 1.045-.418 1.045-1.045 0-.626-.418-1.044-1.045-1.044H6.317c-.627 0-1.045.418-1.045 1.044zM1.93 25.137H20c.627 0 1.045-.418 1.045-1.045s-.418-1.044-1.045-1.044H1.93c-.627 0-1.045.417-1.045 1.044s.418 1.045 1.045 1.045zM21.045 41.64c0-.626-.418-1.044-1.045-1.044H1.93c-.627 0-1.045.418-1.045 1.045 0 .626.418 1.044 1.045 1.044H20c.627 0 1.045-.418 1.045-1.044z"></path>
       <path d="M54.052 15.005l1.045-1.045c.522.313 1.044.418 1.671.418a3.522 3.522 0 003.551-3.551c0-1.985-1.462-3.552-3.447-3.552a3.522 3.522 0 00-3.551 3.552c0 .522.105 1.149.418 1.566l-1.15 1.15c-4.386-3.865-10.027-6.268-16.294-6.477V2.68h3.76c.627 0 1.045-.418 1.045-1.044 0-.627-.418-1.045-1.045-1.045H30.55c-.627 0-1.044.418-1.044 1.045 0 .626.417 1.044 1.044 1.044h3.656v4.387c-6.894.314-13.266 3.134-18.07 8.252a1.01 1.01 0 000 1.462 1.01 1.01 0 001.462 0c4.7-4.909 10.968-7.625 17.653-7.625 6.371 0 12.22 2.507 16.608 6.58a23.97 23.97 0 017.625 17.55c0 13.37-10.863 24.232-24.233 24.232-6.477 0-12.535-2.507-17.13-7.102a1.01 1.01 0 00-1.463 0 1.01 1.01 0 000 1.462c5.014 5.014 11.594 7.73 18.593 7.73 14.519 0 26.322-11.804 26.322-26.323 0-7.103-2.82-13.579-7.52-18.28zm2.82-5.64c.836 0 1.463.626 1.463 1.462 0 .835-.627 1.462-1.462 1.462-.314 0-.627-.104-.94-.313 0-.105-.105-.105-.105-.21 0 0-.105-.104-.209-.104-.209-.209-.209-.522-.209-.835 0-.836.627-1.463 1.463-1.463z"></path>
       <path d="M22.612 49.997c-.314.522-.21 1.149.313 1.462a21.874 21.874 0 0012.43 3.865c12.117 0 21.935-9.819 21.935-21.935 0-12.117-9.818-21.936-21.935-21.936a21.947 21.947 0 00-12.848 4.178c-.418.314-.522 1.045-.209 1.463.314.418.94.522 1.463.209 3.342-2.507 7.416-3.76 11.594-3.76 10.968 0 19.846 8.878 19.846 19.846 0 10.967-8.878 19.846-19.846 19.846-4.074 0-7.938-1.15-11.177-3.447-.626-.314-1.253-.21-1.566.209z"></path>
     </svg>`,
-    title: "Process",
-    skills: ["Jira", "Slack", "Trello"]
-  }
+		title: 'Process',
+		skills: ['Jira', 'Slack', 'Trello'],
+	},
 ];
 ---
 
 <Layout title="Levan Vekua – Web Designer / Developer">
-  <div id="spinner" class="loader"></div>
-  <a class="skip-link screen-reader-text" href="#main-content">Skip to content</a>
-  <header id="header" class="header header-sticky " role="banner">
-    <div class="progress-container">
-      <div class="progress-bar"></div>
-    </div>
-    <div class="header-inner container">
-      <div class="branding">
-        <a href="/" class="custom-logo-link" rel="home" aria-current="page" aria-label="go back to homepage">
-          <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 44.97" aria-hidden="true">
-            <g data-name="Layer 2">
-              <path
-                d="M17.24 10.55 27.79 0 45 17.21 17.24 44.97 0 27.73l8.99-9 10.03 10.03L33.58 14.2l-6.99-6.99-3.62 3.63 1.29 1.29 1.23-1.23 2.33 2.33-4.04 4.04-6.54-6.72z"
-                data-name="Layer 1" />
-            </g>
-          </svg>
-        </a>
-      </div>
+	<header id="header" class="header header-sticky" role="banner">
+		<a class="skip-link sr-only" href="#main-content">Skip to content</a>
+		<div class="progress-container">
+			<div class="progress-bar"></div>
+		</div>
+		<div class="header-inner">
+			<div class="branding">
+				<a
+					href="/"
+					class="custom-logo-link"
+					rel="home"
+					aria-current="page"
+					aria-label="go back to homepage"
+				>
+					<svg
+						class="logo"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 45 44.97"
+						aria-hidden="true"
+					>
+						<g data-name="Layer 2">
+							<path
+								d="M17.24 10.55 27.79 0 45 17.21 17.24 44.97 0 27.73l8.99-9 10.03 10.03L33.58 14.2l-6.99-6.99-3.62 3.63 1.29 1.29 1.23-1.23 2.33 2.33-4.04 4.04-6.54-6.72z"
+								data-name="Layer 1"></path>
+						</g>
+					</svg>
+				</a>
+			</div>
 
-      <nav id="nav" class="nav" aria-label="Primary Navigation">
-        <ul id="primary-menu" class="menu">
-          <li class="menu-item">
-            <a class="nav-link" href="#about">About</a>
-          </li>
-          <li class="menu-item">
-            <a class="nav-link" href="#skills">Skills</a>
-          </li>
-          <li class="menu-item">
-            <a class="nav-link" href="#work">Work</a>
-          </li>
-          <li class="menu-item">
-            <a class="nav-link" href="#contact">Contact</a>
-          </li>
-        </ul>
-      </nav>
+			<nav id="nav" class="nav" aria-label="Primary Navigation">
+				<ul id="primary-menu" class="menu">
+					<li class="menu-item">
+						<a class="nav-link" href="#about">About</a>
+					</li>
+					<li class="menu-item">
+						<a class="nav-link" href="#skills">Skills</a>
+					</li>
+					<li class="menu-item">
+						<a class="nav-link" href="#work">Work</a>
+					</li>
+					<li class="menu-item">
+						<a class="nav-link" href="#contact">Contact</a>
+					</li>
+				</ul>
+			</nav>
 
-      <button id="theme-toggle" aria-label="Switch to dark theme">
-        <svg xmlns="http://www.w3.org/2000/svg" width="472.39" height="472.39" viewBox="0 0 472.39 472.39">
-          <g class="toggle-sun">
-            <path
-              d="M403.21,167V69.18H305.38L236.2,0,167,69.18H69.18V167L0,236.2l69.18,69.18v97.83H167l69.18,69.18,69.18-69.18h97.83V305.38l69.18-69.18Zm-167,198.17a129,129,0,1,1,129-129A129,129,0,0,1,236.2,365.19Z" />
-          </g>
-          <g class="toggle-circle">
-            <circle class="cls-1" cx="236.2" cy="236.2" r="103.78" />
-          </g>
-        </svg>
-      </button>
+			<button
+				id="menu-toggle"
+				class="menu-toggle header-icon"
+				aria-controls="primary-menu"
+				aria-expanded="false"
+			>
+				<span class="sr-only">Menu</span>
+			</button>
+		</div>
+	</header>
 
-      <button id="menu-toggle" class="menu-toggle header-icon" aria-controls="primary-menu" aria-expanded="false">
-        <span class="screen-reader-text">Menu</span>
-      </button>
-    </div>
-  </header>
+	<main id="main-content">
+		<section class="cover gradient-bg" aria-labelledby="main-heading">
+			<div class="cover__content mx-auto">
+				<h1 id="main-heading" class="txt-center">Levan Vekua</h1>
+				<p class="txt-center mx-auto">
+					Web Designer / Developer based in New York
+				</p>
+				<div class="cta-group">
+					<a
+						class="btn"
+						href="/img/Levan_Vekua_Resume.pdf"
+						target="_blank"
+						rel="noreferrer noopener">View Resume</a
+					>
+					<a class="btn btn--outline" href="#work">Recent Work</a>
+				</div>
+			</div>
 
-  <main id="main-content">
-    <div class="content container">
-      <div class="block-cover header-img">
-        <div class="block-cover__inner-container">
-          <h1 class="has-text-align-center main-heading has-base-color has-text-color">
-            Levan Vekua
-          </h1>
-          <p class="has-text-align-center main-intro-text has-dark-color has-text-color">
-            Web Designer / Developer based in New York
-          </p>
-          <div class="cta-group is-content-justification-center">
-            <div class="is-style-fill">
-              <a class="btn-link"
-                href="/img/Levan_Vekua_Resume.pdf" target="_blank" rel="noreferrer noopener">View Resume</a>
-            </div>
-            <div class="is-style-outline">
-              <a class="btn-link btn-link--outline" href="#work">Recent Work</a>
-            </div>
-          </div>
-        </div>
+			<svg
+				class="scroll-down mx-auto"
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 468 668"
+			>
+				<path
+					fill-rule="evenodd"
+					d="M.667 234C.667 105.134 105.134.667 234 .667 362.867.667 467.334 105.134 467.334 234v200c0 128.867-104.467 233.333-233.334 233.333C105.134 667.333.667 562.867.667 434V234ZM234 67.333c-92.047 0-166.666 74.62-166.666 166.667v200c0 92.047 74.619 166.667 166.666 166.667S400.667 526.047 400.667 434V234c0-92.047-74.62-166.667-166.667-166.667Zm0 100c18.41 0 33.334 14.924 33.334 33.334v100C267.334 319.077 252.41 334 234 334c-18.41 0-33.333-14.923-33.333-33.333v-100c0-18.41 14.923-33.334 33.333-33.334Z"
+					clip-rule="evenodd"></path>
+			</svg>
+		</section>
 
-        <svg class="scroll-down" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 468 668">
-          <path fill-rule="evenodd" d="M.667 234C.667 105.134 105.134.667 234 .667 362.867.667 467.334 105.134 467.334 234v200c0 128.867-104.467 233.333-233.334 233.333C105.134 667.333.667 562.867.667 434V234ZM234 67.333c-92.047 0-166.666 74.62-166.666 166.667v200c0 92.047 74.619 166.667 166.666 166.667S400.667 526.047 400.667 434V234c0-92.047-74.62-166.667-166.667-166.667Zm0 100c18.41 0 33.334 14.924 33.334 33.334v100C267.334 319.077 252.41 334 234 334c-18.41 0-33.333-14.923-33.333-33.333v-100c0-18.41 14.923-33.334 33.333-33.334Z" clip-rule="evenodd"/>
-        </svg>
-      </div>
-      
-      <section class="about" id="about">
-        <h2 class="has-text-align-center has-4-xl-font-size has-base-color has-text-color">About</h2>
-        
-        <div class="block-media-text alignwide has-media-on-the-right is-stacked-on-mobile has-base-color has-text-color">
-          <figure class="block-media-text__media">
-            <img loading="lazy" src="/img/productivity.svg" alt="" class="size-full" data-was-processed="true"
-              width="600" height="600" />
-          </figure>
-          <div class="block-media-text__content">
-            <h3 class="has-3-xl-font-size has-base-color has-text-color">
-              Hey, I’m Levan.
-            </h3>
-            <p class="has-base-color has-text-color">
-              I am a passionate web designer and developer with a strong understanding of today's front-end development
-              trends and
-              best practices.
-            </p>
-            <p class="has-base-color has-text-color">
-              I design and build websites that are visually minimal, easy to use, and deliver an exceptional end-user
-              experience.
-            </p>
-          </div>
-        </div>
+		<section id="about" class="about pt-3xl" aria-labelledby="about-heading">
+			<h2 id="about-heading" class="txt-center fs-4xl">About</h2>
 
-        <div class="block-media-text alignwide is-stacked-on-mobile">
-          <figure class="block-media-text__media">
-            <img loading="lazy" src="/img/philosophy.svg" alt="" class="size-full" width="600" height="600" />
-          </figure>
-          <div class="block-media-text__content">
-            <h3 class="has-3-xl-font-size has-base-color has-text-color">
-              Vision and Philosophy
-            </h3>
-            <p class="has-base-color has-text-color">
-              Every project is unique, distinctive, and personal, just like a fingerprint.
-            </p>
-            <p class="has-base-color has-text-color">
-              Therefore, understanding the project objectives and goals is a crucial part of the design process.
-            </p>
-            <p class="has-base-color has-text-color">
-              Ultimately, the strategy is to produce and deliver the highest quality product while pushing to surpass
-              final project
-              expectations.
-            </p>
-          </div>
-        </div>
-      </section>
+			<div class="split">
+				<figure class="split__media">
+					<img
+						loading="lazy"
+						src="/img/productivity.svg"
+						alt=""
+						class="size-full"
+						data-was-processed="true"
+						width="600"
+						height="600"
+					/>
+				</figure>
+				<div class="split__content">
+					<h3>Hey, I’m Levan.</h3>
+					<p>
+						I am a passionate web designer and developer with a strong
+						understanding of today's front-end development trends and best
+						practices.
+					</p>
+					<p>
+						I design and build websites that are visually minimal, easy to use,
+						and deliver an exceptional end-user experience.
+					</p>
+				</div>
+			</div>
 
-      <section class="skills" id="skills">
-        <h2 class="has-text-align-center has-4-xl-font-size has-base-color has-text-color">Skills</h2>
-        <div class="block-columns alignwide skills-top-row">
-          {skillsData.map((skill) => (
-            <SkillColumn 
-              icon={skill.icon}
-              title={skill.title}
-              skills={skill.skills}
-            />
-          ))}
-        </div>
-      </section>
+			<div class="split split--reverse pt-l">
+				<figure class="split__media">
+					<img
+						loading="lazy"
+						src="/img/philosophy.svg"
+						alt=""
+						class="size-full"
+						width="600"
+						height="600"
+					/>
+				</figure>
+				<div class="split__content">
+					<h3>Vision and Philosophy</h3>
+					<p>
+						Every project is unique, distinctive, and personal, just like a
+						fingerprint.
+					</p>
+					<p>
+						Therefore, understanding the project objectives and goals is a
+						crucial part of the design process.
+					</p>
+					<p>
+						Ultimately, the strategy is to produce and deliver the highest
+						quality product while pushing to surpass final project expectations.
+					</p>
+				</div>
+			</div>
+		</section>
 
-      <section class="recent-work" id="work">
-        <div class="recent-work-gallery">
-          <h2 class="has-text-align-center has-4-xl-font-size has-base-color has-text-color">Recent Work</h2>
-          <figure class="block-gallery alignwide columns-3">
-            <ul class="blocks-gallery-grid">
-              {portfolioItems.map((item) => (
-                <li class="blocks-gallery-item">
-                  <Card 
-                    href={item.href}
-                    imageSrc={item.imageSrc}
-                    imageAlt={item.imageAlt}
-                    title={item.title}
-                    description={item.description}
-                  />
-                </li>
-              ))}
-            </ul>
-          </figure>
-        </div>
-      </section>
+		<section id="skills" class="skills pt-3xl" aria-labelledby="skills-heading">
+			<h2 id="skills-heading" class="txt-center fs-4xl">Skills</h2>
+			<div class="list-group">
+				{
+					skillsData.map((skill) => (
+						<SkillColumn
+							icon={skill.icon}
+							title={skill.title}
+							skills={skill.skills}
+						/>
+					))
+				}
+			</div>
+		</section>
 
-      <section class="contact" id="contact">
-        <div class="contact-form-container">
-          <h2 class="has-text-align-center has-4-xl-font-size has-base-color has-text-color">Contact</h2>
-          <form action="https://api.web3forms.com/submit" method="POST" id="form" class="contact-form">
-            <fieldset>
-              <legend>Contact Form</legend>
-              <input type="hidden" name="access_key" value="d7403b7b-2767-433f-99ea-b8673e430fc8" />
-              <input type="hidden" name="subject" value="New Submission from levanvekua.com" />
-              <input type="hidden" name="redirect" value="https://web3forms.com/success" />
-              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-              <div class="contact-input-fields">
-                <div class="floating-group">
-                  <input type="text" name="name" id="name" required />
-                  <label for="name" class="floating-label">Full Name</label>
-                </div>
-                <div class="floating-group">
-                  <input type="email" name="email" id="email" required />
-                  <label for="email" class="floating-label">Email Address</label><br>
-                </div>
-              </div>
-              <div class="floating-group">
-                <textarea rows="5" name="message" id="message" required></textarea>
-                <label for="message" class="floating-label floating-label-msg">Message</label>
-              </div>
-              
-              <button 
-                type="submit"
-                id="submit_btn" 
-                class="btn-link"
-              >
-                Submit
-              </button>
-            
-            </fieldset>
-          </form>
-        </div>
-      </section>
+		<section
+			id="work"
+			class="recent-work pt-3xl"
+			aria-labelledby="work-heading"
+		>
+			<div class="recent-work-gallery">
+				<h2 id="work-heading" class="txt-center fs-4xl">Recent Work</h2>
+				<ul class="list-group-grid">
+					{
+						portfolioItems.map((item) => (
+							<li class="list-group-grid__item">
+								<Card
+									href={item.href}
+									imageSrc={item.imageSrc}
+									imageAlt={item.imageAlt}
+									title={item.title}
+									description={item.description}
+								/>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+		</section>
 
+		<section id="contact" class="contact" aria-labelledby="contact-heading">
+			<div class="contact-form-container">
+				<h2 id="contact-heading" class="txt-center fs-4xl">Contact</h2>
+				<form
+					action="https://api.web3forms.com/submit"
+					method="POST"
+					id="form"
+					class="contact-form"
+				>
+					<fieldset>
+						<legend>Contact Form</legend>
+						<input
+							type="hidden"
+							name="access_key"
+							value="d7403b7b-2767-433f-99ea-b8673e430fc8"
+						/>
+						<input
+							type="hidden"
+							name="subject"
+							value="New Submission from levanvekua.com"
+						/>
+						<input
+							type="hidden"
+							name="redirect"
+							value="https://web3forms.com/success"
+						/>
+						<input
+							type="checkbox"
+							name="botcheck"
+							class="hidden"
+							style="display: none;"
+						/>
+						<div class="contact-input-fields">
+							<div class="floating-group">
+								<input type="text" name="name" id="name" required />
+								<label for="name" class="floating-label">Full Name</label>
+							</div>
+							<div class="floating-group">
+								<input type="email" name="email" id="email" required />
+								<label for="email" class="floating-label">Email Address</label
+								><br />
+							</div>
+						</div>
+						<div class="floating-group">
+							<textarea rows="5" name="message" id="message" required
+							></textarea>
+							<label for="message" class="floating-label floating-label-msg"
+								>Message</label
+							>
+						</div>
 
-      <section class="social">
-        <div class="social-container alignwide columns-3">
-          <a href="https://github.com/lvekua" target="_blank">
-            <img loading="lazy" src="/img/social-icons/github-icon.svg" alt="GitHub" />
-          </a>
-          <a href="https://www.linkedin.com/in/lvekua/" target="_blank">
-            <img loading="lazy" src="/img/social-icons/linkedin-icon.svg" alt="LinkedIn" />
-          </a>
-          <a href="https://twitter.com/lvekua" target="_blank">
-            <img loading="lazy" src="/img/social-icons/twitter-icon.svg" alt="Twitter" />
-          </a>
-        </div>
-      </section>
-    </div>
-  </main>
-  <!-- .content -->
-  <footer class="footer" role="contentinfo">
-    <div class="site-info">&copy; <span id="currentYear"></span> Levan Vekua</div>
-  </footer>
-  <a href="#" class="go-to-top"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon">
-      <polyline points="18 15 12 9 6 15"></polyline>
-    </svg></a>
+						<button type="submit" id="submit_btn" class="btn"> Submit </button>
+					</fieldset>
+				</form>
+			</div>
+		</section>
+	</main>
 
-  <script is:inline>
-    // Only set form values if the elements exist
-    const contactName = document.getElementById('name');
-    const contactEmail = document.getElementById('email');
-    const contactMessage = document.getElementById('message');
-    
-    if (contactName) contactName.value = '';
-    if (contactEmail) contactEmail.value = '';
-    if (contactMessage) contactMessage.value = '';
+	<footer class="footer" id="footer" role="contentinfo">
+		<div class="social">
+			<div class="social-container">
+				<a href="https://github.com/lvekua" target="_blank">
+					<img
+						loading="lazy"
+						src="/img/social-icons/github-icon.svg"
+						alt="GitHub"
+					/>
+				</a>
+				<a href="https://www.linkedin.com/in/lvekua/" target="_blank">
+					<img
+						loading="lazy"
+						src="/img/social-icons/linkedin-icon.svg"
+						alt="LinkedIn"
+					/>
+				</a>
+				<a href="https://twitter.com/lvekua" target="_blank">
+					<img
+						loading="lazy"
+						src="/img/social-icons/twitter-icon.svg"
+						alt="Twitter"
+					/>
+				</a>
+			</div>
+		</div>
+		<div class="site-info">
+			&copy; <span id="currentYear"></span> Levan Vekua
+		</div>
+		<a href="#" class="go-to-top"
+			><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon">
+				<polyline points="18 15 12 9 6 15"></polyline>
+			</svg>
+		</a>
+	</footer>
 
-    const currentYear = document.getElementById('currentYear');
-    if (currentYear) {
-      currentYear.innerHTML = new Date().getFullYear();
-    }
+	<script is:inline>
+		// Only set form values if the elements exist
+		const contactName = document.getElementById('name');
+		const contactEmail = document.getElementById('email');
+		const contactMessage = document.getElementById('message');
 
-  </script>
-  <script src="../scripts/script.js"></script>
+		if (contactName) contactName.value = '';
+		if (contactEmail) contactEmail.value = '';
+		if (contactMessage) contactMessage.value = '';
+
+		const currentYear = document.getElementById('currentYear');
+		if (currentYear) {
+			currentYear.innerHTML = new Date().getFullYear();
+		}
+	</script>
+	<script src="../scripts/script.js"></script>
 </Layout>

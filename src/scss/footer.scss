@@ -1,0 +1,36 @@
+.site-info {
+	background: var(--clr-primary-400);
+	text-align: center;
+	padding: 1rem;
+}
+
+.go-to-top {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.5rem;
+	height: 2.5rem;
+	background: var(--clr-primary-500-3);
+	border: 1px solid var(--clr-primary-300-3);
+	position: fixed;
+	right: 1.2rem;
+	bottom: 1rem;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.25s;
+}
+
+.go-to-top:hover {
+	background: var(--clr-primary-500);
+}
+
+.go-to-top svg {
+	stroke: var(--clr-primary-200);
+	width: 1.5rem;
+	height: 1.5rem;
+}
+
+.is-visible {
+	opacity: 1;
+	visibility: visible;
+}

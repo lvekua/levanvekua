@@ -1,0 +1,70 @@
+.progress-container {
+	width: 100%;
+	height: 5px;
+	background-color: transparent;
+	position: absolute;
+	top: 0;
+	z-index: 2;
+}
+
+.progress-bar {
+	height: 5px;
+	background: var(--clr-primary-200);
+	background: linear-gradient(
+		90deg,
+		rgba(191, 0, 255, 0.199) 0%,
+		rgba(255, 0, 0, 0.221) 100%
+	);
+	width: 0%;
+}
+
+.header-inner {
+	display: flex;
+	background: transparent;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	max-inline-size: min(var(--container), 100% - 2 * var(--space-m));
+	margin-inline: auto;
+	padding-block: 0.5rem;
+}
+
+.header-sticky {
+	width: 100dvw;
+	position: fixed;
+	top: 0;
+	z-index: 9999;
+	background-color: transparent;
+	transition:
+		top,
+		background-color 300ms ease-out;
+}
+
+.header-blur {
+	background-color: var(--clr-primary-500-3);
+	backdrop-filter: blur(1rem);
+}
+
+.branding {
+	display: flex;
+	margin-inline-end: auto;
+	z-index: 1;
+
+	@media (width >= 1024px) {
+		margin-inline-end: 0;
+	}
+}
+
+.logo {
+	width: 45px;
+	height: auto;
+	padding-top: 0.3rem;
+}
+
+.custom-logo-link {
+	fill: var(--clr-primary-200);
+}
+
+.custom-logo {
+	display: block;
+}

@@ -144,6 +144,7 @@ export default defineConfig({
 					sourceMap: isDevelopment,
 					// Ensure accurate source maps in development
 					sourceMapIncludeSources: isDevelopment,
+					includePaths: ["src/scss"],
 				},
 			},
 			// Enable CSS source maps for better debugging in development
