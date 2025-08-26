@@ -44,6 +44,8 @@
 	position: relative;
 	overflow: hidden;
 	margin: 0;
+	border-radius: var(--border-radius);
+	border: 1px solid var(--clr-primary-300);
 }
 
 .list-group-grid__item__wrap {
