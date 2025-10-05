@@ -1,3 +1,11 @@
+.heading-primary {
+	margin-block-end: var(--space-xs);
+}
+
+p:is(.subheading-primary) {
+	margin-block-end: var(--space-m-xl);
+}
+
 .cover {
 	display: grid;
 }
