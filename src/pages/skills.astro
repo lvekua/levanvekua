@@ -1,0 +1,164 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Features from "@/components/widgets/Features.astro";
+import Headline from "@/components/ui/Headline.astro";
+
+const metadata = {
+  title: "Skills & Expertise | Levan Vekua — NYC Web Designer & Developer",
+  description:
+    "Explore the technical skills of Levan Vekua — HTML, CSS, JavaScript, React, Shopify, WordPress, Figma, and more. Custom web design and development services in New York.",
+};
+
+const coreSkills = [
+  {
+    title: "HTML, CSS & JavaScript",
+    description:
+      "Semantic HTML5, modern CSS (Flexbox, Grid, animations), and vanilla JavaScript form the foundation of every project. I write clean, accessible, standards-compliant code.",
+    icon: "lucide:code",
+    iconClass: "bg-blue-500/10 text-blue-500",
+  },
+  {
+    title: "React, Next.js & Astro",
+    description:
+      "Component-driven development with React for interactive UIs, Next.js for server-rendered applications, and Astro for ultra-fast static sites with zero JavaScript overhead.",
+    icon: "lucide:layers",
+    iconClass: "bg-orange-500/10 text-orange-500",
+  },
+  {
+    title: "Shopify & E-Commerce",
+    description:
+      "Custom Shopify theme development, Liquid templating, and storefront optimization. I build e-commerce experiences that boost conversion rates and simplify inventory management.",
+    icon: "lucide:shopping-cart",
+    iconClass: "bg-green-500/10 text-green-500",
+  },
+  {
+    title: "WordPress & CMS",
+    description:
+      "Custom WordPress theme and plugin development, Gutenberg block design, and headless CMS integrations. Content-managed websites that are easy for clients to update.",
+    icon: "lucide:layout",
+    iconClass: "bg-purple-500/10 text-purple-500",
+  },
+  {
+    title: "Figma & UI/UX Design",
+    description:
+      "High-fidelity prototyping, design systems, and user flow mapping in Figma. I also work with Photoshop and Illustrator for asset creation and brand collateral.",
+    icon: "lucide:pen-tool",
+    iconClass: "bg-pink-500/10 text-pink-500",
+  },
+  {
+    title: "Responsive & Accessible Design",
+    description:
+      "Mobile-first responsive layouts that look great on every device. WCAG-compliant accessible markup ensures your website is usable by everyone.",
+    icon: "lucide:smartphone",
+    iconClass: "bg-cyan-500/10 text-cyan-500",
+  },
+  {
+    title: "Performance Optimization",
+    description:
+      "Image optimization, lazy loading, code splitting, and Core Web Vitals tuning. I ensure fast load times that improve user experience and search engine rankings.",
+    icon: "lucide:zap",
+    iconClass: "bg-yellow-500/10 text-yellow-500",
+  },
+  {
+    title: "SEO & Analytics",
+    description:
+      "Technical SEO best practices — structured data, semantic markup, sitemap generation, and meta tag optimization. Integration with Google Analytics and Search Console.",
+    icon: "lucide:search",
+    iconClass: "bg-indigo-500/10 text-indigo-500",
+  },
+  {
+    title: "Git, CI/CD & Deployment",
+    description:
+      "Version control with Git and GitHub, automated CI/CD pipelines, and deployment to platforms like Vercel, Netlify, and AWS. Streamlined workflows for fast, reliable releases.",
+    icon: "lucide:git-branch",
+    iconClass: "bg-red-500/10 text-red-500",
+  },
+];
+---
+
+<BaseLayout {metadata}>
+  <!-- Skills Hero -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Headline
+        title="Skills & Expertise"
+        subtitle="The technologies, tools, and methodologies I use to build fast, beautiful, and conversion-focused websites."
+        titleAs="h1"
+        classes={{
+          container: "max-w-3xl mx-auto text-center mb-8",
+          title: "text-4xl md:text-6xl font-bold mb-4",
+          subtitle: "text-lg text-muted-foreground",
+        }}
+      />
+      <p class="text-center text-muted-foreground max-w-2xl mx-auto">
+        With expertise spanning frontend development, e-commerce platforms, and UI/UX design,
+        I bring a comprehensive skill set to every project. Here's what I work with daily.
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills Grid -->
+  <section class="pb-16 md:pb-24">
+    <Features features={coreSkills} />
+  </section>
+
+  <!-- Platforms Section -->
+  <section class="py-16 md:py-20 border-t border-border">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-6">
+        Platforms & Frameworks I Work With
+      </h2>
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        {
+          [
+            "Shopify",
+            "WordPress",
+            "Webflow",
+            "Magento",
+            "Next.js",
+            "React",
+            "Astro",
+            "ASP.NET",
+            "Figma",
+            "Photoshop",
+            "Illustrator",
+            "Git",
+            "Tailwind CSS",
+            "SASS",
+          ].map((tech) => (
+            <span class="inline-flex items-center rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground">
+              {tech}
+            </span>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 md:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-6">
+        See These Skills in Action
+      </h2>
+      <p class="text-lg text-muted-foreground mb-8">
+        Browse my portfolio to see how I've applied these technologies for brands like
+        Alexander Wang, Nili Lotan, and Bonne Maman.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="/work"
+          class="inline-flex items-center gap-2 rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+        >
+          View Portfolio →
+        </a>
+        <a
+          href="/contact"
+          class="inline-flex items-center gap-2 rounded-md border border-border px-8 py-3 text-sm font-medium text-foreground hover:bg-foreground/5 transition-colors"
+        >
+          Discuss a Project
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

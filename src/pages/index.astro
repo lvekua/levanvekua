@@ -1,413 +1,197 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import SkillColumn from '../components/SkillColumn.astro';
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { siteConfig } from "@/config/site";
+import Hero from "@/components/widgets/Hero.astro";
+import Features from "@/components/widgets/Features.astro";
+import Headline from "@/components/ui/Headline.astro";
+import BrandMarquee from "@/components/widgets/BrandMarquee.astro";
 
-// Portfolio data
-const portfolioItems = [
-	{
-		href: 'https://www.bonnemaman.us',
-		imageSrc: '/img/project-thumbs/bm-thumb-w388.webp',
-		imageAlt: 'Bonne Maman',
-		title: 'UI Design/Development',
-		description: 'Magento &diams; WordPress',
-	},
-	{
-		href: 'https://www.1000storieswines.com',
-		imageSrc: '/img/project-thumbs/1k-thumb-w388.webp',
-		imageAlt: '1000 Stories',
-		title: 'UI Design/Development',
-		description: 'WordPress',
-	},
-	{
-		href: 'https://www.bonterra.com',
-		imageSrc: '/img/project-thumbs/bonterra-thumb-w388.webp',
-		imageAlt: 'Bonterra',
-		title: 'UI Design/Development',
-		description: 'WordPress',
-	},
-	{
-		href: 'https://www.oaknyc.com',
-		imageSrc: '/img/project-thumbs/oak-thumb-w388.webp',
-		imageAlt: 'OAK NYC',
-		title: 'UI/UX Development',
-		description: 'Magento &diams; WordPress',
-	},
-	{
-		href: 'https://www.nililotan.com',
-		imageSrc: '/img/project-thumbs/nl-thumb-w388.webp',
-		imageAlt: 'Nili Lotan',
-		title: 'UI/UX Development',
-		description: 'Shopify &diams; WordPress',
-	},
-	{
-		href: 'https://www.alexanderwang.com/us-en/projects',
-		imageSrc: '/img/project-thumbs/aw-thumb-w388.webp',
-		imageAlt: 'Alexander Wang',
-		title: 'UI/UX Development',
-		description: 'Demandware',
-	},
-	{
-		href: 'https://jiujiedecor.com',
-		imageSrc: '/img/project-thumbs/jj-thumb-w388.webp',
-		imageAlt: 'Jiu Jie',
-		title: 'UX/UI Design',
-		description: 'Shopify',
-	},
-	{
-		href: 'https://www.standardissuenyc.com',
-		imageSrc: '/img/project-thumbs/si-thumb-w388.webp',
-		imageAlt: 'Standard Issue',
-		title: 'UI Design',
-		description: 'Magento &diams; WordPress',
-	},
-	{
-		href: 'https://hydenyoo.com',
-		imageSrc: '/img/project-thumbs/hy-thumb-w388.webp',
-		imageAlt: 'Hyden Yoo',
-		title: 'UI Design',
-		description: 'Magento &diams; WordPress',
-	},
+const metadata = {
+  title: "Levan Vekua — Web Designer & Developer in New York",
+  description:
+    "New York-based web designer and frontend developer specializing in custom websites, Shopify, and WordPress. View portfolio and hire Levan Vekua for your next project.",
+  ignoreTitleTemplate: true,
+};
+
+const services = [
+  {
+    title: "Custom Web Design",
+    description:
+      "Pixel-perfect, responsive websites tailored to your brand identity. From wireframes to final design, every detail is crafted to convert visitors into customers.",
+    icon: "lucide:pen-tool",
+    iconClass: "bg-blue-500/10 text-blue-400",
+  },
+  {
+    title: "Frontend Development",
+    description:
+      "Clean, performant code built with modern technologies like React, Next.js, and Astro. Fast load times, SEO-friendly markup, and seamless interactivity.",
+    icon: "lucide:code",
+    iconClass: "bg-purple-500/10 text-purple-400",
+  },
+  {
+    title: "E-Commerce Solutions",
+    description:
+      "End-to-end Shopify, Magento, and WordPress/WooCommerce development. Custom storefronts designed to drive sales and deliver a frictionless shopping experience.",
+    icon: "lucide:shopping-cart",
+    iconClass: "bg-pink-500/10 text-pink-400",
+  },
 ];
 
-// Skills data
-const skillsData = [
-	{
-		icon: `<svg width="50" height="60" xmlns="http://www.w3.org/2000/svg">
-      <path d="M41.613 56.129c-.58 0-.968.387-.968.968v.968H1.935V8.71h1.936c.58 0 .968-.387.968-.968 0-.58-.387-.968-.968-.968H1.935A1.941 1.941 0 000 8.71v49.355C0 59.128.871 60 1.935 60h38.71a1.941 1.941 0 001.936-1.935v-.968c0-.58-.388-.968-.968-.968z"></path>
-      <path d="M22.064 29.42c-.29-.388-.87-.581-1.354-.194l-6.775 4.839c-.193.193-.387.483-.387.774 0 .29.194.58.387.774l6.775 4.839c.387.29 1.064.193 1.354-.194.29-.387.194-1.065-.193-1.355l-5.71-4.064 5.71-4.065c.387-.29.484-.87.194-1.355z"></path>
-      <path d="M49.065 9.871L39.484.291C39.29.096 39.097 0 38.806 0H8.71a1.941 1.941 0 00-1.936 1.935v50.323c0 1.065.871 1.936 1.936 1.936h38.71a1.941 1.941 0 001.935-1.936v-41.71c0-.29-.097-.483-.29-.677zm-9.29-6.58l6.29 6.29h-6.29V3.29zM8.71 52.257V1.935h29.129v8.613c0 .581.387.968.968.968h8.612v40.742H8.71z"></path>
-      <path d="M31.839 25.258c-.484-.194-1.065 0-1.258.484l-7.258 17.42c-.194.483 0 1.064.483 1.257.484.194 1.065 0 1.258-.484l7.259-17.419c.193-.484 0-1.064-.484-1.258zM42.194 34.065l-6.775-4.84c-.387-.29-1.064-.193-1.354.194-.29.387-.194 1.065.193 1.355l5.71 4.065-5.71 4.064c-.387.29-.58.871-.194 1.355.29.387.871.58 1.355.194l6.775-4.84c.29-.193.387-.483.387-.773 0-.29-.194-.58-.388-.774z"></path>
-    </svg>`,
-		title: 'Technologies',
-		skills: ['HTML', 'CSS', 'JavaScript'],
-	},
-	{
-		icon: `<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg">
-      <path d="M31 41h-2v2h2v-2z"></path>
-      <path d="M52 4H8a4 4 0 00-4 4v35a4 4 0 004 4h14.612l-2.333 7H15a3 3 0 00-3 3c.003.341.066.68.184 1H7v2h38a3 3 0 000-6h-5.279l-2.333-7H52a4 4 0 004-4V8a4 4 0 00-4-4zM8 6h44a2 2 0 012 2v29H42.3l3.56-19.088a1 1 0 00-.8-1.167l-5.9-1.1a1 1 0 00-1.167.8L34.159 37h-1.085l.71-9.937a3.806 3.806 0 00-1.008-2.854c-.06-.065-.135-.114-.2-.175A3.973 3.973 0 0034 21c0-3.5-3.3-5.738-3.445-5.832a1 1 0 00-1.11 0C29.305 15.262 26 17.505 26 21a3.971 3.971 0 001.424 3.034c-.065.061-.14.11-.2.175a3.807 3.807 0 00-1.008 2.854l.71 9.937h-1.3l-2.455-15.562a1 1 0 00-.171-.425l-3.9-5.459a1 1 0 00-1.767.279l-2.027 6.4a1.001 1.001 0 00-.035.458L17.529 37H6V8a2 2 0 012-2zm28.842 27.523l1.966.368.367-1.967-1.966-.367.366-1.966 1.967.367.366-1.967-1.966-.366.367-1.966 1.966.366.367-1.966-1.966-.367.366-1.965 1.967.367.366-1.967-1.966-.367.367-1.966 3.932.734L40.263 37h-4.07l.649-3.477zm-8.631-6.6a1.773 1.773 0 01.476-1.35 1.837 1.837 0 012.625 0 1.77 1.77 0 01.477 1.35L31.64 29h-3.28l-.149-2.077zM28 21a5.355 5.355 0 012-3.724A5.354 5.354 0 0132 21a2 2 0 01-4 0zm.931 16l-.431-6h3l-.428 6h-2.141zm-9.377 0L17.4 23.361l3.952-.624L23.6 37h-4.046zM17.7 21.29l.934-2.946 1.8 2.515-2.734.431zM46 57a1 1 0 01-1 1H15a1 1 0 010-2h30a1 1 0 011 1zm-8.388-3H22.388l2.333-7h10.558l2.333 7zM52 45H8a2 2 0 01-2-2v-4h48v4a2 2 0 01-2 2z"></path>
-      <path d="M13 17h-2v2h2v-2zM13 21h-2v2h2v-2zM13 25h-2v2h2v-2zM13 29h-2v2h2v-2zM13 33h-2v2h2v-2zM49 17h-2v2h2v-2zM49 21h-2v2h2v-2zM49 25h-2v2h2v-2zM49 29h-2v2h2v-2zM49 33h-2v2h2v-2zM10 15h4a1 1 0 001-1v-4a1 1 0 00-1-1h-4a1 1 0 00-1 1v4a1 1 0 001 1zm1-4h2v2h-2v-2zM46 15h4a1 1 0 001-1v-4a1 1 0 00-1-1h-4a1 1 0 00-1 1v4a1 1 0 001 1zm1-4h2v2h-2v-2zM19 11h-2v2h2v-2zM23 11h-2v2h2v-2zM27 11h-2v2h2v-2zM31 11h-2v2h2v-2zM35 11h-2v2h2v-2zM39 11h-2v2h2v-2zM43 11h-2v2h2v-2zM2 20H0v23h2V20zM53 0h-3v2h3a5.006 5.006 0 015 5v24h2V7a7.008 7.008 0 00-7-7zM2 16H0v2h2v-2zM5 58H3v2h2v-2z"></path>
-    </svg>`,
-		title: 'Platforms',
-		skills: ['Webflow', 'Shopify', 'WordPress'],
-	},
-	{
-		icon: `<svg width="59" height="60" xmlns="http://www.w3.org/2000/svg">
-      <path d="M22 55h.282a4.67 4.67 0 003.343-1.394A4.76 4.76 0 0027 50.232V50a4.026 4.026 0 00-4.093-4 1.891 1.891 0 01-1.776-1.222A1.954 1.954 0 0121 44a2 2 0 012-2h9a15.017 15.017 0 0015-15A21.024 21.024 0 0026 6 26.029 26.029 0 000 32v1a22.034 22.034 0 0022 22zM2 32A24.028 24.028 0 0126 8a19.021 19.021 0 0119 19 13.015 13.015 0 01-13 13h-9a4.025 4.025 0 00-4 4.09 3.877 3.877 0 001.146 2.764A3.934 3.934 0 0023 48a2 2 0 012 2v.233a2.773 2.773 0 01-.8 1.97 2.68 2.68 0 01-1.922.8H22A20.032 20.032 0 012 33v-1z"></path>
-      <path d="M12.5 39a4.5 4.5 0 100 9 4.5 4.5 0 000-9zm0 7a2.5 2.5 0 110-5 2.5 2.5 0 010 5zM14 33a4.999 4.999 0 10-9.998 0A4.999 4.999 0 0014 33zm-8 0a3 3 0 116 0 3 3 0 01-6 0zM14.5 27A5.5 5.5 0 109 21.5a5.507 5.507 0 005.5 5.5zm0-9a3.5 3.5 0 110 7 3.5 3.5 0 010-7zM28 23a6 6 0 100-12 6 6 0 000 12zm0-10a4 4 0 110 8 4 4 0 010-8zM58.527 8.078a9.583 9.583 0 00-3.469-5.913L52.625.219a1 1 0 00-1.554 1.152l.811 2.029a3.3 3.3 0 01-1.007 3.82 5.284 5.284 0 00-1.614 6.125l.262.656H49v2h.883l-.877 7.89a.932.932 0 000 .167l2 35A1 1 0 0052 60h3a1 1 0 001-.943l2-35a.932.932 0 000-.167L57.117 16H58v-2h-.382l.027-.054a9.54 9.54 0 00.882-5.868zM54.056 58h-1.112L51 24.027 51.9 16h3.2l.9 8.027L54.056 58zm1.8-44.948l-.474.948h-3.7l-.559-1.4a3.3 3.3 0 011.007-3.82 5.283 5.283 0 001.95-4.825 7.588 7.588 0 011.775 9.1l.001-.003z"></path>
-    </svg>`,
-		title: 'Design Apps',
-		skills: ['Figma', 'Photoshop', 'Illustrator'],
-	},
-	{
-		icon: `<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg">
-      <path d="M7.5 26.25h9.375a1.875 1.875 0 001.875-1.875V15a1.875 1.875 0 00-1.875-1.875H7.5A1.875 1.875 0 005.625 15v9.375A1.875 1.875 0 007.5 26.25zM7.5 15h9.375v9.375H7.5V15zM6.563 30.938h11.25a.938.938 0 000-1.875H6.563a.938.938 0 000 1.875zM6.563 34.688h11.25a.938.938 0 000-1.876H6.563a.938.938 0 000 1.876zM18.75 37.5a.938.938 0 00-.938-.938H6.563a.938.938 0 000 1.876h11.25a.938.938 0 00.938-.938zM25.313 26.25h9.375a1.875 1.875 0 001.874-1.875V15a1.875 1.875 0 00-1.874-1.875h-9.376A1.875 1.875 0 0023.438 15v9.375a1.875 1.875 0 001.875 1.875zm0-11.25h9.375v9.375h-9.376V15zM24.375 30.938h11.25a.938.938 0 000-1.875h-11.25a.938.938 0 000 1.875zM24.375 34.688h11.25a.938.938 0 000-1.876h-11.25a.938.938 0 000 1.876zM24.375 38.438h11.25a.938.938 0 000-1.876h-11.25a.938.938 0 000 1.876zM52.5 13.125h-9.375A1.875 1.875 0 0041.25 15v9.375a1.875 1.875 0 001.875 1.875H52.5a1.875 1.875 0 001.875-1.875V15a1.875 1.875 0 00-1.875-1.875zm-9.375 11.25V15H52.5v9.375h-9.375zM53.438 29.063h-11.25a.938.938 0 000 1.875h11.25a.938.938 0 000-1.875zM53.438 32.813h-11.25a.938.938 0 000 1.874h11.25a.938.938 0 000-1.874zM53.438 36.563h-11.25a.938.938 0 000 1.874h11.25a.938.938 0 000-1.874zM48.281 43.594h-30a.937.937 0 00-.384.084l-8.438 3.75a.938.938 0 000 1.706l8.438 3.75c.12.055.252.084.384.085h30a4.687 4.687 0 100-9.375zM19.22 45.469H44.53v5.625H19.22v-5.625zm-1.875.506v4.65l-5.157-2.344 5.157-2.306zm30.937 5.119h-1.875v-5.625h1.875a2.813 2.813 0 110 5.625z"></path>
-      <path d="M55.313 0H4.687A4.687 4.687 0 000 4.688v50.624A4.688 4.688 0 004.688 60h50.624A4.688 4.688 0 0060 55.312V4.688A4.687 4.687 0 0055.312 0zM4.687 1.875h50.626a2.812 2.812 0 012.812 2.813V7.5H1.875V4.687a2.813 2.813 0 012.813-2.812zm50.626 56.25H4.687a2.812 2.812 0 01-2.812-2.813V9.376h56.25v45.938a2.812 2.812 0 01-2.813 2.812z"></path>
-      <path d="M19.688 5.625h34.687a.937.937 0 000-1.875H19.687a.937.937 0 000 1.875zM5.625 5.625H7.5a.937.937 0 100-1.875H5.625a.937.937 0 100 1.875z"></path>
-    </svg>`,
-		title: 'Frameworks',
-		skills: ['Next.js', 'Asp.NET', 'Astro'],
-	},
+const featuredWork = [
+  {
+    href: "https://www.bonnemaman.us",
+    imageSrc: "/img/project-thumbs/bm-thumb-w388.webp",
+    imageAlt: "Bonne Maman website design by Levan Vekua",
+    name: "Bonne Maman",
+    role: "UI Design & Development",
+    platform: "Magento & WordPress",
+  },
+  {
+    href: "https://www.nililotan.com",
+    imageSrc: "/img/project-thumbs/nl-thumb-w388.webp",
+    imageAlt: "Nili Lotan e-commerce website by Levan Vekua",
+    name: "Nili Lotan",
+    role: "UI/UX Development",
+    platform: "Shopify & WordPress",
+  },
+  {
+    href: "https://www.alexanderwang.com/us-en/projects",
+    imageSrc: "/img/project-thumbs/aw-thumb-w388.webp",
+    imageAlt: "Alexander Wang website development by Levan Vekua",
+    name: "Alexander Wang",
+    role: "UI/UX Development",
+    platform: "Demandware",
+  },
+];
+
+const clientBrands = [
+  { name: "Alexander Wang", imageSrc: "/img/project-thumbs/aw-thumb-w388.webp" },
+  { name: "Bonne Maman", imageSrc: "/img/project-thumbs/bm-thumb-w388.webp" },
+  { name: "Nili Lotan", imageSrc: "/img/project-thumbs/nl-thumb-w388.webp" },
+  { name: "Bonterra", imageSrc: "/img/project-thumbs/bonterra-thumb-w388.webp" },
+  { name: "1000 Stories", imageSrc: "/img/project-thumbs/1k-thumb-w388.webp" },
+  { name: "OAK NYC", imageSrc: "/img/project-thumbs/oak-thumb-w388.webp" },
+  { name: "Jiu Jie", imageSrc: "/img/project-thumbs/jj-thumb-w388.webp" },
+  { name: "Standard Issue", imageSrc: "/img/project-thumbs/si-thumb-w388.webp" },
+  { name: "Hyden Yoo", imageSrc: "/img/project-thumbs/hy-thumb-w388.webp" },
 ];
 ---
 
-<Layout title="Levan Vekua – Web Designer / Developer">
-	<header id="header" class="header header-sticky" role="banner">
-		<a class="skip-link sr-only" href="#main-content">Skip to content</a>
-		<div class="progress-container">
-			<div class="progress-bar"></div>
-		</div>
-		<div class="header-inner">
-			<div class="branding">
-				<a
-					href="/"
-					class="custom-logo-link"
-					rel="home"
-					aria-current="page"
-					aria-label="go back to homepage"
-				>
-					<svg
-						class="logo"
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 45 44.97"
-						aria-hidden="true"
-					>
-						<g data-name="Layer 2">
-							<path
-								d="M17.24 10.55 27.79 0 45 17.21 17.24 44.97 0 27.73l8.99-9 10.03 10.03L33.58 14.2l-6.99-6.99-3.62 3.63 1.29 1.29 1.23-1.23 2.33 2.33-4.04 4.04-6.54-6.72z"
-								data-name="Layer 1"></path>
-						</g>
-					</svg>
-				</a>
-			</div>
+<BaseLayout {metadata}>
+  <!-- Hero Section -->
+  <Hero
+    title={`Web Designer & Developer <br class="hidden md:block" /> <span class="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">in New York</span>`}
+    tagline="Freelance Web Designer & Frontend Developer — NYC"
+    description="I design and build high-performance websites for brands that demand exceptional digital experiences. Specializing in Shopify, WordPress, and custom frontend development."
+    actions={[
+      {
+        text: "View My Work",
+        href: "/work",
+        variant: "primary",
+        icon: "lucide:arrow-right",
+        ariaLabel: "View portfolio of web design projects",
+      },
+      {
+        text: "Get In Touch",
+        href: "/contact",
+        variant: "secondary",
+        icon: "lucide:mail",
+        ariaLabel: "Contact Levan Vekua for web design projects",
+      },
+    ]}
+  />
 
-			<nav id="nav" class="nav" aria-label="Primary Navigation">
-				<ul id="primary-menu" class="menu">
-					<li class="menu-item">
-						<a class="nav-link" href="#about">About</a>
-					</li>
-					<li class="menu-item">
-						<a class="nav-link" href="#skills">Skills</a>
-					</li>
-					<li class="menu-item">
-						<a class="nav-link" href="#work">Work</a>
-					</li>
-					<li class="menu-item">
-						<a class="nav-link" href="#contact">Contact</a>
-					</li>
-				</ul>
-			</nav>
+  <!-- Services Section -->
+  <Features
+    tagline="What I Do"
+    title="Web Design & Development Services"
+    subtitle="From concept to launch, I provide end-to-end web design and frontend development services for businesses and brands in New York and beyond."
+    features={services}
+  />
 
-			<button
-				id="menu-toggle"
-				class="menu-toggle header-icon"
-				aria-controls="primary-menu"
-				aria-expanded="false"
-			>
-				<span class="sr-only">Menu</span>
-			</button>
-		</div>
-	</header>
+  <!-- Social Proof: Client Brands -->
+  <BrandMarquee title="Trusted by leading brands" brands={clientBrands} />
 
-	<main id="main-content">
-		<section class="cover gradient-bg" aria-labelledby="main-heading">
-			<div class="cover__content mx-auto">
-				<h1 id="main-heading" class="heading-primary txt-center">
-					Levan Vekua
-				</h1>
-				<p class="subheading-primary txt-center mx-auto">
-					Web Designer / Developer based in New York
-				</p>
-				<div class="cta-group">
-					<a
-						class="btn"
-						href="/img/Levan_Vekua_Resume.pdf"
-						target="_blank"
-						rel="noreferrer noopener">View Resume</a
-					>
-					<a class="btn btn--outline" href="#work">Recent Work</a>
-				</div>
-			</div>
+  <!-- Featured Work Preview -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Headline
+        title="Featured Projects"
+        subtitle="A selection of recent web design and development work for high-profile brands."
+        classes={{
+          container: "max-w-3xl mx-auto text-center mb-12",
+        }}
+      />
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {
+          featuredWork.map((project) => (
+            <a
+              href={project.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group block overflow-hidden rounded-2xl bg-card shadow-sm border border-border/50 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+            >
+              <div class="aspect-video w-full overflow-hidden bg-muted">
+                <img
+                  src={project.imageSrc}
+                  alt={project.imageAlt}
+                  class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  width="388"
+                  height="218"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
+                  {project.name}
+                </h3>
+                <p class="text-sm font-medium text-foreground/80">
+                  {project.role}
+                </p>
+                <p class="text-sm text-muted-foreground">{project.platform}</p>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+      <div class="text-center mt-12">
+        <a
+          href="/work"
+          class="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+        >
+          View All Projects →
+        </a>
+      </div>
+    </div>
+  </section>
 
-			<svg
-				class="scroll-down mx-auto"
-				xmlns="http://www.w3.org/2000/svg"
-				fill="none"
-				viewBox="0 0 468 668"
-			>
-				<path
-					fill-rule="evenodd"
-					d="M.667 234C.667 105.134 105.134.667 234 .667 362.867.667 467.334 105.134 467.334 234v200c0 128.867-104.467 233.333-233.334 233.333C105.134 667.333.667 562.867.667 434V234ZM234 67.333c-92.047 0-166.666 74.62-166.666 166.667v200c0 92.047 74.619 166.667 166.666 166.667S400.667 526.047 400.667 434V234c0-92.047-74.62-166.667-166.667-166.667Zm0 100c18.41 0 33.334 14.924 33.334 33.334v100C267.334 319.077 252.41 334 234 334c-18.41 0-33.333-14.923-33.333-33.333v-100c0-18.41 14.923-33.334 33.333-33.334Z"
-					clip-rule="evenodd"></path>
-			</svg>
-		</section>
-
-		<section id="about" class="about pt-3xl" aria-labelledby="about-heading">
-			<h2 id="about-heading" class="txt-center fs-4xl">About</h2>
-
-			<div class="split">
-				<figure class="split__media">
-					<img
-						loading="lazy"
-						src="/img/productivity.svg"
-						alt=""
-						class="size-full"
-						data-was-processed="true"
-						width="600"
-						height="600"
-					/>
-				</figure>
-				<div class="split__content">
-					<h3>Hey, I’m Levan.</h3>
-					<p>
-						I am a passionate web designer and developer with a strong
-						understanding of today's front-end development trends and best
-						practices.
-					</p>
-					<p>
-						I design and build websites that are visually minimal, easy to use,
-						and deliver an exceptional end-user experience.
-					</p>
-				</div>
-			</div>
-
-			<div class="split split--reverse pt-l">
-				<figure class="split__media">
-					<img
-						loading="lazy"
-						src="/img/philosophy.svg"
-						alt=""
-						class="size-full"
-						width="600"
-						height="600"
-					/>
-				</figure>
-				<div class="split__content">
-					<h3>Vision and Philosophy</h3>
-					<p>
-						Every project is unique, distinctive, and personal, just like a
-						fingerprint.
-					</p>
-					<p>
-						Therefore, understanding the project objectives and goals is a
-						crucial part of the design process.
-					</p>
-					<p>
-						Ultimately, the strategy is to produce and deliver the highest
-						quality product while pushing to surpass final project expectations.
-					</p>
-				</div>
-			</div>
-		</section>
-
-		<section id="skills" class="skills pt-3xl" aria-labelledby="skills-heading">
-			<h2 id="skills-heading" class="txt-center fs-4xl">Skills</h2>
-			<div class="list-group">
-				{
-					skillsData.map((skill) => (
-						<SkillColumn
-							icon={skill.icon}
-							title={skill.title}
-							skills={skill.skills}
-						/>
-					))
-				}
-			</div>
-		</section>
-
-		<section
-			id="work"
-			class="recent-work pt-3xl"
-			aria-labelledby="work-heading"
-		>
-			<div class="recent-work-gallery">
-				<h2 id="work-heading" class="txt-center fs-4xl">Recent Work</h2>
-				<ul class="list-group-grid">
-					{
-						portfolioItems.map((item) => (
-							<li class="list-group-grid__item">
-								<Card
-									href={item.href}
-									imageSrc={item.imageSrc}
-									imageAlt={item.imageAlt}
-									title={item.title}
-									description={item.description}
-								/>
-							</li>
-						))
-					}
-				</ul>
-			</div>
-		</section>
-
-		<section id="contact" class="contact" aria-labelledby="contact-heading">
-			<div class="contact-form-container">
-				<h2 id="contact-heading" class="txt-center fs-4xl">Contact</h2>
-				<form
-					action="https://api.web3forms.com/submit"
-					method="POST"
-					id="form"
-					class="contact-form"
-				>
-					<fieldset>
-						<legend>Contact Form</legend>
-						<input
-							type="hidden"
-							name="access_key"
-							value="d7403b7b-2767-433f-99ea-b8673e430fc8"
-						/>
-						<input
-							type="hidden"
-							name="subject"
-							value="New Submission from levanvekua.com"
-						/>
-						<input
-							type="hidden"
-							name="redirect"
-							value="https://web3forms.com/success"
-						/>
-						<input
-							type="checkbox"
-							name="botcheck"
-							class="hidden"
-							style="display: none;"
-						/>
-						<div class="contact-input-fields">
-							<div class="floating-group">
-								<input type="text" name="name" id="name" required />
-								<label for="name" class="floating-label">Full Name</label>
-							</div>
-							<div class="floating-group">
-								<input type="email" name="email" id="email" required />
-								<label for="email" class="floating-label">Email Address</label
-								><br />
-							</div>
-						</div>
-						<div class="floating-group">
-							<textarea rows="5" name="message" id="message" required
-							></textarea>
-							<label for="message" class="floating-label floating-label-msg"
-								>Message</label
-							>
-						</div>
-
-						<button type="submit" id="submit_btn" class="btn"> Submit </button>
-					</fieldset>
-				</form>
-			</div>
-		</section>
-	</main>
-
-	<footer class="footer" id="footer" role="contentinfo">
-		<div class="social">
-			<div class="social-container">
-				<a href="https://github.com/lvekua" target="_blank">
-					<img
-						loading="lazy"
-						src="/img/social-icons/github-icon.svg"
-						alt="GitHub"
-					/>
-				</a>
-				<a href="https://www.linkedin.com/in/lvekua/" target="_blank">
-					<img
-						loading="lazy"
-						src="/img/social-icons/linkedin-icon.svg"
-						alt="LinkedIn"
-					/>
-				</a>
-				<a href="https://twitter.com/lvekua" target="_blank">
-					<img
-						loading="lazy"
-						src="/img/social-icons/twitter-icon.svg"
-						alt="Twitter"
-					/>
-				</a>
-			</div>
-		</div>
-		<div class="site-info">
-			&copy; <span id="currentYear"></span> Levan Vekua
-		</div>
-		<a href="#" class="go-to-top"
-			><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon">
-				<polyline points="18 15 12 9 6 15"></polyline>
-			</svg>
-		</a>
-	</footer>
-
-	<script is:inline>
-		// Only set form values if the elements exist
-		const contactName = document.getElementById('name');
-		const contactEmail = document.getElementById('email');
-		const contactMessage = document.getElementById('message');
-
-		if (contactName) contactName.value = '';
-		if (contactEmail) contactEmail.value = '';
-		if (contactMessage) contactMessage.value = '';
-
-		const currentYear = document.getElementById('currentYear');
-		if (currentYear) {
-			currentYear.innerHTML = new Date().getFullYear();
-		}
-	</script>
-	<script src="../scripts/script.js"></script>
-</Layout>
+  <!-- Final CTA Section -->
+  <section class="py-20 md:py-28">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-6">
+        Ready to Start Your Project?
+      </h2>
+      <p class="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
+        Whether you need a new website, a redesign, or e-commerce development, I'm
+        here to help bring your vision to life. Let's build something exceptional
+        together.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="/contact"
+          class="inline-flex items-center gap-2 rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+        >
+          Start a Conversation →
+        </a>
+        <a
+          href="/img/Levan_Vekua_Resume.pdf"
+          target="_blank"
+          rel="noreferrer noopener"
+          class="inline-flex items-center gap-2 rounded-md border border-border px-8 py-3 text-sm font-medium text-foreground hover:bg-foreground/5 transition-colors"
+        >
+          Download Resume
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

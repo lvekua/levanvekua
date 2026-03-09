@@ -1,0 +1,139 @@
+---
+import { siteConfig } from "@/config/site";
+
+interface Props {
+  type: "WebSite" | "BlogPosting" | "BreadcrumbList" | "Person" | "ProfessionalService";
+  data: {
+    title?: string;
+    description?: string;
+    image?: string;
+    pubDate?: Date;
+    author?: string;
+    url?: string;
+  };
+}
+
+const { type, data } = Astro.props;
+
+let schema = {};
+
+if (type === "WebSite") {
+  schema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    description: siteConfig.description,
+    author: {
+      "@type": "Person",
+      name: siteConfig.author,
+    },
+    sameAs: [
+      siteConfig.socialLinks.twitter,
+      siteConfig.socialLinks.github,
+      siteConfig.socialLinks.linkedin,
+    ],
+  };
+} else if (type === "Person") {
+  schema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Levan Vekua",
+    jobTitle: "Web Designer & Frontend Developer",
+    url: siteConfig.url,
+    description: siteConfig.description,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "New York",
+      addressRegion: "NY",
+      addressCountry: "US",
+    },
+    sameAs: [
+      siteConfig.socialLinks.twitter,
+      siteConfig.socialLinks.github,
+      siteConfig.socialLinks.linkedin,
+    ],
+    knowsAbout: [
+      "Web Design",
+      "Frontend Development",
+      "UI/UX Design",
+      "Shopify Development",
+      "WordPress Development",
+      "E-Commerce",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Next.js",
+      "Astro",
+      "Figma",
+      "Responsive Design",
+    ],
+  };
+} else if (type === "ProfessionalService") {
+  schema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "Levan Vekua — Web Design & Development",
+    description: siteConfig.description,
+    url: siteConfig.url,
+    telephone: "",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "New York",
+      addressRegion: "NY",
+      addressCountry: "US",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: "40.7128",
+      longitude: "-74.0060",
+    },
+    areaServed: {
+      "@type": "City",
+      name: "New York",
+    },
+    priceRange: "$$",
+    serviceType: [
+      "Web Design",
+      "Frontend Development",
+      "Shopify Development",
+      "WordPress Development",
+      "UI/UX Design",
+      "E-Commerce Development",
+    ],
+    sameAs: [
+      siteConfig.socialLinks.twitter,
+      siteConfig.socialLinks.github,
+      siteConfig.socialLinks.linkedin,
+    ],
+  };
+} else if (type === "BlogPosting") {
+  schema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: data.title,
+    description: data.description,
+    image: data.image,
+    datePublished: data.pubDate,
+    author: {
+      "@type": "Person",
+      name: data.author,
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": data.url,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      logo: {
+        "@type": "ImageObject",
+        url: new URL("/favicon.svg", siteConfig.url).toString(),
+      },
+    },
+  };
+}
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

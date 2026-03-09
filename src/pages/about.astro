@@ -1,0 +1,260 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Features from '@/components/widgets/Features.astro';
+import Headline from '@/components/ui/Headline.astro';
+import BrandMarquee from '@/components/widgets/BrandMarquee.astro';
+
+const metadata = {
+	title: 'About Levan Vekua | NYC Web Designer & Frontend Developer',
+	description:
+		'Meet Levan Vekua — a New York City web designer and frontend developer who builds high-converting Shopify stores, WordPress sites, and custom web applications for fashion, luxury, and e-commerce brands.',
+};
+
+const processSteps = [
+	{
+		title: '1. Research & Strategy',
+		description:
+			'I start by learning your business inside and out — your audience, your competitors, and your goals. This strategic foundation shapes every design decision and ensures your website is built to perform, not just to look good.',
+		icon: 'lucide:search',
+		iconClass: 'bg-blue-500/10 text-blue-400',
+	},
+	{
+		title: '2. Wireframing & Design',
+		description:
+			'In Figma, I map out the user journey and design high-fidelity mockups that reflect your brand. Every page is crafted mobile-first so your site looks and works flawlessly on phones, tablets, and desktops.',
+		icon: 'lucide:pen-tool',
+		iconClass: 'bg-purple-500/10 text-purple-400',
+	},
+	{
+		title: '3. Development & QA',
+		description:
+			'I write clean, semantic code using HTML, CSS, JavaScript, and modern frameworks like React or Astro. Performance, SEO, and accessibility are baked in from line one — then I test across every major browser and device.',
+		icon: 'lucide:code',
+		iconClass: 'bg-pink-500/10 text-pink-400',
+	},
+	{
+		title: '4. Launch & Growth',
+		description:
+			"Once we've reviewed every detail, your site goes live. But the partnership doesn't end there — I provide ongoing support, analytics monitoring, and strategic recommendations to help your site keep growing.",
+		icon: 'lucide:rocket',
+		iconClass: 'bg-green-500/10 text-green-400',
+	},
+	{
+		title: '5. Content & SEO Integration',
+		description:
+			'I optimize every page for search engines — from semantic HTML structure and meta tags to structured data and keyword-targeted copy. Your site is built to rank, not just to exist.',
+		icon: 'lucide:search',
+		iconClass: 'bg-orange-500/10 text-orange-400',
+	},
+	{
+		title: '6. Iteration & Optimization',
+		description:
+			"Using analytics and real user data, I identify what's working and what can improve. Continuous refinements to design, content, and performance keep your site ahead of the competition.",
+		icon: 'lucide:refresh-cw',
+		iconClass: 'bg-cyan-500/10 text-cyan-400',
+	},
+];
+
+const clientBrands = [
+	{
+		name: 'Alexander Wang',
+		imageSrc: '/img/project-thumbs/aw-thumb-w388.webp',
+	},
+	{ name: 'Bonne Maman', imageSrc: '/img/project-thumbs/bm-thumb-w388.webp' },
+	{ name: 'Nili Lotan', imageSrc: '/img/project-thumbs/nl-thumb-w388.webp' },
+	{
+		name: 'Bonterra',
+		imageSrc: '/img/project-thumbs/bonterra-thumb-w388.webp',
+	},
+	{ name: '1000 Stories', imageSrc: '/img/project-thumbs/1k-thumb-w388.webp' },
+	{ name: 'OAK NYC', imageSrc: '/img/project-thumbs/oak-thumb-w388.webp' },
+	{ name: 'Jiu Jie', imageSrc: '/img/project-thumbs/jj-thumb-w388.webp' },
+	{
+		name: 'Standard Issue',
+		imageSrc: '/img/project-thumbs/si-thumb-w388.webp',
+	},
+	{ name: 'Hyden Yoo', imageSrc: '/img/project-thumbs/hy-thumb-w388.webp' },
+];
+---
+
+<BaseLayout {metadata}>
+	<!-- About Hero -->
+	<section class="py-16 md:py-24">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<Headline
+				title="The Designer Behind the Pixels"
+				subtitle="I'm Levan Vekua — a freelance web designer and frontend developer in New York City helping brands turn their digital presence into a competitive advantage."
+				titleAs="h1"
+				classes={{
+					container: 'max-w-3xl mx-auto text-center mb-12',
+					title: 'text-4xl md:text-6xl font-bold mb-4',
+					subtitle: 'text-lg text-muted-foreground',
+				}}
+			/>
+		</div>
+	</section>
+
+	<!-- Bio Section with Image -->
+	<section class="pb-16 md:pb-24">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="grid md:grid-cols-2 gap-12 items-center">
+				<!-- Text Content -->
+				<div class="prose prose-lg max-w-none text-muted-foreground space-y-6">
+					<h2 class="text-2xl md:text-3xl font-bold text-foreground">
+						Designing for Impact, <br />Building for Scale
+					</h2>
+					<p>
+						With years of hands-on experience in <strong
+							>web design and frontend development</strong
+						>, I've helped fashion houses, consumer brands, and e-commerce
+						businesses across
+						<strong>New York City</strong> and beyond build digital experiences that
+						drive real results — more traffic, higher engagement, and stronger conversion
+						rates.
+					</p>
+					<p>
+						My client roster includes names like <strong>Alexander Wang</strong
+						>,
+						<strong>Nili Lotan</strong>, <strong>Bonne Maman</strong>, and
+						<strong>Bonterra</strong>. I've built and shipped production sites
+						on
+						<strong>Shopify</strong>, <strong>WordPress</strong>,
+						<strong>Magento</strong>, and fully custom tech stacks — always with
+						an obsessive focus on performance and user experience.
+					</p>
+					<p>
+						On the technical side, I work daily with <strong
+							>HTML, CSS, JavaScript</strong
+						>, and modern frameworks including <strong
+							>React, Next.js, and Astro</strong
+						>. Every line of code I write is semantic, accessible, and optimized
+						for
+						<strong>Google Core Web Vitals</strong> — because a beautiful website
+						means nothing if it can't be found or loads slowly.
+					</p>
+				</div>
+
+				<!-- Image -->
+				<div class="relative">
+					<div>
+						<img
+							src="/img/productivity.svg"
+							alt="Levan Vekua's workspace — modern design studio in New York City"
+							class="w-full h-auto object-cover"
+							loading="lazy"
+						/>
+					</div>
+					<!-- Decorative gradient behind image -->
+					<div
+						class="absolute -inset-4 -z-10 rounded-3xl bg-linear-to-br from-primary/10 via-transparent to-purple-500/10 blur-2xl"
+					>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- What Drives Me Section -->
+	<section class="pb-16 md:pb-24">
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="grid md:grid-cols-2 gap-12 items-center">
+				<!-- Image (left side) -->
+				<div class="relative order-2 md:order-1">
+					<div>
+						<img
+							src="/img/philosophy.svg"
+							alt="Web development workspace with modern tools and technology"
+							class="w-full h-auto object-cover"
+							loading="lazy"
+						/>
+					</div>
+					<!-- Decorative gradient behind image -->
+					<div
+						class="absolute -inset-4 -z-10 rounded-3xl bg-linear-to-tr from-purple-500/10 via-transparent to-primary/10 blur-2xl"
+					>
+					</div>
+				</div>
+
+				<!-- Text Content -->
+				<div
+					class="prose prose-lg max-w-none text-muted-foreground space-y-6 order-1 md:order-2"
+				>
+					<h2 class="text-2xl md:text-3xl font-bold text-foreground">
+						What Drives My Work
+					</h2>
+					<p>
+						I don't believe in one-size-fits-all templates. Every brand has a
+						unique story, and I treat each project as an opportunity to
+						translate that story into a digital experience that <strong
+							>connects with real people</strong
+						>. The best websites aren't just pretty — they solve problems,
+						answer questions, and guide visitors toward a clear action.
+					</p>
+					<p>
+						That's why I approach every engagement the same way: understand the
+						<strong>business objectives</strong> first, design with the <strong
+							>end user</strong
+						>
+						in mind, and build with <strong>code that scales</strong>. Whether
+						it's a high-traffic Shopify store, a content-rich WordPress site, or
+						a custom web application, the standard is always the same — deliver
+						work that outperforms the competition.
+					</p>
+					<p>
+						I'm especially passionate about the details that most people never
+						see:
+						<strong>page speed optimization</strong>, <strong
+							>semantic markup for SEO</strong
+						>,
+						<strong>WCAG-compliant accessibility</strong>, and smooth
+						micro-interactions that make a website feel alive.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- My Process -->
+	<Features
+		tagline="How I Work"
+		title="From First Call to Final Launch"
+		subtitle="A structured, end-to-end process designed to eliminate guesswork, keep you in the loop, and deliver a website that hits every mark."
+		features={processSteps}
+	/>
+
+	<!-- Client Brands -->
+	<BrandMarquee
+		title="Trusted by Industry-Leading Brands"
+		brands={clientBrands}
+	/>
+
+	<!-- CTA -->
+	<section class="py-20 md:py-24">
+		<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<h2
+				class="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-6"
+			>
+				Have a Project in Mind?
+			</h2>
+			<p class="text-lg text-muted-foreground mb-8">
+				I'm currently accepting new projects. Whether you need a full website
+				build, a redesign, or e-commerce development, I'd love to learn about
+				your goals and show you how I can help.
+			</p>
+			<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+				<a
+					href="/contact"
+					class="inline-flex items-center gap-2 rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+				>
+					Let's Talk →
+				</a>
+				<a
+					href="/work"
+					class="inline-flex items-center gap-2 rounded-md border border-border px-8 py-3 text-sm font-medium text-foreground hover:bg-foreground/5 transition-colors"
+				>
+					See My Portfolio
+				</a>
+			</div>
+		</div>
+	</section>
+</BaseLayout>
