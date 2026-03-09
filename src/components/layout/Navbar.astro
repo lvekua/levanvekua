@@ -136,27 +136,17 @@ import ThemeToggle from "@/components/ui/ThemeToggle.astro";
 </nav>
 
 <script>
-  document.addEventListener("astro:page-load", () => {
-    const button = document.getElementById("mobile-menu-button");
-    const menu = document.getElementById("mobile-menu");
-    const iconClosed = document.getElementById("menu-icon-closed");
-    const iconOpen = document.getElementById("menu-icon-open");
+  const button = document.getElementById("mobile-menu-button");
+  const menu = document.getElementById("mobile-menu");
+  const iconClosed = document.getElementById("menu-icon-closed");
+  const iconOpen = document.getElementById("menu-icon-open");
 
-    // Remove old event listener if it exists to prevent multiple triggers
-    const newButton = button?.cloneNode(true);
-    if (newButton && button && button.parentNode) {
-      button.parentNode.replaceChild(newButton, button);
-    }
+  button?.addEventListener("click", () => {
+    const isExpanded = button.getAttribute("aria-expanded") === "true";
 
-    const finalButton = document.getElementById("mobile-menu-button");
-
-    finalButton?.addEventListener("click", () => {
-      const isExpanded = finalButton.getAttribute("aria-expanded") === "true";
-
-      finalButton.setAttribute("aria-expanded", String(!isExpanded));
-      menu?.classList.toggle("hidden");
-      iconClosed?.classList.toggle("hidden");
-      iconOpen?.classList.toggle("hidden");
-    });
+    button.setAttribute("aria-expanded", String(!isExpanded));
+    menu?.classList.toggle("hidden");
+    iconClosed?.classList.toggle("hidden");
+    iconOpen?.classList.toggle("hidden");
   });
 </script>
