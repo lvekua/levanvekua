@@ -1,0 +1,83 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  --primary: #0254d8;
+  --primary-foreground: #ffffff;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #0254d8;
+  --muted: #f4f4f5;
+  --muted-foreground: #52525b;
+  --card: #ffffff;
+}
+
+:root[data-theme="dark"] {
+  --background: #030303;
+  --foreground: #e5e7eb;
+  --primary: #8bbcff;
+  --primary-foreground: #0a0a0a;
+  --border: #262626;
+  --input: #262626;
+  --ring: #8bbcff;
+  --muted: #171717;
+  --muted-foreground: #a1a1aa;
+  --card: #0a0a0a;
+}
+
+/* Base styles using variables */
+@layer base {
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+  }
+}
+
+/* Ensure strong/bold text is readable in dark mode — must be outside @layer base
+   to override Tailwind Typography plugin's prose styles */
+:root[data-theme="dark"] strong,
+:root[data-theme="dark"] b,
+:root[data-theme="dark"] .prose strong,
+:root[data-theme="dark"] .prose b {
+  color: var(--foreground) !important;
+}
+
+/* Animations - Reveal on Scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Prevent double-bounce conflicts when Astro View Transitions is actively animating */
+:root[data-astro-transition] .reveal {
+  transition: none !important;
+}

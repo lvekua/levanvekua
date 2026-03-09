@@ -1,0 +1,259 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Headline from "@/components/ui/Headline.astro";
+import { siteConfig } from "@/config/site";
+
+const metadata = {
+  title: "Contact Levan Vekua | Hire a Web Designer in New York",
+  description:
+    "Get in touch with Levan Vekua for web design, frontend development, and e-commerce projects. Based in New York, available for freelance and contract work.",
+};
+
+const projectTypes = [
+  {
+    title: "Website Design & Development",
+    description: "Custom responsive websites built from concept to launch.",
+    icon: "🎨",
+  },
+  {
+    title: "E-Commerce & Shopify",
+    description: "Online stores optimized for conversions and sales.",
+    icon: "🛒",
+  },
+  {
+    title: "WordPress Development",
+    description: "Custom themes, plugins, and content-managed websites.",
+    icon: "📝",
+  },
+  {
+    title: "UI/UX Design & Prototyping",
+    description: "Wireframes, mockups, and interactive prototypes in Figma.",
+    icon: "✏️",
+  },
+];
+---
+
+<BaseLayout {metadata}>
+  <!-- Contact Hero -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Headline
+        title="Get In Touch"
+        subtitle="Have a project in mind? I'd love to hear about it. I'm currently accepting new freelance web design and development projects."
+        titleAs="h1"
+        classes={{
+          container: "max-w-3xl mx-auto text-center mb-12",
+          title: "text-4xl md:text-6xl font-bold mb-4",
+          subtitle: "text-lg text-muted-foreground",
+        }}
+      />
+    </div>
+  </section>
+
+  <!-- Main Content: Form + Sidebar -->
+  <section class="pb-16 md:pb-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+        <!-- Contact Form (3 cols) -->
+        <div class="lg:col-span-3">
+          <div class="bg-card rounded-2xl shadow-sm border border-border/50 p-8">
+            <h2 class="text-xl font-bold text-foreground mb-6">
+              Send Me a Message
+            </h2>
+            <form
+              action="https://api.web3forms.com/submit"
+              method="POST"
+              id="form"
+              class="space-y-6"
+            >
+              <input
+                type="hidden"
+                name="access_key"
+                value="d7403b7b-2767-433f-99ea-b8673e430fc8"
+              />
+              <input
+                type="hidden"
+                name="subject"
+                value="New Submission from levanvekua.com"
+              />
+              <input
+                type="hidden"
+                name="redirect"
+                value="https://web3forms.com/success"
+              />
+              <input
+                type="checkbox"
+                name="botcheck"
+                class="hidden"
+                style="display: none;"
+              />
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label for="name" class="text-sm font-medium text-foreground">
+                    Full Name
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    required
+                    class="w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    placeholder="John Doe"
+                  />
+                </div>
+                <div class="space-y-2">
+                  <label for="email" class="text-sm font-medium text-foreground">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    required
+                    class="w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    placeholder="john@example.com"
+                  />
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <label for="project-type" class="text-sm font-medium text-foreground">
+                  Project Type
+                </label>
+                <select
+                  name="project_type"
+                  id="project-type"
+                  class="w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                >
+                  <option value="">Select a project type</option>
+                  <option value="website-design">Website Design & Development</option>
+                  <option value="ecommerce">E-Commerce & Shopify</option>
+                  <option value="wordpress">WordPress Development</option>
+                  <option value="ui-ux">UI/UX Design & Prototyping</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="space-y-2">
+                <label for="message" class="text-sm font-medium text-foreground">
+                  Tell Me About Your Project
+                </label>
+                <textarea
+                  rows="5"
+                  name="message"
+                  id="message"
+                  required
+                  class="w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 resize-none"
+                  placeholder="Describe your project, timeline, and any specific requirements..."
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                id="submit_btn"
+                class="w-full inline-flex items-center justify-center rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 transition-colors"
+              >
+                Send Message →
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Sidebar (2 cols) -->
+        <div class="lg:col-span-2 space-y-8">
+          <!-- What to Expect -->
+          <div class="bg-card rounded-2xl shadow-sm border border-border/50 p-6">
+            <h3 class="text-lg font-bold text-foreground mb-4">What to Expect</h3>
+            <ul class="space-y-3 text-sm text-muted-foreground">
+              <li class="flex items-start gap-3">
+                <span class="text-primary mt-0.5">✓</span>
+                <span>Response within <strong class="text-foreground">24 hours</strong></span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-primary mt-0.5">✓</span>
+                <span>Free initial consultation to discuss your project</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-primary mt-0.5">✓</span>
+                <span>Transparent pricing with no hidden fees</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-primary mt-0.5">✓</span>
+                <span>Available for both short-term and long-term projects</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Alternative Contact -->
+          <div class="bg-card rounded-2xl shadow-sm border border-border/50 p-6">
+            <h3 class="text-lg font-bold text-foreground mb-4">Connect Directly</h3>
+            <ul class="space-y-4 text-sm">
+              <li>
+                <a
+                  href={siteConfig.socialLinks.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <span class="w-8 h-8 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 text-xs font-bold">in</span>
+                  <span>LinkedIn</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={siteConfig.socialLinks.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <span class="w-8 h-8 rounded-full bg-foreground/10 flex items-center justify-center text-foreground text-xs font-bold">GH</span>
+                  <span>GitHub</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={siteConfig.socialLinks.twitter}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <span class="w-8 h-8 rounded-full bg-sky-500/10 flex items-center justify-center text-sky-400 text-xs font-bold">X</span>
+                  <span>Twitter / X</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Project Types -->
+          <div class="bg-card rounded-2xl shadow-sm border border-border/50 p-6">
+            <h3 class="text-lg font-bold text-foreground mb-4">Services I Offer</h3>
+            <ul class="space-y-3">
+              {
+                projectTypes.map((type) => (
+                  <li class="flex items-start gap-3">
+                    <span class="text-lg leading-none mt-0.5">{type.icon}</span>
+                    <div>
+                      <p class="text-sm font-medium text-foreground">{type.title}</p>
+                      <p class="text-xs text-muted-foreground">{type.description}</p>
+                    </div>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    const contactName = document.getElementById("name");
+    const contactEmail = document.getElementById("email");
+    const contactMessage = document.getElementById("message");
+
+    if (contactName) contactName.value = "";
+    if (contactEmail) contactEmail.value = "";
+    if (contactMessage) contactMessage.value = "";
+  </script>
+</BaseLayout>

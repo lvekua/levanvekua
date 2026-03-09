@@ -1,0 +1,205 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Headline from "@/components/ui/Headline.astro";
+
+const metadata = {
+  title: "Portfolio | Web Design & Development Projects — Levan Vekua",
+  description:
+    "Browse web design and development projects by Levan Vekua — including work for Alexander Wang, Bonne Maman, Nili Lotan, and more. Shopify, WordPress, and custom builds.",
+};
+
+const portfolioItems = [
+  {
+    href: "https://www.bonnemaman.us",
+    imageSrc: "/img/project-thumbs/bm-thumb-w388.webp",
+    imageAlt: "Bonne Maman website design and development by Levan Vekua",
+    name: "Bonne Maman",
+    role: "UI Design & Development",
+    platform: "Magento & WordPress",
+    summary:
+      "Designed and developed the digital presence for this iconic French preserves brand, creating a seamless e-commerce experience integrated with their content-driven marketing strategy.",
+  },
+  {
+    href: "https://www.1000storieswines.com",
+    imageSrc: "/img/project-thumbs/1k-thumb-w388.webp",
+    imageAlt: "1000 Stories Wines website by Levan Vekua",
+    name: "1000 Stories",
+    role: "UI Design & Development",
+    platform: "WordPress",
+    summary:
+      "Built a visually immersive website for this bourbon barrel-aged wine brand, featuring age-gate integration, product showcases, and a brand storytelling experience.",
+  },
+  {
+    href: "https://www.bonterra.com",
+    imageSrc: "/img/project-thumbs/bonterra-thumb-w388.webp",
+    imageAlt: "Bonterra organic wines website by Levan Vekua",
+    name: "Bonterra",
+    role: "UI Design & Development",
+    platform: "WordPress",
+    summary:
+      "Created a clean, sustainability-focused web experience for this organic winery, highlighting their environmental mission alongside their product catalog.",
+  },
+  {
+    href: "https://www.oaknyc.com",
+    imageSrc: "/img/project-thumbs/oak-thumb-w388.webp",
+    imageAlt: "OAK NYC fashion e-commerce website by Levan Vekua",
+    name: "OAK NYC",
+    role: "UI/UX Development",
+    platform: "Magento & WordPress",
+    summary:
+      "Developed a high-performance e-commerce storefront for this New York-based fashion retailer, optimizing the shopping experience across desktop and mobile.",
+  },
+  {
+    href: "https://www.nililotan.com",
+    imageSrc: "/img/project-thumbs/nl-thumb-w388.webp",
+    imageAlt: "Nili Lotan luxury fashion website by Levan Vekua",
+    name: "Nili Lotan",
+    role: "UI/UX Development",
+    platform: "Shopify & WordPress",
+    summary:
+      "Built a premium Shopify storefront for this luxury fashion designer, featuring refined product photography, seamless checkout, and editorial content integration.",
+  },
+  {
+    href: "https://www.alexanderwang.com/us-en/projects",
+    imageSrc: "/img/project-thumbs/aw-thumb-w388.webp",
+    imageAlt: "Alexander Wang fashion brand website by Levan Vekua",
+    name: "Alexander Wang",
+    role: "UI/UX Development",
+    platform: "Demandware",
+    summary:
+      "Contributed to the frontend development of this globally recognized fashion house's digital platform, implementing interactive features and maintaining brand consistency across the site.",
+  },
+  {
+    href: "https://jiujiedecor.com",
+    imageSrc: "/img/project-thumbs/jj-thumb-w388.webp",
+    imageAlt: "Jiu Jie home decor e-commerce website by Levan Vekua",
+    name: "Jiu Jie",
+    role: "UX/UI Design",
+    platform: "Shopify",
+    summary:
+      "Designed and launched a Shopify store for this home decor brand, creating a browsing experience that showcases products beautifully and drives online sales.",
+  },
+  {
+    href: "https://www.standardissuenyc.com",
+    imageSrc: "/img/project-thumbs/si-thumb-w388.webp",
+    imageAlt: "Standard Issue NYC fashion website by Levan Vekua",
+    name: "Standard Issue",
+    role: "UI Design",
+    platform: "Magento & WordPress",
+    summary:
+      "Created the visual design and frontend templates for this NYC streetwear brand, delivering a bold, minimalist aesthetic that matches their brand identity.",
+  },
+  {
+    href: "https://hydenyoo.com",
+    imageSrc: "/img/project-thumbs/hy-thumb-w388.webp",
+    imageAlt: "Hyden Yoo menswear brand website by Levan Vekua",
+    name: "Hyden Yoo",
+    role: "UI Design",
+    platform: "Magento & WordPress",
+    summary:
+      "Designed the website for this contemporary menswear label, highlighting their collections with editorial-style layouts and a clean, sophisticated aesthetic.",
+  },
+];
+---
+
+<BaseLayout {metadata}>
+  <!-- Portfolio Hero -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Headline
+        title="My Work"
+        subtitle="A curated selection of web design and development projects for fashion, food & beverage, and e-commerce brands."
+        titleAs="h1"
+        classes={{
+          container: "max-w-3xl mx-auto text-center mb-8",
+          title: "text-4xl md:text-6xl font-bold mb-4",
+          subtitle: "text-lg text-muted-foreground",
+        }}
+      />
+      <p class="text-center text-muted-foreground max-w-2xl mx-auto">
+        Each project below represents a collaboration where I served as the lead designer, developer,
+        or both — delivering custom solutions across Shopify, WordPress, Magento, and more.
+      </p>
+    </div>
+  </section>
+
+  <!-- Portfolio Grid -->
+  <section class="pb-16 md:pb-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          portfolioItems.map((item) => (
+            <li class="group relative overflow-hidden rounded-2xl bg-card shadow-sm border border-border/50 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+              <a
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block h-full"
+              >
+                <div class="aspect-video w-full overflow-hidden bg-muted">
+                  <img
+                    src={item.imageSrc}
+                    alt={item.imageAlt}
+                    class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    width="388"
+                    height="218"
+                  />
+                </div>
+                <div class="p-6">
+                  <h2 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                    {item.name}
+                  </h2>
+                  <p class="text-sm font-medium text-foreground/80 mb-1">
+                    {item.role}
+                  </p>
+                  <p class="text-xs text-muted-foreground mb-3">
+                    {item.platform}
+                  </p>
+                  <p class="text-sm text-muted-foreground leading-relaxed">
+                    {item.summary}
+                  </p>
+                </div>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <!-- Process CTA -->
+  <section class="py-12 md:py-16 border-t border-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-muted-foreground mb-4">
+        Curious about how these projects came to life?
+      </p>
+      <a
+        href="/about"
+        class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
+      >
+        Learn about my design & development process →
+      </a>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-20 md:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-6">
+        Have a Project in Mind?
+      </h2>
+      <p class="text-lg text-muted-foreground mb-8">
+        I'm currently accepting new web design and development projects.
+        Whether you need a Shopify store, a WordPress site, or a custom build —
+        let's talk about what you need.
+      </p>
+      <a
+        href="/contact"
+        class="inline-flex items-center gap-2 rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+      >
+        Start a Conversation →
+      </a>
+    </div>
+  </section>
+</BaseLayout>
