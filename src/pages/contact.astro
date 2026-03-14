@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import Schema from "@/components/seo/Schema.astro";
 import Headline from "@/components/ui/Headline.astro";
 import { siteConfig } from "@/config/site";
 
@@ -34,6 +35,8 @@ const projectTypes = [
 ---
 
 <BaseLayout {metadata}>
+  <Schema type="BreadcrumbList" data={{ title: "Contact", url: Astro.url.pathname }} slot="head" />
+
   <!-- Contact Hero -->
   <section class="py-16 md:py-24">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
