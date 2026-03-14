@@ -17,10 +17,10 @@
     "build-preview": "npm run build && npm run preview"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.6",
-    "@astrojs/mdx": "^4.3.13",
-    "@astrojs/rss": "^4.0.15",
-    "@astrojs/sitemap": "^3.6.1",
+    "@astrojs/check": "^0.9.7",
+    "@astrojs/mdx": "^5.0.0",
+    "@astrojs/rss": "^4.0.17",
+    "@astrojs/sitemap": "^3.7.1",
     "@iconify-json/lucide": "^1.2.86",
     "@iconify-json/tabler": "^1.2.26",
     "@tailwindcss/vite": "^4.1.18",

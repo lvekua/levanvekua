@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import Schema from '@/components/seo/Schema.astro';
 import Features from '@/components/widgets/Features.astro';
 import Headline from '@/components/ui/Headline.astro';
 import BrandMarquee from '@/components/widgets/BrandMarquee.astro';
@@ -78,6 +79,8 @@ const clientBrands = [
 ---
 
 <BaseLayout {metadata}>
+	<Schema type="BreadcrumbList" data={{ title: "About", url: Astro.url.pathname }} slot="head" />
+
 	<!-- About Hero -->
 	<section class="py-16 md:py-24">
 		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -142,6 +145,8 @@ const clientBrands = [
 							alt="Levan Vekua's workspace — modern design studio in New York City"
 							class="w-full h-auto object-cover"
 							loading="lazy"
+							width="800"
+							height="600"
 						/>
 					</div>
 					<!-- Decorative gradient behind image -->
@@ -166,6 +171,8 @@ const clientBrands = [
 							alt="Web development workspace with modern tools and technology"
 							class="w-full h-auto object-cover"
 							loading="lazy"
+							width="800"
+							height="600"
 						/>
 					</div>
 					<!-- Decorative gradient behind image -->

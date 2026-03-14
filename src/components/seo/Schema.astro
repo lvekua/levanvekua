@@ -108,6 +108,25 @@ if (type === "WebSite") {
       siteConfig.socialLinks.linkedin,
     ],
   };
+} else if (type === "BreadcrumbList") {
+  schema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: siteConfig.url,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: data.title || "Page",
+        item: data.url ? new URL(data.url, siteConfig.url).toString() : siteConfig.url,
+      },
+    ],
+  };
 } else if (type === "BlogPosting") {
   schema = {
     "@context": "https://schema.org",

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import Schema from "@/components/seo/Schema.astro";
 import Headline from "@/components/ui/Headline.astro";
 
 const metadata = {
@@ -103,6 +104,8 @@ const portfolioItems = [
 ---
 
 <BaseLayout {metadata}>
+  <Schema type="BreadcrumbList" data={{ title: "Work", url: Astro.url.pathname }} slot="head" />
+
   <!-- Portfolio Hero -->
   <section class="py-16 md:py-24">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
