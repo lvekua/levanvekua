@@ -1,197 +1,212 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
-import { siteConfig } from "@/config/site";
-import Hero from "@/components/widgets/Hero.astro";
-import Features from "@/components/widgets/Features.astro";
-import Headline from "@/components/ui/Headline.astro";
-import BrandMarquee from "@/components/widgets/BrandMarquee.astro";
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/components/widgets/Hero.astro';
+import Features from '@/components/widgets/Features.astro';
+import Headline from '@/components/ui/Headline.astro';
+import BrandMarquee from '@/components/widgets/BrandMarquee.astro';
 
 const metadata = {
-  title: "Levan Vekua — Web Designer & Developer in New York",
-  description:
-    "New York-based web designer and frontend developer specializing in custom websites, Shopify, and WordPress. View portfolio and hire Levan Vekua for your next project.",
-  ignoreTitleTemplate: true,
+	title: 'NYC Web Designer & Frontend Developer | Levan Vekua',
+	description:
+		'Freelance web designer and developer in New York City. I build high-performance Shopify stores, WordPress sites, and custom web applications for premium brands.',
+	ignoreTitleTemplate: true,
 };
 
 const services = [
-  {
-    title: "Custom Web Design",
-    description:
-      "Pixel-perfect, responsive websites tailored to your brand identity. From wireframes to final design, every detail is crafted to convert visitors into customers.",
-    icon: "lucide:pen-tool",
-    iconClass: "bg-blue-500/10 text-blue-400",
-  },
-  {
-    title: "Frontend Development",
-    description:
-      "Clean, performant code built with modern technologies like React, Next.js, and Astro. Fast load times, SEO-friendly markup, and seamless interactivity.",
-    icon: "lucide:code",
-    iconClass: "bg-purple-500/10 text-purple-400",
-  },
-  {
-    title: "E-Commerce Solutions",
-    description:
-      "End-to-end Shopify, Magento, and WordPress/WooCommerce development. Custom storefronts designed to drive sales and deliver a frictionless shopping experience.",
-    icon: "lucide:shopping-cart",
-    iconClass: "bg-pink-500/10 text-pink-400",
-  },
+	{
+		title: 'Conversion-Led Web Design',
+		description:
+			'Pixel-perfect, responsive interfaces designed to elevate your brand. From wireframes to final design, I build websites that turn visitors into loyal customers.',
+		icon: 'lucide:pen-tool',
+		iconClass: 'bg-blue-500/10 text-blue-400',
+	},
+	{
+		title: 'Modern Frontend Development',
+		description:
+			'High-performance code built with React, Next.js, and Astro. Fast load times, SEO-friendly architecture, and smooth interactions that perform at scale.',
+		icon: 'lucide:code',
+		iconClass: 'bg-purple-500/10 text-purple-400',
+	},
+	{
+		title: 'Premium E-Commerce Systems',
+		description:
+			'End-to-end Shopify, Magento, and WordPress/WooCommerce development. Custom storefronts engineered for speed, security, and a frictionless shopping experience.',
+		icon: 'lucide:shopping-cart',
+		iconClass: 'bg-pink-500/10 text-pink-400',
+	},
 ];
 
 const featuredWork = [
-  {
-    href: "https://www.bonnemaman.us",
-    imageSrc: "/img/project-thumbs/bm-thumb-w388.webp",
-    imageAlt: "Bonne Maman website design by Levan Vekua",
-    name: "Bonne Maman",
-    role: "UI Design & Development",
-    platform: "Magento & WordPress",
-  },
-  {
-    href: "https://www.nililotan.com",
-    imageSrc: "/img/project-thumbs/nl-thumb-w388.webp",
-    imageAlt: "Nili Lotan e-commerce website by Levan Vekua",
-    name: "Nili Lotan",
-    role: "UI/UX Development",
-    platform: "Shopify & WordPress",
-  },
-  {
-    href: "https://www.alexanderwang.com/us-en/projects",
-    imageSrc: "/img/project-thumbs/aw-thumb-w388.webp",
-    imageAlt: "Alexander Wang website development by Levan Vekua",
-    name: "Alexander Wang",
-    role: "UI/UX Development",
-    platform: "Demandware",
-  },
+	{
+		href: 'https://www.bonnemaman.us',
+		imageSrc: '/img/project-thumbs/bm-thumb-w388.webp',
+		imageAlt: 'Bonne Maman website design by Levan Vekua',
+		name: 'Bonne Maman',
+		role: 'UI Design & Development',
+		platform: 'Magento & WordPress',
+	},
+	{
+		href: 'https://www.nililotan.com',
+		imageSrc: '/img/project-thumbs/nl-thumb-w388.webp',
+		imageAlt: 'Nili Lotan e-commerce website by Levan Vekua',
+		name: 'Nili Lotan',
+		role: 'UI/UX Development',
+		platform: 'Shopify & WordPress',
+	},
+	{
+		href: 'https://www.alexanderwang.com/us-en/projects',
+		imageSrc: '/img/project-thumbs/aw-thumb-w388.webp',
+		imageAlt: 'Alexander Wang website development by Levan Vekua',
+		name: 'Alexander Wang',
+		role: 'UI/UX Development',
+		platform: 'Demandware',
+	},
 ];
 
 const clientBrands = [
-  { name: "Alexander Wang", imageSrc: "/img/project-thumbs/aw-thumb-w388.webp" },
-  { name: "Bonne Maman", imageSrc: "/img/project-thumbs/bm-thumb-w388.webp" },
-  { name: "Nili Lotan", imageSrc: "/img/project-thumbs/nl-thumb-w388.webp" },
-  { name: "Bonterra", imageSrc: "/img/project-thumbs/bonterra-thumb-w388.webp" },
-  { name: "1000 Stories", imageSrc: "/img/project-thumbs/1k-thumb-w388.webp" },
-  { name: "OAK NYC", imageSrc: "/img/project-thumbs/oak-thumb-w388.webp" },
-  { name: "Jiu Jie", imageSrc: "/img/project-thumbs/jj-thumb-w388.webp" },
-  { name: "Standard Issue", imageSrc: "/img/project-thumbs/si-thumb-w388.webp" },
-  { name: "Hyden Yoo", imageSrc: "/img/project-thumbs/hy-thumb-w388.webp" },
+	{
+		name: 'Alexander Wang',
+		imageSrc: '/img/project-thumbs/aw-thumb-w388.webp',
+	},
+	{ name: 'Bonne Maman', imageSrc: '/img/project-thumbs/bm-thumb-w388.webp' },
+	{ name: 'Nili Lotan', imageSrc: '/img/project-thumbs/nl-thumb-w388.webp' },
+	{
+		name: 'Bonterra',
+		imageSrc: '/img/project-thumbs/bonterra-thumb-w388.webp',
+	},
+	{ name: '1000 Stories', imageSrc: '/img/project-thumbs/1k-thumb-w388.webp' },
+	{ name: 'OAK NYC', imageSrc: '/img/project-thumbs/oak-thumb-w388.webp' },
+	{ name: 'Jiu Jie', imageSrc: '/img/project-thumbs/jj-thumb-w388.webp' },
+	{
+		name: 'Standard Issue',
+		imageSrc: '/img/project-thumbs/si-thumb-w388.webp',
+	},
+	{ name: 'Hyden Yoo', imageSrc: '/img/project-thumbs/hy-thumb-w388.webp' },
 ];
 ---
 
 <BaseLayout {metadata}>
-  <!-- Hero Section -->
-  <Hero
-    title={`Web Designer & Developer <br class="hidden md:block" /> <span class="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">in New York</span>`}
-    tagline="Freelance Web Designer & Frontend Developer — NYC"
-    description="I design and build high-performance websites for brands that demand exceptional digital experiences. Specializing in Shopify, WordPress, and custom frontend development."
-    actions={[
-      {
-        text: "View My Work",
-        href: "/work",
-        variant: "primary",
-        icon: "lucide:arrow-right",
-        ariaLabel: "View portfolio of web design projects",
-      },
-      {
-        text: "Get In Touch",
-        href: "/contact",
-        variant: "secondary",
-        icon: "lucide:mail",
-        ariaLabel: "Contact Levan Vekua for web design projects",
-      },
-    ]}
-  />
+	<!-- Hero Section -->
+	<Hero
+		title={`Elevating Brands with <br class="hidden md:block" /> <span class="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Digital Excellence</span>`}
+		tagline="NYC Web Designer & Frontend Developer"
+		description="I design and build high-performance websites for global brands that demand exceptional digital experiences. Specialized in Shopify, WordPress, and React-based applications."
+		actions={[
+			{
+				text: 'View My Work',
+				href: '/work',
+				variant: 'primary',
+				icon: 'lucide:arrow-right',
+				ariaLabel: 'View portfolio of web design projects',
+			},
+			{
+				text: 'Get In Touch',
+				href: '/contact',
+				variant: 'secondary',
+				icon: 'lucide:mail',
+				ariaLabel: 'Contact Levan Vekua for web design projects',
+			},
+		]}
+	/>
 
-  <!-- Services Section -->
-  <Features
-    tagline="What I Do"
-    title="Web Design & Development Services"
-    subtitle="From concept to launch, I provide end-to-end web design and frontend development services for businesses and brands in New York and beyond."
-    features={services}
-  />
+	<!-- Services Section -->
+	<Features
+		tagline="What I Do"
+		title="Web Design & Development Services"
+		subtitle="From concept to launch, I provide end-to-end web design and frontend development services for businesses and brands in New York and beyond."
+		features={services}
+	/>
 
-  <!-- Social Proof: Client Brands -->
-  <BrandMarquee title="Trusted by leading brands" brands={clientBrands} />
+	<!-- Social Proof: Client Brands -->
+	<BrandMarquee title="Trusted by leading brands" brands={clientBrands} />
 
-  <!-- Featured Work Preview -->
-  <section class="py-16 md:py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <Headline
-        title="Featured Projects"
-        subtitle="A selection of recent web design and development work for high-profile brands."
-        classes={{
-          container: "max-w-3xl mx-auto text-center mb-12",
-        }}
-      />
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {
-          featuredWork.map((project) => (
-            <a
-              href={project.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group block overflow-hidden rounded-2xl bg-card shadow-sm border border-border/50 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
-            >
-              <div class="aspect-video w-full overflow-hidden bg-muted">
-                <img
-                  src={project.imageSrc}
-                  alt={project.imageAlt}
-                  class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                  width="388"
-                  height="218"
-                />
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
-                  {project.name}
-                </h3>
-                <p class="text-sm font-medium text-foreground/80">
-                  {project.role}
-                </p>
-                <p class="text-sm text-muted-foreground">{project.platform}</p>
-              </div>
-            </a>
-          ))
-        }
-      </div>
-      <div class="text-center mt-12">
-        <a
-          href="/work"
-          class="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
-        >
-          View All Projects →
-        </a>
-      </div>
-    </div>
-  </section>
+	<!-- Featured Work Preview -->
+	<section class="py-20 md:py-32">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<Headline
+				title="Featured Projects"
+				subtitle="A selection of recent web design and development work for high-profile brands."
+				classes={{
+					container: 'max-w-3xl mx-auto text-center mb-16 md:mb-24',
+					title: 'text-4xl md:text-5xl font-extrabold tracking-tightest',
+				}}
+			/>
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+				{
+					featuredWork.map((project) => (
+						<a
+							href={project.href}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="group block overflow-hidden rounded-3xl bg-card shadow-sm border border-border/50 hover:shadow-xl hover:border-primary/20 transition-all duration-500 transform hover:-translate-y-2"
+						>
+							<div class="aspect-video w-full overflow-hidden bg-muted">
+								<img
+									src={project.imageSrc}
+									alt={project.imageAlt}
+									class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+									loading="lazy"
+									width="388"
+									height="218"
+								/>
+							</div>
+							<div class="p-8">
+								<h3 class="text-2xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors tracking-tight">
+									{project.name}
+								</h3>
+								<p class="text-sm font-semibold text-muted-foreground uppercase tracking-widest mb-3">
+									{project.role}
+								</p>
+								<p class="text-sm text-muted-foreground/80">
+									{project.platform}
+								</p>
+							</div>
+						</a>
+					))
+				}
+			</div>
+			<div class="text-center mt-16 md:mt-24">
+				<a
+					href="/work"
+					class="inline-flex items-center gap-2 rounded-full bg-foreground px-8 py-3.5 text-sm font-bold text-background hover:bg-foreground/80 transition-all hover:scale-[1.02] tracking-tight shadow-sm"
+				>
+					View All Projects
+				</a>
+			</div>
+		</div>
+	</section>
 
-  <!-- Final CTA Section -->
-  <section class="py-20 md:py-28">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-foreground mb-6">
-        Ready to Start Your Project?
-      </h2>
-      <p class="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
-        Whether you need a new website, a redesign, or e-commerce development, I'm
-        here to help bring your vision to life. Let's build something exceptional
-        together.
-      </p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a
-          href="/contact"
-          class="inline-flex items-center gap-2 rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
-        >
-          Start a Conversation →
-        </a>
-        <a
-          href="/img/Levan_Vekua_Resume.pdf"
-          target="_blank"
-          rel="noreferrer noopener"
-          class="inline-flex items-center gap-2 rounded-md border border-border px-8 py-3 text-sm font-medium text-foreground hover:bg-foreground/5 transition-colors"
-        >
-          Download Resume
-        </a>
-      </div>
-    </div>
-  </section>
+	<!-- Final CTA Section -->
+	<section class="py-24 md:py-40">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+			<h2
+				class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tightest text-foreground mb-8 leading-[1.1]"
+			>
+				Ready to Start Your Project?
+			</h2>
+			<p
+				class="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed"
+			>
+				Whether you need a new website, a redesign, or e-commerce development,
+				I'm here to help bring your vision to life. Let's build something
+				exceptional together.
+			</p>
+			<div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+				<a
+					href="/contact"
+					class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-primary px-10 py-4 text-base font-bold text-primary-foreground hover:bg-primary/90 transition-all hover:scale-[1.02] tracking-tight shadow-lg shadow-primary/20"
+				>
+					Start a Conversation
+				</a>
+				<a
+					href="/img/Levan_Vekua_Resume.pdf"
+					target="_blank"
+					rel="noreferrer noopener"
+					class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-border px-10 py-4 text-base font-bold text-foreground hover:bg-muted transition-all hover:scale-[1.02] tracking-tight"
+				>
+					Download Resume
+				</a>
+			</div>
+		</div>
+	</section>
 </BaseLayout>

@@ -1,158 +1,164 @@
 ---
 interface Brand {
-  name: string;
-  imageSrc: string;
+	name: string;
+	imageSrc: string;
 }
 
 interface Props {
-  title?: string;
-  brands: Brand[];
+	title?: string;
+	brands: Brand[];
 }
 
 const { title = 'Trusted by leading brands', brands } = Astro.props;
 ---
 
-<section class="brand-marquee py-16 md:py-20 overflow-hidden">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-10">
-    <p class="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-      {title}
-    </p>
-  </div>
+<section class="brand-marquee py-24 md:py-32 overflow-hidden bg-transparent">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
+		<p class="text-xs font-bold uppercase tracking-widest text-primary mb-2">
+			{title}
+		</p>
+	</div>
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="marquee-container">
-      <div class="marquee-track">
-      {/* First copy */}
-      <div class="marquee-content" aria-hidden="false">
-        {brands.map((brand) => (
-          <div class="marquee-item">
-            <img
-              src={brand.imageSrc}
-              alt={brand.name}
-              loading="lazy"
-              width="388"
-              height="218"
-            />
-          </div>
-        ))}
-      </div>
+	<div class="marquee-container">
+		<div class="marquee-track">
+			{/* First copy */}
+			<div class="marquee-content" aria-hidden="false">
+				{
+					brands.map((brand) => (
+						<div class="marquee-item group">
+							<img
+								src={brand.imageSrc}
+								alt={brand.name}
+								loading="lazy"
+								width="388"
+								height="218"
+							/>
+						</div>
+					))
+				}
+			</div>
 
-      {/* Duplicate for seamless loop */}
-      <div class="marquee-content" aria-hidden="true">
-        {brands.map((brand) => (
-          <div class="marquee-item">
-            <img
-              src={brand.imageSrc}
-              alt=""
-              loading="lazy"
-              width="388"
-              height="218"
-            />
-          </div>
-        ))}
-      </div>
-      </div>
-    </div>
-  </div>
+			{/* Duplicate for seamless loop */}
+			<div class="marquee-content" aria-hidden="true">
+				{
+					brands.map((brand) => (
+						<div class="marquee-item group">
+							<img
+								src={brand.imageSrc}
+								alt=""
+								loading="lazy"
+								width="388"
+								height="218"
+							/>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</div>
 </section>
 
 <style>
-  .marquee-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-  }
+	.marquee-container {
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+	}
 
-  /* Soft fade edges */
-  .marquee-container::before,
-  .marquee-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100px;
-    z-index: 2;
-    pointer-events: none;
-  }
+	/* Soft fade edges */
+	.marquee-container::before,
+	.marquee-container::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 200px;
+		z-index: 2;
+		pointer-events: none;
+	}
 
-  .marquee-container::before {
-    left: 0;
-    background: linear-gradient(to right, var(--color-background, hsl(0 0% 100%)), transparent);
-  }
+	.marquee-container::before {
+		left: 0;
+		background: linear-gradient(
+			to right,
+			var(--color-background, #fff),
+			transparent
+		);
+	}
 
-  .marquee-container::after {
-    right: 0;
-    background: linear-gradient(to left, var(--color-background, hsl(0 0% 100%)), transparent);
-  }
+	.marquee-container::after {
+		right: 0;
+		background: linear-gradient(
+			to left,
+			var(--color-background, #fff),
+			transparent
+		);
+	}
 
-  .marquee-track {
-    display: flex;
-    width: max-content;
-    animation: marquee-scroll 35s linear infinite;
-  }
+	.marquee-track {
+		display: flex;
+		width: max-content;
+		animation: marquee-scroll 45s linear infinite;
+	}
 
-  .marquee-track:hover {
-    animation-play-state: paused;
-  }
+	.marquee-content {
+		display: flex;
+		align-items: center;
+		gap: 4rem;
+		padding: 0 2rem;
+	}
 
-  .marquee-content {
-    display: flex;
-    align-items: center;
-    gap: 2.5rem;
-    padding: 0 1.25rem;
-  }
+	.marquee-item {
+		flex-shrink: 0;
+		width: 220px;
+		height: 110px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: var(--muted);
+		border: 1px solid var(--border);
+		border-radius: 1.5rem;
+		overflow: hidden;
+		transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+	}
 
-  .marquee-item {
-    flex-shrink: 0;
-    width: 180px;
-    height: 100px;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid hsl(var(--border, 0 0% 90%) / 0.5);
-    background: hsl(var(--muted, 0 0% 96%));
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+	.marquee-item:hover {
+		border-color: var(--primary);
+		transform: scale(1.05);
+		background: var(--background);
+		shadow:
+			0 20px 25px -5px rgb(0 0 0 / 0.1),
+			0 8px 10px -6px rgb(0 0 0 / 0.1);
+	}
 
-  .marquee-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 24px hsl(0 0% 0% / 0.12);
-  }
+	.marquee-item img {
+		max-width: 100%;
+		max-height: 100%;
+		object-fit: cover;
+	}
 
-  .marquee-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    opacity: 0.85;
-    transition: opacity 0.3s ease;
-  }
+	@keyframes marquee-scroll {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(-50%);
+		}
+	}
 
-  .marquee-item:hover img {
-    opacity: 1;
-  }
+	/* Accessibility: respect reduced motion preference */
+	@media (prefers-reduced-motion: reduce) {
+		.marquee-track {
+			animation: none;
+		}
 
-  @keyframes marquee-scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
+		.marquee-content[aria-hidden='true'] {
+			display: none;
+		}
 
-  /* Accessibility: respect reduced motion preference */
-  @media (prefers-reduced-motion: reduce) {
-    .marquee-track {
-      animation: none;
-    }
-
-    .marquee-content[aria-hidden='true'] {
-      display: none;
-    }
-
-    .marquee-content[aria-hidden='false'] {
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-  }
+		.marquee-content[aria-hidden='false'] {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+	}
 </style>

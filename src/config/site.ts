@@ -3,7 +3,7 @@ import ogImage from "@/assets/og-image.png";
 export const siteConfig = {
   name: "Levan Vekua",
   description:
-    "New York-based web designer and frontend developer specializing in custom websites, Shopify, and WordPress. View portfolio and hire Levan Vekua for your next project.",
+    "NYC-based web designer and frontend developer specializing in high-performance Shopify stores, WordPress sites, and custom web applications for premium brands.",
   url: "https://levanvekua.dev",
   lang: "en",
   locale: "en_US",

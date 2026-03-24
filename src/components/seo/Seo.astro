@@ -22,7 +22,7 @@ const ogImageSrc = typeof ogImage === "string" ? ogImage : ogImage.src;
 
 const fullTitle =
   title && !ignoreTitleTemplate
-    ? `${title} | ${siteConfig.name}`
+    ? `${title} — ${siteConfig.name}`
     : title || siteConfig.name;
 const canonicalURL =
   canonical ?? new URL(Astro.url.pathname, siteConfig.url).toString();

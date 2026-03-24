@@ -20,20 +20,20 @@ const {
 } = Astro.props;
 
 const baseStyles =
-  "inline-flex items-center justify-center font-bold transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none rounded-xl";
+  "inline-flex items-center justify-center font-bold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none rounded-full tracking-tight";
 
 const variants = {
   primary:
-    "bg-foreground text-background hover:bg-foreground/90 transform hover:scale-105 shadow-lg shadow-primary/20",
-  secondary: "bg-muted text-foreground border border-border hover:bg-muted/80",
+    "bg-foreground text-background hover:bg-foreground/80 hover:scale-[1.02] shadow-sm",
+  secondary: "bg-muted text-foreground border border-border hover:bg-muted/80 hover:scale-[1.02]",
   tertiary:
     "bg-transparent text-foreground hover:bg-accent hover:text-accent-foreground",
 };
 
 const sizes = {
   sm: "px-4 py-2 text-sm",
-  md: "px-6 py-3 text-base",
-  lg: "px-8 py-4 text-lg",
+  md: "px-8 py-3.5 text-sm",
+  lg: "px-10 py-4 text-base",
 };
 
 const classes = [baseStyles, variants[variant], sizes[size], className].join(

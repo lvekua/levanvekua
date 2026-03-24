@@ -10,10 +10,10 @@ const {
 } = Astro.props as HeadlineProps;
 
 const {
-  container = "max-w-xl",
-  title: titleClass = "text-3xl md:text-4xl",
-  subtitle: subtitleClass = "text-xl",
-  tagline: taglineClass = "",
+  container = "max-w-2xl",
+  title: titleClass = "text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tightest",
+  subtitle: subtitleClass = "text-lg md:text-xl leading-relaxed text-muted-foreground mt-4",
+  tagline: taglineClass = "text-xs font-bold uppercase tracking-widest text-primary mb-2",
 } = classes;
 
 const Title = titleAs as "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
@@ -21,23 +21,22 @@ const Title = titleAs as "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
 {
   (title || subtitle || tagline) && (
-    <div class={`mb-4 ${container}`}>
+    <div class={`mb-16 md:mb-20 ${container} mx-auto text-center`}>
       {tagline && (
-        <div
-          class={`inline-flex items-center gap-2 px-3 py-1 text-primary text-lg font-semibold ${taglineClass}`}
-        >
-          {tagline}
-        </div>
+        <p
+          class={`${taglineClass}`}
+          set:html={tagline}
+        />
       )}
       {title && (
         <Title
-          class={`font-bold tracking-tight text-foreground mb-4 ${titleClass}`}
+          class={`text-foreground ${titleClass}`}
           set:html={title}
         />
       )}
       {subtitle && (
         <p
-          class={`text-muted-foreground ${subtitleClass}`}
+          class={`${subtitleClass}`}
           set:html={subtitle}
         />
       )}
