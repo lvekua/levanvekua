@@ -2,7 +2,7 @@
 title: "Markdown Features"
 pubDate: "2026-01-19"
 description: "Exploring the capabilities of Markdown in our blog."
-author: "Angelo Pescetto"
+author: "Levan Vekua"
 category: "Tech"
 tags: ["markdown", "features", "astro"]
 image: "/blog/markdown.webp"

@@ -12,63 +12,84 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-card: var(--card);
+
+  /* Modern Spacing */
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+  --spacing-26: 6.5rem;
+  --spacing-30: 7.5rem;
+
+  /* Refined Typography */
+  --tracking-tighter: -0.02em;
+  --tracking-tightest: -0.05em;
 }
 
 :root {
   --background: #ffffff;
-  --foreground: #0a0a0a;
-  --primary: #0254d8;
+  --foreground: #000000;
+  --primary: #007AFF; /* Apple Blue */
   --primary-foreground: #ffffff;
-  --border: #e5e7eb;
-  --input: #e5e7eb;
-  --ring: #0254d8;
-  --muted: #f4f4f5;
-  --muted-foreground: #52525b;
+  --border: #e5e5e7; /* Apple Border */
+  --input: #e5e5e7;
+  --ring: #007AFF;
+  --muted: #f5f5f7; /* Apple Muted */
+  --muted-foreground: #86868b; /* Apple Muted Text */
   --card: #ffffff;
 }
 
 :root[data-theme="dark"] {
-  --background: #030303;
-  --foreground: #e5e7eb;
-  --primary: #8bbcff;
-  --primary-foreground: #0a0a0a;
-  --border: #262626;
-  --input: #262626;
-  --ring: #8bbcff;
-  --muted: #171717;
-  --muted-foreground: #a1a1aa;
-  --card: #0a0a0a;
+  --background: #000000;
+  --foreground: #f5f5f7;
+  --primary: #0A84FF; /* Apple Blue Dark */
+  --primary-foreground: #ffffff;
+  --border: #1d1d1f;
+  --input: #1d1d1f;
+  --ring: #0A84FF;
+  --muted: #1d1d1f;
+  --muted-foreground: #86868b;
+  --card: #1c1c1e;
 }
 
 /* Base styles using variables */
 @layer base {
+  html {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  }
+
   body {
     background-color: var(--background);
     color: var(--foreground);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   :focus-visible {
     outline: 2px solid var(--primary);
     outline-offset: 2px;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: var(--tracking-tighter);
+    line-height: 1.1;
+  }
 }
 
-/* Ensure strong/bold text is readable in dark mode — must be outside @layer base
-   to override Tailwind Typography plugin's prose styles */
-:root[data-theme="dark"] strong,
-:root[data-theme="dark"] b,
-:root[data-theme="dark"] .prose strong,
-:root[data-theme="dark"] .prose b {
-  color: var(--foreground) !important;
+/* Ensure strong/bold text inherits color for better blending with paragraph text */
+strong,
+b,
+.prose strong,
+.prose b {
+  color: inherit !important;
+  font-weight: 700;
 }
 
 /* Animations - Reveal on Scroll */
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(20px);
   transition:
-    opacity 0.6s ease-out,
-    transform 0.6s ease-out;
+    opacity 1.2s cubic-bezier(0.5, 1, 0.89, 1),
+    transform 1.2s cubic-bezier(0.5, 1, 0.89, 1);
   will-change: opacity, transform;
 }
 
@@ -80,4 +101,11 @@
 /* Prevent double-bounce conflicts when Astro View Transitions is actively animating */
 :root[data-astro-transition] .reveal {
   transition: none !important;
+}
+
+[data-theme="light"] .logo {
+	filter: none;
+}
+[data-theme="dark"] .logo {
+	filter: invert(1);
 }

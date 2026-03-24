@@ -2,7 +2,7 @@
 title: "Welcome to the New Blog"
 pubDate: "2026-01-19"
 description: "This is the first post on our new Astro-powered blog."
-author: "Angelo Pescetto"
+author: "Levan Vekua"
 category: "General"
 tags: ["welcome", "community", "astro"]
 image: "/blog/welcome.webp"

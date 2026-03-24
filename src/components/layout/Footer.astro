@@ -2,44 +2,50 @@
 import { siteConfig } from "@/config/site";
 ---
 
-<footer class="mt-20 border-t border-border bg-card">
-  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-    <div class="flex flex-col items-center justify-between gap-8 md:flex-row">
-      <div class="flex flex-col items-center gap-2 md:items-start">
-        <span class="text-lg font-bold text-foreground">{siteConfig.name}</span>
-        <p class="text-sm text-muted-foreground">
+<footer class="mt-32 border-t border-border bg-background">
+  <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+      <div class="flex flex-col items-center md:items-start text-center md:text-left">
+        <span class="text-xl font-extrabold tracking-tightest mb-4 text-foreground">{siteConfig.name}</span>
+        <p class="text-sm text-muted-foreground max-w-sm leading-relaxed">
           {siteConfig.description}
         </p>
       </div>
-      <div class="flex items-center gap-6">
-        <a
-          href={siteConfig.socialLinks.twitter}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-muted-foreground transition-colors hover:text-primary"
-          >Twitter</a
-        >
-        <a
-          href={siteConfig.socialLinks.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-muted-foreground transition-colors hover:text-primary"
-          >GitHub</a
-        >
-        <a
-          href={siteConfig.socialLinks.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-muted-foreground transition-colors hover:text-primary"
-          >LinkedIn</a
-        >
+      <div class="flex flex-col items-center md:items-end gap-6">
+        <div class="flex items-center gap-8">
+          <a
+            href={siteConfig.socialLinks.twitter}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-[13px] font-semibold text-muted-foreground transition-colors hover:text-foreground tracking-tight"
+            >Twitter</a
+          >
+          <a
+            href={siteConfig.socialLinks.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-[13px] font-semibold text-muted-foreground transition-colors hover:text-foreground tracking-tight"
+            >GitHub</a
+          >
+          <a
+            href={siteConfig.socialLinks.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-[13px] font-semibold text-muted-foreground transition-colors hover:text-foreground tracking-tight"
+            >LinkedIn</a
+          >
+        </div>
+        <p class="text-[11px] font-medium text-muted-foreground tracking-widest uppercase opacity-60">
+          Built with Astro & Tailwind v4
+        </p>
       </div>
     </div>
     <div
-      class="mt-8 border-t border-border pt-8 text-center text-xs text-muted-foreground"
+      class="mt-16 pt-8 border-t border-border text-center md:text-left"
     >
-      &copy; {new Date().getFullYear()}
-      {siteConfig.author}. All rights reserved.
+      <p class="text-[11px] font-medium text-muted-foreground tracking-tight opacity-50">
+        &copy; {new Date().getFullYear()} {siteConfig.author}. All rights reserved. Designed in New York.
+      </p>
     </div>
   </div>
 </footer>
