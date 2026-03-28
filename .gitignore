@@ -73,3 +73,5 @@ build/
 
 # Astro specific
 .astro/
+.agent/
+.agents/
