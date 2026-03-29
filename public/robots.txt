@@ -1,3 +1,5 @@
 # Allow all crawlers
 User-agent: *
 Allow: /
+
+Sitemap: https://levanvekua.dev/sitemap-index.xml
